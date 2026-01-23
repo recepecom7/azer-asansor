@@ -20,9 +20,11 @@ export const Header = () => {
                 <nav className="hidden md:flex items-center gap-8">
                     {[
                         ['Anasayfa', '/'],
-                        ['Hizmetler', '#services'],
-                        ['Hakkımızda', '#about'],
-                        ['İletişim', '#contact'],
+                        ['Mobil Asansör', '/antalya-mobil-asansor-kiralama'],
+                        ['Dış Cephe', '/antalya-dis-cephe-asansoru'],
+                        ['Hizmet Bölgeleri', '/hizmet-bolgeleri'],
+                        ['Hakkımızda', '/hakkimizda'],
+                        ['İletişim', '/iletisim'],
                     ].map(([label, href]) => (
                         <Link
                             key={label}

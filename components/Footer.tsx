@@ -42,10 +42,17 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-brand-yellow">Hızlı Bağlantılar</h3>
                         <ul className="space-y-3">
-                            {['Anasayfa', 'Hizmetler', 'Hakkımızda', 'İletişim'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="text-gray-400 hover:text-brand-yellow transition-colors">
-                                        {item}
+                            {[
+                                ['Anasayfa', '/'],
+                                ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
+                                ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
+                                ['Hizmet Bölgeleri', '/hizmet-bolgeleri'],
+                                ['Hakkımızda', '/hakkimizda'],
+                                ['İletişim', '/iletisim']
+                            ].map(([label, href]) => (
+                                <li key={label}>
+                                    <Link href={href} className="text-gray-400 hover:text-brand-yellow transition-colors">
+                                        {label}
                                     </Link>
                                 </li>
                             ))}
