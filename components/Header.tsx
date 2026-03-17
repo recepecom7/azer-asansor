@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from './Button';
 import { Phone, ChevronDown } from 'lucide-react';
@@ -46,13 +47,15 @@ export const Header = () => {
             <div className="container mx-auto px-4 h-full flex items-center justify-between">
 
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-8 h-8 bg-brand-yellow rounded flex items-center justify-center">
-                        <span className="text-brand-black font-bold text-xl">A</span>
-                    </div>
-                    <span className="text-white font-bold text-xl tracking-tight group-hover:text-brand-yellow transition-colors">
-                        AZER ASANSÖR
-                    </span>
+                <Link href="/" className="flex flex-shrink-0 items-center">
+                    <Image
+                        src="/images/logo.png"
+                        alt="Azer Asansör"
+                        width={200}
+                        height={60}
+                        className="h-14 w-auto object-contain"
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}

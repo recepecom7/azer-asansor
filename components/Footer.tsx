@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const Footer = () => {
@@ -20,12 +21,15 @@ export const Footer = () => {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                     <div>
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 bg-brand-yellow rounded flex items-center justify-center">
-                                <span className="text-brand-black font-bold text-xl">A</span>
-                            </div>
-                            <span className="text-xl font-bold">AZER ASANSÖR</span>
-                        </div>
+                        <Link href="/" className="inline-block mb-6">
+                            <Image
+                                src="/images/logo.png"
+                                alt="Azer Asansör"
+                                width={240}
+                                height={72}
+                                className="h-16 w-auto object-contain"
+                            />
+                        </Link>
                         <p className="text-gray-400 leading-relaxed">
                             Antalya ve çevre illerde güvenli, hızlı ve profesyonel
                             nakliyat ve kiralık asansör hizmetleri.
