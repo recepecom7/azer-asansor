@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { ConversionTracker } from "@/components/ConversionTracker";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -154,6 +155,23 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={inter.className}>
+        <Script
+          id="google-ads-js"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=AW-18038829941`}
+        />
+        <Script
+          id="google-ads-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18038829941');
+            `,
+          }}
+        />
         {children}
         <Script
           id="local-business-schema"
@@ -162,6 +180,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <ConversionTracker />
       </body>
     </html>
   );
