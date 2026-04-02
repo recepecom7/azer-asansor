@@ -154,24 +154,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18038829941"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-global-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'AW-18038829941');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
-        <Script
-          id="google-ads-js"
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=AW-18038829941`}
-        />
-        <Script
-          id="google-ads-config"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-18038829941');
-            `,
-          }}
-        />
         {children}
         <Script
           id="local-business-schema"
