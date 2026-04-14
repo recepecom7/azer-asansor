@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://azerasansor.com'
+    const baseUrl = 'https://www.azerasansor.com'
 
     return [
         {
@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.5,
         },
         {
-            url: `${baseUrl}/antalya-asansorlu-tasima`,
+            url: `${baseUrl}/antalya-asansorlu-nakliyat`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,

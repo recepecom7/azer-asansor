@@ -7,7 +7,7 @@ import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 export const metadata: Metadata = {
     title: "Iletisim | Azer Asansor Antalya",
     description: "Azer Asansor iletisim bilgileri. 7/24 Telefon ve WhatsApp destegi.",
-    alternates: { canonical: "https://azerasansor.com/iletisim" },
+    alternates: { canonical: "https://www.azerasansor.com/iletisim" },
 };
 
 export default function ContactPage() {

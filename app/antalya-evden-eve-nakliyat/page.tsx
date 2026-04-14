@@ -39,7 +39,7 @@ const faqs = [
 export const metadata: Metadata = {
     title: 'Antalya Evden Eve Nakliyat | Güvenli & Sigortalı Taşıma',
     description: 'Antalya evden eve nakliyat hizmeti. Profesyonel ekip, sigortalı taşıma, asansörlü nakliyat ve ambalajlama. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.',
-    alternates: { canonical: 'https://azerasansor.com/antalya-evden-eve-nakliyat' },
+    alternates: { canonical: 'https://www.azerasansor.com/antalya-evden-eve-nakliyat' },
 };
 
 export default function EvdenEveNakliyatPage() {

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Hakkımızda | Azer Asansör Antalya",
     description: "Azer Asansör hakkında bilgi edinin. 10 yılı aşkın tecrübe, sertifikalı operatörler ve güvenli mobil asansör kiralama hizmetleri.",
     alternates: {
-        canonical: "https://azerasansor.com/hakkimizda",
+        canonical: "https://www.azerasansor.com/hakkimizda",
     },
 };
 
@@ -79,8 +79,8 @@ export default function AboutPage() {
                 highlight="Azer Asansör?"
                 description="Antalya ve çevre illerde asansör kiralama ve nakliyat hizmetlerinde güvenilir çözüm ortağınız."
                 benefits={benefits}
-                image="/images/project-lift.png"
-                imageAlt="Azer Asansör - Antalya nakliyat ve asansör kiralama"
+                image="/new-image.jpg"
+                imageAlt="Antalya mobil asansör kurulumu"
             />
             <Footer />
         </main>

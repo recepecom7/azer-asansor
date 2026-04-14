@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Antalya Dış Cephe Asansörü Kiralama | İnşaat ve Moloz Asansörü",
     description: "Antalya dış cephe asansörü kiralama hizmetleri. İnşaat malzemesi çıkarma, moloz indirme ve cam balkon montajı için profesyonel cephe asansörü.",
     alternates: {
-        canonical: "https://azerasansor.com/antalya-dis-cephe-asansoru",
+        canonical: "https://www.azerasansor.com/antalya-dis-cephe-asansoru",
     },
 };
 
@@ -69,8 +69,8 @@ export default function FacadeElevatorPage() {
                 highlight="Azer Asansör?"
                 description="Antalya'da inşaat ve tadilat sektörünün güvenilir dış cephe asansörü çözüm ortağı. Hızlı mobilizasyon, sertifikalı ekip ve tam sigorta güvencesi."
                 benefits={benefits}
-                image="/images/project-lift.png"
-                imageAlt="Antalya dış cephe asansörü kiralama - Azer Asansör"
+                image="/new-image.jpg"
+                imageAlt="Antalya mobil asansör kurulumu"
             />
             <FAQ
                 faqs={faqs}

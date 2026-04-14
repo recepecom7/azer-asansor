@@ -13,8 +13,6 @@ const navItems = [
         children: [
             { label: 'Evden Eve Nakliyat', href: '/antalya-evden-eve-nakliyat' },
             { label: 'Asansörlü Nakliyat', href: '/antalya-asansorlu-nakliyat' },
-            { label: 'Şehirler Arası Taşıma', href: '/antalya-sehirler-arasi-nakliyat' },
-            { label: 'Parça Eşya Taşıma', href: '/antalya-parca-esya-tasima' },
         ],
     },
     {
@@ -27,9 +25,6 @@ const navItems = [
     {
         label: 'Taşımacılık',
         children: [
-            { label: 'Ofis Taşıma', href: '/antalya-ofis-tasima' },
-            { label: 'Piyano Taşıma', href: '/antalya-piyano-tasima' },
-            { label: 'Eşya Depolama', href: '/antalya-esya-depolama' },
         ],
     },
     { label: 'Hizmet Bölgeleri', href: '/hizmet-bolgeleri' },
