@@ -3,13 +3,12 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { MapPin } from "lucide-react";
-import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Antalya Nakliyat ve Asansör Hizmet Bölgeleri | Tüm İlçeler",
     description: "Antalya'nın tüm ilçelerinde evden eve nakliyat ve mobil asansör kiralama hizmeti. Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı'nda 7/24 hizmet.",
     alternates: {
-        canonical: "https://azerasansor.com/hizmet-bolgeleri",
+        canonical: "https://www.azerasansor.com/hizmet-bolgeleri",
     },
 };
 
@@ -17,38 +16,26 @@ const districts = [
     {
         name: "Muratpaşa",
         description: "Muratpaşa genelinde evden eve nakliyat ve inşaat işleri için hızlı mobil asansör servisi.",
-        nakliyatHref: "/muratpasa-evden-eve-nakliyat",
-        asansorHref: "/muratpasa-mobil-asansor-kiralama",
     },
     {
         name: "Kepez",
         description: "Kepez bölgesindeki tüm mahallelerde 22. kata kadar ulaşan kiralık dış cephe asansörleri.",
-        nakliyatHref: "/kepez-evden-eve-nakliyat",
-        asansorHref: "/kepez-mobil-asansor-kiralama",
     },
     {
         name: "Konyaaltı",
         description: "Konyaaltı ilçesinde güvenli, sigortalı ve profesyonel mobil asansör ve nakliyat çözümleri.",
-        nakliyatHref: "/konyaalti-evden-eve-nakliyat",
-        asansorHref: "/konyaalti-mobil-asansor-kiralama",
     },
     {
         name: "Lara",
         description: "Lara bölgesinde hassas mobilya taşıma ve beyaz eşya çıkarma işlemleri için özel ekipman.",
-        nakliyatHref: "/lara-evden-eve-nakliyat",
-        asansorHref: "/lara-mobil-asansor-kiralama",
     },
     {
         name: "Aksu",
         description: "Aksu ve çevresinde inşaat malzemesi taşıma ve moloz indirme için güçlü asansör parkuru.",
-        nakliyatHref: "/aksu-evden-eve-nakliyat",
-        asansorHref: "/aksu-mobil-asansor-kiralama",
     },
     {
         name: "Döşemealtı",
         description: "Döşemealtı bölgesinde villa ve yüksek katlı binalar için uygun mobil asansör kiralama.",
-        nakliyatHref: "/dosemealti-evden-eve-nakliyat",
-        asansorHref: "/dosemealti-mobil-asansor-kiralama",
     },
 ];
 
@@ -75,6 +62,9 @@ export default function ServiceAreasPage() {
                         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
                             Antalya'nın tüm ilçelerinde profesyonel nakliyat ve asansör kiralama hizmetleri sunuyoruz.
                         </p>
+                        <p className="text-gray-600 max-w-2xl mx-auto text-lg mt-3">
+                            Antalya’nın tüm ilçelerine hizmet veriyoruz.
+                        </p>
                         <div className="w-24 h-1 bg-brand-yellow mx-auto rounded-full mt-4"></div>
                     </div>
 
@@ -96,18 +86,12 @@ export default function ServiceAreasPage() {
                                     {district.description}
                                 </p>
                                 <div className="flex flex-col gap-2">
-                                    <Link
-                                        href={district.nakliyatHref}
-                                        className="text-sm font-medium text-brand-black hover:text-brand-yellow transition-colors flex items-center gap-1"
-                                    >
+                                    <span className="text-sm font-medium text-brand-black flex items-center gap-1">
                                         → {district.name} Evden Eve Nakliyat
-                                    </Link>
-                                    <Link
-                                        href={district.asansorHref}
-                                        className="text-sm font-medium text-brand-black hover:text-brand-yellow transition-colors flex items-center gap-1"
-                                    >
+                                    </span>
+                                    <span className="text-sm font-medium text-brand-black flex items-center gap-1">
                                         → {district.name} Mobil Asansör Kiralama
-                                    </Link>
+                                    </span>
                                 </div>
                             </div>
                         ))}

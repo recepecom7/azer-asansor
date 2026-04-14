@@ -9,8 +9,6 @@ export const Footer = () => {
         ['Asansörlü Nakliyat', '/antalya-asansorlu-nakliyat'],
         ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
         ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
-        ['Ofis Taşıma', '/antalya-ofis-tasima'],
-        ['Eşya Depolama', '/antalya-esya-depolama'],
         ['Hizmet Bölgeleri', '/hizmet-bolgeleri'],
         ['Hakkımızda', '/hakkimizda'],
         ['İletişim', '/iletisim'],
