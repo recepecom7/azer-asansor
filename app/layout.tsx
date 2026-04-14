@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   },
   description:
     "Antalya ve çevre illerde güvenli kiralık asansör, yük asansörü kiralama ve nakliyat asansörü hizmetleri. 7/24 profesyonel çözüm.",
+  verification: {
+    google: "BxSKlndSYfdFDktpcq3w57q_TvNbUP0ZdcYqrVsR8a8",
+  },
   keywords: [
     "antalya asansör kiralama",
     "dış cephe asansörü",
