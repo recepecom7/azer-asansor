@@ -41,7 +41,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="text-xl font-bold text-brand-black mb-1">WhatsApp</h3>
                                     <p className="text-gray-600 mb-2">Hizli Fiyat Teklifi Alin</p>
-                                    <a href="https://wa.me/+905424669631" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-green-600 hover:text-green-700 transition-colors">WhatsApp tan Yaz</a>
+                                    <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-green-600 hover:text-green-700 transition-colors">WhatsApp tan Yaz</a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -83,7 +83,7 @@ export default function ContactPage() {
                                     <Phone className="w-5 h-5" />
                                     +90 542 466 96 31
                                 </a>
-                                <a href="https://wa.me/+905424669631" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-green-600 text-white font-bold py-4 px-6 rounded-2xl hover:bg-green-700 transition-colors text-lg">
+                                <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-green-600 text-white font-bold py-4 px-6 rounded-2xl hover:bg-green-700 transition-colors text-lg">
                                     <MessageCircle className="w-5 h-5" />
                                     WhatsApp tan Yaz
                                 </a>

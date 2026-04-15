@@ -1,7 +1,7 @@
 import { Phone, MessageCircle } from "lucide-react";
 
 const PHONE_HREF = "tel:+905424669631";
-const WHATSAPP_HREF = "https://wa.me/+905424669631";
+const WHATSAPP_HREF = "https://wa.me/905424669631";
 
 export function MobileStickyCTA() {
   return (

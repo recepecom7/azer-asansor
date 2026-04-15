@@ -50,7 +50,7 @@ export const Hero = ({
                                 </Button>
                             </a>
 
-                            <a href="https://wa.me/+905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                 <Button variant="whatsapp" className="w-full text-lg px-8">
                                     <MessageCircle className="w-5 h-5 mr-2" />
                                     WhatsApp&apos;tan Yaz

@@ -75,7 +75,7 @@ export const Services = ({
                                 Hemen Ara
                             </Button>
                         </a>
-                        <a href="https://wa.me/+905424669631" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
                             <Button variant="whatsapp" className="min-w-[180px] text-lg">
                                 <MessageCircle className="w-5 h-5 mr-2" />
                                 WhatsApp ile İletişim
