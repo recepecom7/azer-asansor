@@ -14,6 +14,8 @@ interface FAQProps {
     schemaId: string;
     title?: string;
     highlight?: string;
+    ctaText?: string;
+    defaultOpenIndex?: number | null;
 }
 
 export const FAQ = ({
@@ -21,8 +23,10 @@ export const FAQ = ({
     schemaId,
     title = 'Sık Sorulan',
     highlight = 'Sorular',
+    ctaText,
+    defaultOpenIndex = null,
 }: FAQProps) => {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
 
     const faqSchema = {
         '@context': 'https://schema.org',
@@ -38,7 +42,7 @@ export const FAQ = ({
     };
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-brand-black text-white">
             <Script
                 id={schemaId}
                 type="application/ld+json"
@@ -46,9 +50,9 @@ export const FAQ = ({
             />
             <div className="container mx-auto px-4 max-w-3xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         {title}{' '}
-                        <span className="text-brand-yellow/90 bg-black px-2 rounded">
+                        <span className="text-brand-yellow bg-gray-900 px-2 rounded">
                             {highlight}
                         </span>
                     </h2>
@@ -59,15 +63,15 @@ export const FAQ = ({
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="border border-gray-200 rounded-2xl overflow-hidden"
+                            className="border border-gray-800 bg-gray-900 rounded-2xl overflow-hidden"
                         >
                             <button
-                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-800 transition-colors"
                                 onClick={() =>
                                     setOpenIndex(openIndex === index ? null : index)
                                 }
                             >
-                                <span className="font-semibold text-brand-black pr-4">
+                                <span className="font-semibold text-white pr-4">
                                     {faq.question}
                                 </span>
                                 <ChevronDown
@@ -76,13 +80,19 @@ export const FAQ = ({
                                 />
                             </button>
                             {openIndex === index && (
-                                <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                                <div className="px-6 pb-6 text-gray-300 leading-relaxed border-t border-gray-800 pt-4">
                                     {faq.answer}
                                 </div>
                             )}
                         </div>
                     ))}
                 </div>
+
+                {ctaText && (
+                    <p className="text-center text-gray-400 mt-8">
+                        {ctaText}
+                    </p>
+                )}
             </div>
         </section>
     );

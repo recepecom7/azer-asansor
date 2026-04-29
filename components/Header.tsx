@@ -11,23 +11,32 @@ const navItems = [
     {
         label: 'Nakliyat',
         children: [
-            { label: 'Evden Eve Nakliyat', href: '/antalya-evden-eve-nakliyat' },
-            { label: 'Asansörlü Nakliyat', href: '/antalya-asansorlu-nakliyat' },
+            { label: 'Antalya Evden Eve Nakliyat', href: '/antalya-evden-eve-nakliyat' },
+            { label: 'Antalya Asansörlü Nakliyat', href: '/antalya-asansorlu-nakliyat' },
+            { label: 'Antalya Ofis Taşıma', href: '/antalya-ofis-tasima' },
+            { label: 'Antalya Şehirlerarası Nakliyat', href: '/antalya-sehirlerarasi-nakliyat' },
+        ],
+    },
+    {
+        label: 'Hizmet Bölgeleri',
+        children: [
+            { label: 'Antalya Hizmet Bölgeleri', href: '/antalya-hizmet-bolgeleri' },
+            { label: 'Muratpaşa Asansörlü Nakliyat', href: '/muratpasa-asansorlu-nakliyat' },
+            { label: 'Kepez Asansörlü Nakliyat', href: '/kepez-asansorlu-nakliyat' },
+            { label: 'Konyaaltı Asansörlü Nakliyat', href: '/konyaalti-asansorlu-nakliyat' },
+            { label: 'Lara Asansörlü Nakliyat', href: '/lara-asansorlu-nakliyat' },
+            { label: 'Aksu Asansörlü Nakliyat', href: '/aksu-asansorlu-nakliyat' },
+            { label: 'Döşemealtı Asansörlü Nakliyat', href: '/dosemealti-asansorlu-nakliyat' },
         ],
     },
     {
         label: 'Asansör',
         children: [
-            { label: 'Mobil Asansör Kiralama', href: '/antalya-mobil-asansor-kiralama' },
+            { label: 'Antalya Kiralık Asansör', href: '/antalya-kiralik-asansor' },
+            { label: 'Antalya Mobil Asansör Kiralama', href: '/antalya-mobil-asansor-kiralama' },
             { label: 'Dış Cephe Asansörü', href: '/antalya-dis-cephe-asansoru' },
         ],
     },
-    {
-        label: 'Taşımacılık',
-        children: [
-        ],
-    },
-    { label: 'Hizmet Bölgeleri', href: '/hizmet-bolgeleri' },
     { label: 'Hakkımızda', href: '/hakkimizda' },
     { label: 'İletişim', href: '/iletisim' },
 ];

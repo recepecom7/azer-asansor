@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { LucideIcon, Award, HardHat, ShieldCheck, Check, Clock } from 'lucide-react';
+import { WhyUsSlider } from './WhyUsSlider';
 
 export interface Benefit {
     title: string;
@@ -22,6 +22,7 @@ interface WhyUsProps {
     benefits?: Benefit[];
     image?: string;
     imageAlt?: string;
+    ctaText?: string;
 }
 
 export const WhyUs = ({
@@ -31,48 +32,53 @@ export const WhyUs = ({
     benefits = defaultBenefits,
     image = '/images/project-lift.png',
     imageAlt = 'Azer Asansör Operasyon',
+    ctaText,
 }: WhyUsProps) => {
+    const slides = [
+        { src: image, alt: imageAlt },
+        { src: '/images/antalya-konyaalti-nakliyat.jpg', alt: 'Antalya Konyaaltı nakliyat taşıma operasyonu' },
+        { src: '/images/antalya-asansorlu-nakliyat.jpeg', alt: 'Antalya asansörlü nakliyat araç filosu' },
+    ];
+
     return (
-        <section id="about" className="py-20 bg-brand-beige">
+        <section id="about" className="py-12 md:py-16 bg-brand-black text-white">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
                     <div className="flex-1">
-                        <h2 className="text-3xl md:text-4xl font-bold text-brand-black mb-6">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                             {title}{' '}
-                            <span className="text-brand-yellow/90 bg-black px-2 rounded">
+                            <span className="text-brand-yellow">
                                 {highlight}
                             </span>
                         </h2>
-                        <p className="text-lg text-gray-700 mb-10 leading-relaxed">
+                        <p className="text-lg text-gray-300 mb-7 leading-relaxed">
                             {description}
                         </p>
-                        <div className="space-y-8">
+                        <div className="space-y-5">
                             {benefits.map((benefit, index) => (
-                                <div key={index} className="flex gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-brand-yellow/20 flex items-center justify-center flex-shrink-0 mt-1">
-                                        <benefit.icon className="w-6 h-6 text-brand-black" />
+                                <div key={index} className="flex gap-4 bg-gray-900 border border-gray-800 rounded-2xl p-4 md:p-5 shadow-sm">
+                                    <div className="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <benefit.icon className="w-6 h-6 text-brand-yellow" />
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-brand-black mb-2">
+                                        <h3 className="text-xl font-bold text-white mb-1.5">
                                             {benefit.title}
                                         </h3>
-                                        <p className="text-gray-600 leading-relaxed">
+                                        <p className="text-gray-400 leading-relaxed">
                                             {benefit.description}
                                         </p>
                                     </div>
                                 </div>
                             ))}
                         </div>
+                        {ctaText && (
+                            <p className="text-sm text-gray-400 mt-6">
+                                {ctaText}
+                            </p>
+                        )}
                     </div>
                     <div className="flex-1 w-full">
-                        <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                            <Image
-                                src={image}
-                                alt={imageAlt}
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
+                        <WhyUsSlider slides={slides} />
                     </div>
                 </div>
             </div>

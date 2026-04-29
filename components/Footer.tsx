@@ -1,15 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 
 export const Footer = () => {
     const links = [
         ['Anasayfa', '/'],
         ['Evden Eve Nakliyat', '/antalya-evden-eve-nakliyat'],
         ['Asansörlü Nakliyat', '/antalya-asansorlu-nakliyat'],
+        ['Ofis Taşıma', '/antalya-ofis-tasima'],
+        ['Şehirlerarası Nakliyat', '/antalya-sehirlerarasi-nakliyat'],
         ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
         ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
-        ['Hizmet Bölgeleri', '/hizmet-bolgeleri'],
+        ['Blog', '/blog'],
+        ['Hizmet Bölgeleri', '/antalya-hizmet-bolgeleri'],
         ['Hakkımızda', '/hakkimizda'],
         ['İletişim', '/iletisim'],
     ];
@@ -43,12 +46,6 @@ export const Footer = () => {
                                     +90 542 466 96 31
                                 </a>
                             </li>
-                            <li className="flex items-center gap-3 text-gray-300">
-                                <Mail className="w-5 h-5 text-brand-yellow" />
-                                <a href="mailto:info@azerasansor.com" className="hover:text-brand-yellow transition-colors">
-                                    info@azerasansor.com
-                                </a>
-                            </li>
                             <li className="flex items-start gap-3 text-gray-300">
                                 <MapPin className="w-5 h-5 text-brand-yellow mt-1" />
                                 <span>Antalya, Türkiye</span>
@@ -75,6 +72,14 @@ export const Footer = () => {
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                     <p>&copy; {new Date().getFullYear()} Azer Asansör. Tüm hakları saklıdır.</p>
+                    <a
+                        href="https://defora.digital"
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        className="block mt-3 text-gray-300 hover:text-brand-yellow transition-colors font-medium"
+                    >
+                        Web Tasarım: Defora Digital
+                    </a>
                 </div>
             </div>
         </footer>

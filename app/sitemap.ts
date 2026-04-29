@@ -1,50 +1,45 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.azerasansor.com'
+  const baseUrl = "https://www.azerasansor.com";
+  const lastModified = new Date();
 
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/hakkimizda`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/hizmet-bolgeleri`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/iletisim`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/antalya-asansorlu-nakliyat`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/antalya-dis-cephe-asansoru`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/antalya-mobil-asansor-kiralama`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-    ]
+  const routes = [
+    { path: "/", priority: 1.0, changeFrequency: "weekly" },
+    { path: "/hakkimizda", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/iletisim", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+
+    { path: "/antalya-evden-eve-nakliyat", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-asansorlu-nakliyat", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-ofis-tasima", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-sehirlerarasi-nakliyat", priority: 0.9, changeFrequency: "weekly" },
+
+    { path: "/antalya-mobil-asansor-kiralama", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-kiralik-asansor", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-dis-cephe-asansoru", priority: 0.9, changeFrequency: "weekly" },
+
+    { path: "/cam-balkon-tasima-antalya", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/insaat-malzemesi-tasima-antalya", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/klima-tasima-antalya", priority: 0.7, changeFrequency: "monthly" },
+
+    { path: "/antalya-hizmet-bolgeleri", priority: 0.8, changeFrequency: "weekly" },
+    { path: "/muratpasa-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/kepez-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/konyaalti-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/lara-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/aksu-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/dosemealti-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+
+    { path: "/blog/antalya-evden-eve-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/antalya-asansorlu-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/antalya-mobil-asansor-kiralama-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
+  ] as const;
+
+  return routes.map((route) => ({
+    url: route.path === "/" ? baseUrl : `${baseUrl}${route.path}`,
+    lastModified,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 }

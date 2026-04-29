@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.azerasansor.com"),
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   title: {
     default: "Azer Asansör | Dış Cephe ve Yük Asansörü Hizmetleri",
     template: "%s | Azer Asansör",
