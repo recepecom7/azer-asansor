@@ -11,6 +11,9 @@ export const Footer = () => {
         ['Şehirlerarası Nakliyat', '/antalya-sehirlerarasi-nakliyat'],
         ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
         ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
+        ['Parça Eşya Taşıma', '/antalya-parca-esya-tasima'],
+        ['Eşya Depolama', '/antalya-esya-depolama'],
+        ['Piyano ve Ağır Eşya Taşıma', '/antalya-piyano-ve-agir-esya-tasima'],
         ['Blog', '/blog'],
         ['Hizmet Bölgeleri', '/antalya-hizmet-bolgeleri'],
         ['Hakkımızda', '/hakkimizda'],
@@ -67,6 +70,25 @@ export const Footer = () => {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+                </div>
+
+                <div className="border-t border-gray-800 pt-8 pb-8 text-center">
+                    <h4 className="text-gray-400 font-semibold mb-4 text-sm uppercase tracking-wider">Hizmet Bölgelerimiz & Hizmetlerimiz</h4>
+                    <div className="flex flex-wrap justify-center items-center gap-3 text-xs text-gray-500">
+                        <Link href="/" className="hover:text-brand-yellow transition-colors">Antalya Asansörlü Nakliyat</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/" className="hover:text-brand-yellow transition-colors">Muratpaşa Asansör Kiralama</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/" className="hover:text-brand-yellow transition-colors">Kepez Evden Eve Taşıma</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/" className="hover:text-brand-yellow transition-colors">Konyaaltı Eşya Taşıma</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/antalya-parca-esya-tasima" className="hover:text-brand-yellow transition-colors">Antalya Parça Eşya Taşıma</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/antalya-esya-depolama" className="hover:text-brand-yellow transition-colors">Antalya Sigortalı Eşya Depolama</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/antalya-piyano-ve-agir-esya-tasima" className="hover:text-brand-yellow transition-colors">Antalya Piyano Taşıma</Link>
                     </div>
                 </div>
 

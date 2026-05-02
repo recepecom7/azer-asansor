@@ -111,16 +111,62 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Antalya Nakliyat ve Kiralık Asansör | Azer Asansör",
-  description: "Antalya evden eve nakliyat ve mobil asansör kiralama hizmeti. Profesyonel ekip, sigortalı taşıma, 22. kata kadar asansör. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.",
+  title: "Antalya Asansörlü Nakliyat ve Evden Eve Taşıma | Azer Asansör",
+  description:
+    "Antalya asansörlü nakliyat ve evden eve taşıma hizmetlerinde 22. kata ulaşabilen mobil asansör kiralama. Sıfır hasar, uygun fiyat garantisiyle hemen teklif alın.",
   alternates: {
     canonical: "https://www.azerasansor.com",
   },
 };
 
 export default function Home() {
+  const homepageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Azer Asansör",
+        "image": "https://www.azerasansor.com/images/logo.png",
+        "@id": "https://www.azerasansor.com/#localbusiness",
+        "url": "https://www.azerasansor.com/",
+        "telephone": "+905424669631",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Antalya",
+          "addressCountry": "TR"
+        },
+        "description": "Antalya asansörlü nakliyat ve evden eve taşıma hizmetleri. 22. kata kadar mobil asansör kiralama."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Antalya asansörlü nakliyat hizmeti kaçıncı kata kadar veriliyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Azer Asansör olarak Antalya genelinde 22. kata kadar güvenli ve sigortalı asansörlü nakliyat hizmeti sunuyoruz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Antalya'da hangi ilçelerde mobil asansör kiralayabilirim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı ilçelerinde aynı gün mobil asansör kiralama hizmeti sağlıyoruz."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-brand-beige">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+      />
       <Header />
       <Hero />
       <TrustBar />
@@ -141,6 +187,50 @@ export default function Home() {
         imageAlt="Antalya mobil asansör kurulumu"
         ctaText="Antalya asansörlü nakliyat veya mobil asansör kiralama için hemen arayın ya da WhatsApp'tan hızlı teklif alın."
       />
+
+      <section className="py-16 bg-brand-black text-white border-t border-gray-800">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="bg-gray-900 border border-gray-800 rounded-3xl p-6 md:p-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Neden Azer Asansör? <br className="md:hidden" />
+              <span className="text-brand-yellow text-xl md:text-2xl mt-2 block">(Geleneksel Taşıma vs. Asansörlü Sistem)</span>
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse whitespace-nowrap md:whitespace-normal">
+                <thead>
+                  <tr className="border-b border-gray-700">
+                    <th className="py-4 px-4 text-gray-400 font-semibold">Karşılaştırma Kriteri</th>
+                    <th className="py-4 px-4 text-gray-400 font-semibold">Geleneksel Taşıma</th>
+                    <th className="py-4 px-4 text-brand-yellow font-bold text-lg">Azer Asansörlü Nakliyat</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-800">
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-4 font-medium text-white">Taşıma Süresi</td>
+                    <td className="py-4 px-4 text-gray-300">Saatler Sürer</td>
+                    <td className="py-4 px-4 text-brand-yellow font-medium">Saniyeler İçinde Çıkarılır</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-4 font-medium text-white">Hasar Riski</td>
+                    <td className="py-4 px-4 text-gray-300">Merdivenlerde Yüksek Çizilme Riski</td>
+                    <td className="py-4 px-4 text-brand-yellow font-medium">Dış Cepheden Sıfır Hasar Garantisi</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-4 font-medium text-white">Maksimum Yükseklik</td>
+                    <td className="py-4 px-4 text-gray-300">Kat Arttıkça İmkansızlaşır</td>
+                    <td className="py-4 px-4 text-brand-yellow font-medium">22. Kata Kadar Güvenli Erişim</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-4 px-4 font-medium text-white">İşçilik Maliyeti</td>
+                    <td className="py-4 px-4 text-gray-300">Ekstra Eleman Ücreti Gerektirir</td>
+                    <td className="py-4 px-4 text-brand-yellow font-medium">Sabit Fiyat, Gizli Ücret Yok</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
       <FAQ
         faqs={faqs}
         schemaId="faq-homepage"
