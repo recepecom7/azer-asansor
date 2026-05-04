@@ -136,30 +136,10 @@ export default function Home() {
           "addressCountry": "TR"
         },
         "description": "Antalya asansörlü nakliyat ve evden eve taşıma hizmetleri. 22. kata kadar mobil asansör kiralama."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Antalya asansörlü nakliyat hizmeti kaçıncı kata kadar veriliyor?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Azer Asansör olarak Antalya genelinde 22. kata kadar güvenli ve sigortalı asansörlü nakliyat hizmeti sunuyoruz."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Antalya'da hangi ilçelerde mobil asansör kiralayabilirim?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı ilçelerinde aynı gün mobil asansör kiralama hizmeti sağlıyoruz."
-            }
-          }
-        ]
       }
     ]
   };
+
 
   return (
     <main className="min-h-screen bg-brand-beige">
