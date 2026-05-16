@@ -235,7 +235,7 @@ export default function AboutPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 66+ yorum · Antalya geneli hizmet</p>
+          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 82+ yorum · Antalya geneli hizmet</p>
         </div>
       </section>
 

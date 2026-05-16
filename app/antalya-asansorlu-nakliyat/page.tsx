@@ -202,7 +202,7 @@ export default function AsansorluNakliyatPage() {
               </a>
             </div>
             <p className="text-sm text-gray-300 mt-5">
-              ⭐ 5.0 Google puanı · 66+ yorum · Antalya geneli hizmet
+              ⭐ 5.0 Google puanı · 82+ yorum · Antalya geneli hizmet
             </p>
           </div>
         </div>
@@ -436,7 +436,7 @@ export default function AsansorluNakliyatPage() {
             </a>
           </div>
           <p className="text-sm text-gray-400 text-center mt-6">
-            5.0 Google puanı · 66+ yorum · Ortalama dönüş süresi: 5–10 dakika
+            5.0 Google puanı · 82+ yorum · Ortalama dönüş süresi: 5–10 dakika
           </p>
         </div>
       </section>

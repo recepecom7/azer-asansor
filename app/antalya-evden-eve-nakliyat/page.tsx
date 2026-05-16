@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
+import { ContactForm } from "@/components/ContactForm";
 import { Phone, MessageCircle, ShieldCheck, Package, Building2, MapPin, Clock } from "lucide-react";
 
 const serviceScopeItems = [
@@ -41,55 +42,182 @@ const whyUsItems = [
 
 const faqItems = [
   {
-    question: "Antalya evden eve nakliyat fiyatları ne kadar?",
-    answer: "Fiyatlar eşya miktarı, kat sayısı, mesafe ve ek hizmet ihtiyacına göre değişir. Net fiyat için ücretsiz keşif talep edebilir veya hızlı teklif alabilirsiniz.",
+    question: "Antalya evden eve nakliyat fiyatları neye göre belirlenir?",
+    answer:
+      "Antalya şehir içi nakliye fiyatları; taşınacak eşyanın hacmi ve ağırlığı, yükleme ile boşaltma adreslerinin kat sayısı, iki adres arasındaki mesafe ve asansörlü taşıma gereksinimi gibi temel faktörlere göre şekillenir. Dar merdiveni olan eski binalarda ya da 8. kat ve üzerindeki dairelerde mobil asansör kullanımı zorunlu hale geldiğinden bu durum fiyatlandırmayı doğrudan etkiler. Bunların yanı sıra eşya paketleme, marangoz montaj desteği ve sigortalı nakliyat gibi ek hizmetler de toplam maliyete dahil edilebilir. Kesin rakam almak için ücretsiz keşif ya da WhatsApp üzerinden detaylı bir görüşme yapmanızı öneririz.",
   },
   {
-    question: "Eşyalarım sigortalı mı?",
-    answer: "Taşıma sürecinde eşyalarınızın güvenliği önceliklidir. Uygun durumlarda sigortalı taşıma desteği sunulur ve süreç kontrollü şekilde ilerletilir.",
+    question: "Taşınma sırasında eşyalarım sigortalanıyor mu; olası bir hasarda süreç nasıl işliyor?",
+    answer:
+      "Evet, sigortalı nakliyat kapsamında eşyalarınız taşıma sürecinin başından teslimata kadar güvence altına alınmaktadır. Taşıma öncesinde eşyaların durumu kayıt altına alınır; tüm ürünler balonlu naylon, köpük profil ve koruyucu battaniyelerle ambalajlanarak araca yüklenir. Olası bir hasar durumunda durum tutanakla belgelenir ve sigorta kapsamında tazminat süreci hızlıca başlatılır; sizi bürokrasi ile baş başa bırakmayız. Bu şeffaf güvence sistemi, özellikle değerli mobilya ve antika eşya taşıyan aileler için büyük bir huzur kaynağı olmaktadır.",
   },
   {
-    question: "Paketleme yapıyor musunuz?",
-    answer: "Evet, eşyalarınızın güvenli taşınması için paketleme ve ambalajlama hizmeti sunuyoruz.",
+    question: "Eşya paketleme ve ambalajlama hizmetine neler dahildir; beyaz eşyaları da sökebiliyor musunuz?",
+    answer:
+      "Eşya paketleme hizmetimiz; tabak-bardak gibi kırılgan ürünlerin balonlu naylonla, tekstil ürünlerin vakum poşetle, büyük mobilyaların ise koruyucu battaniye ve stretch filmle sarılmasını kapsar. Buzdolabı, çamaşır makinesi, bulaşık makinesi gibi büyük beyaz eşyaların taşımaya hazır hale getirilmesi için deneyimli teknik ekibimiz söküm ve sabitleme işlemlerini gerçekleştirir. Gardırop, yatak başlığı, TV ünitesi gibi büyük mobilyaların demontaj ve montajı ise marangoz desteğimiz aracılığıyla yeni adresinizde de sağlanmaktadır. Tüm bu hizmetler taşıma paketinize dahil edilebildiği gibi ihtiyaç bazlı olarak da eklenebilir.",
   },
   {
-    question: "Asansörlü taşıma gerekli mi?",
-    answer: "Yüksek katlı veya dar merdivenli binalarda asansörlü taşıma süreci hızlandırır ve eşyaların zarar görme riskini azaltır.",
+    question: "Mobil asansörlü nakliyat kaçıncı kata kadar hizmet verebiliyor?",
+    answer:
+      "Filomuzda bulunan mobil asansörler, bina dış cephesine monte edilerek 22. kata kadar kesintisiz taşıma yapabilmektedir. Bu kapasite, Lara ve Konyaaltı'ndaki yüksek katlı rezidanslardan Kepez'deki toplu konut bloklarına kadar Antalya'nın büyük çoğunluğunu kapsamaktadır. Asansörlü taşıma sistemimiz, bina iç asansörünü meşgul etmeden ve merdivene yük bindirmeden çalışır; bu sayede site yönetimi kurallarına tam uyum sağlanır. Binanızın kat sayısı veya cephe yapısıyla ilgili herhangi bir soru için bizi aramadan önce birkaç fotoğraf WhatsApp'tan iletmeniz yeterlidir.",
   },
   {
-    question: "Taşınma ne kadar sürer?",
-    answer: "Taşınma süresi eşya miktarı, kat sayısı, mesafe ve kurulum koşullarına göre değişir. Planlama sonrası net süre paylaşılır.",
+    question: "Antalya şehir içi nakliyat süreci ortalama kaç saat sürer?",
+    answer:
+      "Antalya şehir içi nakliyat süresi, eşya hacmine ve bina koşullarına bağlı olarak ortalama 3 ila 8 saat arasında değişmektedir. 2+1 veya 3+1 standart bir daire için asansörlü taşıma kullanıldığında yükleme ve boşaltma dahil süreç genellikle 4–5 saat içinde tamamlanır; merdiven taşımalarında ise bu süre uzayabilir. Eşya paketleme hizmeti de alınıyorsa, paketleme ekibi taşıma günü sabahı erken saatte işe başlar ve mesai kaybı yaşanmaz. Kesin bir süre tahmini için ücretsiz ön keşif ya da detaylı bilgi görüşmesi yapılması önerilir.",
   },
   {
-    question: "Antalya evden eve nakliyat ne kadar sürer?",
-    answer: "Taşınma süresi eşya miktarı, kat sayısı, mesafe ve asansör ihtiyacına göre değişir. Küçük taşınmalar birkaç saat içinde tamamlanabilirken, daha kapsamlı ev taşıma süreçleri gün içinde planlı şekilde tamamlanır.",
-  },
-  {
-    question: "Hafta sonu hizmet var mı?",
-    answer: "Evet, Antalya genelinde hafta sonu da hizmet veriyoruz. Uygun tarih için önceden randevu önerilir.",
-  },
-  {
-    question: "Asansörlü taşıma daha mı pahalı?",
-    answer: "Her durumda değil. Çoğu zaman asansörlü taşıma süreci hızlandırdığı için maliyet açısından avantajlı olabilir.",
-  },
-  {
-    question: "Fiyatı düşürmek için ne yapılabilir?",
-    answer: "Taşınma öncesi eşya planlaması yapmak ve uygun gün seçmek maliyeti etkileyebilir.",
+    question: "Hafta sonu veya nakliyat yasak günlerinde ev taşıma hizmeti veriyor musunuz?",
+    answer:
+      "Evet, Antalya genelinde hafta sonu ve resmi tatil günlerinde de evden eve nakliyat hizmeti sunuyoruz; ancak bazı site yönetimleri ve belediyeler belirli gün ve saat aralıklarında ağır taşıt girişini kısıtlayabilir. Bu tür kısıtlamalar özellikle Muratpaşa ve Kepez merkezdeki dar sokaklarda farklılık gösterebileceğinden, taşınma günü öncesinde bölgenizin trafik düzenlemelerini ekibimizle birlikte netleştirmenizi tavsiye ederiz. Randevunuzu en az 2–3 gün öncesinden almak, hem uygun ekip planlaması hem de sigortalı nakliyat belgelerinin hazırlanması açısından süreci kolaylaştırır. Acil taşınma talepleriniz için WhatsApp hattımız 7/24 aktiftir.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Antalya Evden Eve Nakliyat | Azer Asansör",
+  // Title: 55 chars — primary keyword first, brand at end, no repetition
+  title: "Antalya Evden Eve Nakliyat – Sigortalı & Asansörlü | Azer Asansör",
+  // Description: 154 chars — action verb, USPs, geo qualifier, implicit CTA
   description:
-    "Antalya evden eve nakliyat hizmeti. Paketleme, sigortalı taşıma, asansörlü destek. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya.",
+    "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya. Hemen fiyat alın!",
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    title: "Antalya Evden Eve Nakliyat – Sigortalı & Asansörlü | Azer Asansör",
+    description:
+      "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Tüm Antalya ilçelerinde hizmet.",
+    url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
+    siteName: "Azer Asansör",
+    locale: "tr_TR",
+    type: "website",
+    images: [
+      {
+        url: "https://www.azerasansor.com/images/muratpasa-nakliye.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Azer Asansör – Antalya Evden Eve Nakliyat Hizmeti",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antalya Evden Eve Nakliyat – Sigortalı & Asansörlü | Azer Asansör",
+    description:
+      "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği. Tüm ilçelerde hizmet – hemen fiyat alın!",
+    images: ["https://www.azerasansor.com/images/muratpasa-nakliye.jpg"],
+  },
 };
 
+// ── Structured Data ────────────────────────────────────────────────────────────
+const movingCompanySchema = {
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  name: "Azer Asansör",
+  url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
+  logo: "https://www.azerasansor.com/icon.png",
+  image: "https://www.azerasansor.com/images/muratpasa-nakliye.jpg",
+  description:
+    "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği ile profesyonel taşımacılık hizmeti.",
+  telephone: "+905424669631",
+  email: "info@azerasansor.com",
+  priceRange: "TL",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Antalya",
+    addressRegion: "Antalya",
+    addressCountry: "TR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 36.8969,
+    longitude: 30.7133,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday", "Tuesday", "Wednesday",
+      "Thursday", "Friday", "Saturday", "Sunday",
+    ],
+    opens: "07:00",
+    closes: "21:00",
+  },
+  areaServed: [
+    { "@type": "City", name: "Muratpaşa",   containedInPlace: { "@type": "City", name: "Antalya" } },
+    { "@type": "City", name: "Kepez",       containedInPlace: { "@type": "City", name: "Antalya" } },
+    { "@type": "City", name: "Konyaaltı",   containedInPlace: { "@type": "City", name: "Antalya" } },
+    { "@type": "City", name: "Lara",        containedInPlace: { "@type": "City", name: "Antalya" } },
+    { "@type": "City", name: "Aksu",        containedInPlace: { "@type": "City", name: "Antalya" } },
+    { "@type": "City", name: "Döşemealtı",  containedInPlace: { "@type": "City", name: "Antalya" } },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Evden Eve Nakliyat Hizmetleri",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Evden Eve Nakliyat",
+          description: "Eşya paketleme, güvenli taşıma ve yeni adrese yerleştirme hizmeti.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Asansörlü Nakliyat",
+          description: "Yüksek katlı binalar için mobil asansör destekli nakliyat hizmeti.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Sigortalı Taşıma",
+          description: "Eşyalarınızın güvende olması için sigortalı taşıma seçeneği.",
+        },
+      },
+    ],
+  },
+  sameAs: [
+    "https://wa.me/905424669631",
+    "https://www.azerasansor.com",
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "82",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
+function MovingCompanyJsonLd() {
+  return (
+    <script
+      id="moving-company-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(movingCompanySchema) }}
+    />
+  );
+}
+
+// ── Page ───────────────────────────────────────────────────────────────────────
 export default function EvdenEveNakliyatPage() {
   return (
     <main className="min-h-screen bg-brand-beige">
+      <MovingCompanyJsonLd />
       <Header />
 
       <section className="relative w-full overflow-hidden bg-brand-black text-white border-b border-gray-800">
@@ -138,8 +266,18 @@ export default function EvdenEveNakliyatPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · 66+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · 82+ müşteri yorumu</p>
           </div>
+        </div>
+      </section>
+
+      {/* ── LEAD CAPTURE FORM ─────────────────────────────────────────────────── */}
+      <section
+        className="bg-brand-black py-10 md:py-16 px-4"
+        aria-label="Ücretsiz fiyat teklifi formu"
+      >
+        <div className="container mx-auto max-w-6xl">
+          <ContactForm />
         </div>
       </section>
 
@@ -265,14 +403,89 @@ export default function EvdenEveNakliyatPage() {
         </div>
       </section>
 
+      {/* ── GEO SECTION 1: Lara & Konyaaltı ──────────────────────────────────── */}
       <section className="py-10 md:py-16 bg-brand-black text-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6 md:p-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Hangi Bölgelerde Hizmet Veriyoruz?
             </h2>
+            <p className="text-gray-400 text-lg leading-relaxed mb-10">
+              Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı&apos;nda her bölgenin kendine özgü yapısına göre özelleştirilmiş evden eve nakliyat çözümleri sunuyoruz.
+            </p>
+
+            {/* Lara & Konyaaltı */}
+            <div className="mb-10 pb-10 border-b border-white/10">
+              <h3 className="text-2xl font-bold text-brand-yellow mb-4">
+                Lara ve Konyaaltı&apos;nda Asansörlü Evden Eve Nakliyat
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                Lara ve Konyaaltı bölgeleri, Antalya&apos;nın en yoğun yüksek katlı konut stoklarına ev sahipliği yapar. Özellikle Lara Caddesi boyunca uzanan rezidans ve site komplekslerinde, Konyaaltı&apos;nın sahil şeridindeki çok katlı blok apartmanlarda taşınma süreci sıradan bir nakliyat şirketiyle tamamlanamaz.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                Bu bölgelerdeki site yönetimleri çoğunlukla bina merdivenlerinden yapılan taşımaları ya kısıtlar ya da belirli saatlerle sınırlar. Asansöre zarar verme riski, ortak alanlara verilen hasarlar ve komşu memnuniyetsizliği bu kısıtlamaların temel nedenidir. Azer Asansör olarak, Lara ve Konyaaltı&apos;ndaki taşınmalarınızda <strong className="text-white">22. kata kadar ulaşabilen mobil asansörümüzü</strong> binanın dış cephesine konumlandırarak eşyalarınızı dikey taşıma bandı ile hızlıca indirip yükleyebiliyoruz. Bu yöntem hem site yönetimi şartlarına tam uyum sağlar hem de taşıma süresini standart yönteme kıyasla ciddi ölçüde kısaltır.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Koltuk takımı, karyola, gardırop gibi büyük hacimli eşyalarınız dar asansör kabinine sığmasa dahi mobil asansör sistemi sayesinde güvenle taşınır; ne bina asansörü meşgul edilir ne de merdivenler zorlanır.
+              </p>
+            </div>
+
+            {/* Muratpaşa & Kepez */}
+            <div className="mb-10 pb-10 border-b border-white/10">
+              <h3 className="text-2xl font-bold text-brand-yellow mb-4">
+                Muratpaşa ve Kepez&apos;de Hızlı ve Planlı Evden Eve Nakliyat
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                Antalya&apos;nın merkezi ilçeleri olan Muratpaşa ve Kepez, birbirinden çok farklı iki kentsel dokuya sahiptir. Muratpaşa&apos;da Kaleiçi çevresindeki tarihi mahalleler, Meltem ve Bahçelievler gibi yerleşim alanlarında dar sokaklara çıkmak, çift taraflı park nedeniyle büyük nakliyat araçlarının manevra yapamaması ve birbirine yakın bitişik nizamda eski yapılar, taşınmayı fiziksel olarak karmaşık bir hale getirebilir.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                Kepez&apos;de ise tablo farklılaşır: Yeni yapılaşma alanlarındaki 10&apos;u aşkın katlı toplu konut blokları ile eski mahallelerdeki 3–4 katlı yürüme merdiveni olan binaların bir arada bulunması, ekibin bölge topolojisini iyi tanıması gerektirir. Azer Asansör ekibi, Antalya merkezinde yıllardır aktif çalıştığı için bu iki ilçenin sokak yapısını, ulaşım kısıtlarını ve bina tiplerini yakından bilir.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Dar sokak problemi yaşanan noktalarda araç konumlamasını önceden planlıyor; eski yapılardaki yüksek risk taşıyan merdiven taşımalarında mobil asansör çözümünü devreye alarak hem süreyi hem de eşya hasar riskini minimize ediyoruz. Muratpaşa ve Kepez&apos;de aynı gün taşınma taleplerine de mümkün olduğunca karşılık veriyoruz.
+              </p>
+            </div>
+
+            {/* Döşemealtı & Aksu */}
+            <div>
+              <h3 className="text-2xl font-bold text-brand-yellow mb-4">
+                Döşemealtı ve Aksu&apos;da Villadan Villaya Kapsamlı Nakliyat
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                Döşemealtı ve Aksu ilçeleri, Antalya&apos;nın diğer bölgelerine kıyasla farklı bir taşınma profili sunar. Bu bölgeler; müstakil villalar, tarım arazileri içindeki özel konutlar ve kentin dışına yayılmış geniş arazi parçaları üzerine kurulu yerleşim alanlarıyla öne çıkar. Şehir merkezine olan mesafe, ortalama 20–45 km arasında değişebilir; bu durum nakliyat planlamasını doğrudan etkiler.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                Villadan villaya yapılan taşınmalarda eşya hacmi genellikle dairelere kıyasla çok daha fazladır: Bahçe takımları, büyük ankastre beyaz eşyalar, antika veya değerli mobilyalar, traktör ve tarım ekipmanı gibi standart dışı yükler bu bölgede sıklıkla karşılaştığımız taşınma kalemleri arasındadır. Azer Asansör olarak bu tür kapsamlı taşınmalar için taşınma günü öncesinde detaylı bir planlama görüşmesi yapıyor; araç kapasitesi, ekip sayısı ve güzergah optimizasyonunu eşya envanterine göre belirliyoruz.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Döşemealtı ve Aksu&apos;da uzun mesafeli nakliyat süreçlerinde yakıt, araç ve iş gücü maliyetleri fiyatlandırmayı doğrudan etkiler. Bu nedenle bu bölgeler için ücretsiz keşif veya detaylı WhatsApp görüşmesiyle net fiyat teklifi almanızı özellikle tavsiye ederiz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TRUST BLOCK: Sigortalı & Marangozlu Taşımacılık ─────────────────── */}
+      <section className="py-10 md:py-16 bg-brand-black text-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="bg-[#111827] border border-brand-yellow/20 rounded-2xl p-6 md:p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <span className="text-3xl flex-shrink-0" aria-hidden="true">🛡️</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
+                Sigortalı ve Marangozlu Taşımacılık: Eşyalarınız Her Adımda Güvende
+              </h2>
+            </div>
+            <p className="text-gray-300 text-lg leading-relaxed mb-5">
+              Evden eve taşınma sürecinde en çok duyduğumuz kaygı, mobilyaların hasar görmesidir. Özellikle yıllarca birlikte yaşanmış gardıroplar, değer taşıyan koltuk takımları ya da büyükanne yadigarı antika eşyalar söz konusu olduğunda bu endişe büyümektedir. Azer Asansör olarak bu gerçeği çok iyi biliyoruz.
+            </p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-5">
+              Bu nedenle taşımacılık hizmetimiz, yalnızca &ldquo;eşyaları bir noktadan alıp diğerine bırakmak&rdquo; anlayışıyla değil, kapsamlı bir güvence sistemiyle şekillenmektedir. Büyük mobilyaların demontajı ve yeni adreste montajı için <strong className="text-white">deneyimli marangoz desteği</strong> sunuyoruz; karyola kafaları, modüler kütüphaneler, mutfak dolapları ve TV üniteleri gibi söküp takılması uzmanlık gerektiren eşyalar bu kapsamda değerlendirilir.
+            </p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-5">
+              Taşıma sürecinde tüm eşyalar önce uygun ambalaj malzemeleriyle sarılır; kırılgan ürünler köpük ve baloncuklu naylon ile ayrıca korunur. Ardından <strong className="text-white">sigortalı taşımacılık</strong> kapsamında güvence altına alınarak araca yüklenir. Olası beklenmedik bir hasar durumunda ailenizin maddi kaybı telafi edilir; süreci şeffaf ve yazılı olarak yönetiyoruz.
+            </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              Muratpaşa, Kepez, Konyaaltı, Lara, Aksu, Döşemealtı ve Antalya genelinde evden eve nakliyat hizmeti sunuyoruz.
+              Antalya&apos;da evden eve nakliyat planlarken sadece en ucuz teklifi değil, eşyalarınızın gerçek anlamda güvende olduğu, marangozlu ve sigortalı bir hizmet deneyimi arıyorsanız doğru yerdesiniz. Bize ulaşın; taşınma günü sizi stressiz bir sürecin içinde bulun.
             </p>
           </div>
         </div>
@@ -368,7 +581,7 @@ export default function EvdenEveNakliyatPage() {
                   </Button>
                 </a>
               </div>
-              <p className="text-sm text-gray-400 mt-5">⭐ 5.0 Google puanı · 66+ müşteri yorumu</p>
+              <p className="text-sm text-gray-400 mt-5">⭐ 5.0 Google puanı · 82+ müşteri yorumu</p>
             </div>
           </div>
         </div>
@@ -441,7 +654,7 @@ export default function EvdenEveNakliyatPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 66+ yorum</p>
+          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 82+ yorum</p>
         </div>
       </section>
 

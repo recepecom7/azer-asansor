@@ -6,6 +6,7 @@ import { Services } from "@/components/Services";
 import { WhyUs } from "@/components/WhyUs";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
+import { ContactForm } from "@/components/ContactForm";
 import {
   Truck, Building2, Armchair, Refrigerator,
   BrickWall, Award, ShieldCheck,
@@ -150,6 +151,13 @@ export default function Home() {
       <Header />
       <Hero />
       <TrustBar />
+
+      {/* ── LEAD CAPTURE FORM ─────────────────────────────────────────────────── */}
+      <section className="bg-brand-black py-10 md:py-16 px-4" aria-label="Ücretsiz fiyat teklifi formu">
+        <div className="container mx-auto max-w-6xl">
+          <ContactForm />
+        </div>
+      </section>
 
       <Services
         title="Hizmetlerimiz"

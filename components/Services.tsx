@@ -101,7 +101,7 @@ export const Services = ({
                         </a>
                     </div>
                     <p className="text-sm text-gray-400 text-center mt-5">
-                        5.0 Google puanı · 66+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
+                        5.0 Google puanı · 82+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
                     </p>
                 </div>
             </div>

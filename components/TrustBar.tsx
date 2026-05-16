@@ -21,7 +21,7 @@ export function TrustBar() {
             {/* Update review count manually every 1–2 months */}
             <p className="text-white font-bold text-lg">
               5.0 Google Değerlendirmesi
-              <span className="text-gray-300 font-medium"> · 66+ Yorum</span>
+              <span className="text-gray-300 font-medium"> · 82+ Yorum</span>
             </p>
 
             <p className="text-gray-400 text-sm mt-1">
