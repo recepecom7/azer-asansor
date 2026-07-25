@@ -28,7 +28,7 @@ export function ConversionTracker() {
 
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
         window.gtag?.('event', 'conversion', {
-          send_to: 'AW-18038829941/5ySFCOrdrpQcEPXmyplD',
+          send_to: 'AW-18038829941/S_QXCLmZwZwcEPXmyplD',
           value: 1.0,
           currency: 'TRY',
         })
