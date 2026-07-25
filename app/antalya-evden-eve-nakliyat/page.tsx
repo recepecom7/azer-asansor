@@ -7,6 +7,7 @@ import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
+import { REVIEW_COUNT } from "@/lib/constants";
 import { Phone, MessageCircle, ShieldCheck, Package, Building2, MapPin, Clock } from "lucide-react";
 
 const serviceScopeItems = [
@@ -198,7 +199,7 @@ const movingCompanySchema = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5.0",
-    reviewCount: "82",
+    reviewCount: `${REVIEW_COUNT}`,
     bestRating: "5",
     worstRating: "1",
   },
@@ -273,7 +274,7 @@ export default function EvdenEveNakliyatPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · 82+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
           </div>
         </div>
       </section>
@@ -588,7 +589,7 @@ export default function EvdenEveNakliyatPage() {
                   </Button>
                 </a>
               </div>
-              <p className="text-sm text-gray-400 mt-5">⭐ 5.0 Google puanı · 82+ müşteri yorumu</p>
+              <p className="text-sm text-gray-400 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
             </div>
           </div>
         </div>
@@ -661,7 +662,7 @@ export default function EvdenEveNakliyatPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 82+ yorum</p>
+          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum</p>
         </div>
       </section>
 

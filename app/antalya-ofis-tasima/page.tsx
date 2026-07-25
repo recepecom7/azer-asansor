@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
+import { REVIEW_COUNT } from "@/lib/constants";
 import { Phone, MessageCircle, ShieldCheck, Building2, Clock, Package, MapPin } from "lucide-react";
 
 const scopeItems = [
@@ -404,7 +405,7 @@ export default function OfisTasimaPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 82+ yorum · Antalya geneli hizmet</p>
+          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet</p>
         </div>
       </section>
 

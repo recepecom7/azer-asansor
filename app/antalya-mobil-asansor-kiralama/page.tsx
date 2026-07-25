@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
+import { REVIEW_COUNT } from "@/lib/constants";
 import { Phone, MessageCircle, ShieldCheck, Clock, Building2, MapPin } from "lucide-react";
 
 const useCases = [
@@ -410,7 +411,7 @@ export default function MobileElevatorPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · 82+ yorum · Antalya geneli hizmet</p>
+          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet</p>
         </div>
       </section>
 

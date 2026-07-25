@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
+import { REVIEW_COUNT } from "@/lib/constants";
 import { Phone, MessageCircle, ShieldCheck, Clock, Building2, MapPin, PhoneCall, Package, Route } from "lucide-react";
 
 const needItems = [
@@ -209,7 +210,7 @@ export default function AsansorluNakliyatPage() {
               </a>
             </div>
             <p className="text-sm text-gray-300 mt-5">
-              ⭐ 5.0 Google puanı · 82+ yorum · Antalya geneli hizmet
+              ⭐ 5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet
             </p>
           </div>
         </div>
@@ -443,7 +444,7 @@ export default function AsansorluNakliyatPage() {
             </a>
           </div>
           <p className="text-sm text-gray-400 text-center mt-6">
-            5.0 Google puanı · 82+ yorum · Ortalama dönüş süresi: 5–10 dakika
+            5.0 Google puanı · {REVIEW_COUNT}+ yorum · Ortalama dönüş süresi: 5–10 dakika
           </p>
         </div>
       </section>

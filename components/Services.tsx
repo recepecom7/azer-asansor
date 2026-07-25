@@ -1,6 +1,7 @@
 import { LucideIcon, Phone, MessageCircle, Armchair, Refrigerator, BrickWall, Trash2, Truck, Building2 } from 'lucide-react';
 import { Button } from './Button';
 import Link from 'next/link';
+import { REVIEW_COUNT } from '@/lib/constants';
 
 export interface ServiceItem {
     title: string;
@@ -101,7 +102,7 @@ export const Services = ({
                         </a>
                     </div>
                     <p className="text-sm text-gray-400 text-center mt-5">
-                        5.0 Google puanı · 82+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
+                        5.0 Google puanı · {REVIEW_COUNT}+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
                     </p>
                 </div>
             </div>
