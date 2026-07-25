@@ -28,6 +28,21 @@ const posts = [
     href: "/blog/antalya-mobil-asansor-kiralama-fiyatlari",
     text: "Kiralık asansör fiyatı neye göre değişir, aynı gün hizmet nasıl planlanır?",
   },
+  {
+    title: "Antalya'da Taşınmadan Önce Yapılması Gereken 10 Hazırlık",
+    href: "/blog/antalya-tasinma-hazirlik-rehberi",
+    text: "Kutulama, envanter, sigorta ve asansör izninden taşınma günü kontrol listesine kadar 10 pratik adım.",
+  },
+  {
+    title: "Taşınma Günü Ne Kadar Sürer? Antalya'da Ev Taşıma Süreci",
+    href: "/blog/antalya-tasinma-suresi-ne-kadar",
+    text: "Keşiften yerleştirmeye kadar tüm adımlar ve ev büyüklüğüne göre yaklaşık süreler.",
+  },
+  {
+    title: "Nakliyat Firması Seçerken Nelere Dikkat Etmeli?",
+    href: "/blog/nakliyat-firmasi-secerken-nelere-dikkat",
+    text: "Sigorta, yorumlar, fiyat şeffaflığı ve sözleşme şartları gibi kritik seçim kriterleri.",
+  },
 ];
 
 export default function BlogPage() {

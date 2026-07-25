@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/Button";
@@ -22,13 +23,27 @@ const faqs = [
   { question: "Ücretsiz keşif ile net fiyat alabilir miyim?", answer: "Evet, ücretsiz keşif veya ön değerlendirme sonrası size özel net teklif paylaşılır." },
 ];
 
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Antalya Asansörlü Nakliyat Fiyatları 2026",
+  datePublished: "2026-01-15",
+  dateModified: "2026-07-25",
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-brand-beige">
+      <Script
+        id="blogposting-schema-asansorlu-fiyatlari"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <Header />
       <section className="py-12 md:py-16 bg-brand-black text-white border-b border-gray-800">
         <div className="container mx-auto px-4 max-w-5xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Antalya Asansörlü Nakliyat Fiyatları 2026</h1>
+          <p className="text-sm text-gray-400 mb-4">Güncelleme: 25 Temmuz 2026</p>
           <p className="text-gray-300 text-lg">
             Antalya’da asansörlü nakliyat fiyatları, taşımanın teknik detaylarına göre değişir. Amaç, süreci güvenli ve hızlı hale getirirken size net ve şeffaf bir teklif sunmaktır.
           </p>
