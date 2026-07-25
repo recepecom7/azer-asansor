@@ -213,11 +213,31 @@ function MovingCompanyJsonLd() {
   );
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Anasayfa", item: "https://www.azerasansor.com" },
+    { "@type": "ListItem", position: 2, name: "Evden Eve Nakliyat", item: "https://www.azerasansor.com/antalya-evden-eve-nakliyat" },
+  ],
+};
+
+function BreadcrumbJsonLd() {
+  return (
+    <script
+      id="breadcrumb-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+    />
+  );
+}
+
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default function EvdenEveNakliyatPage() {
   return (
     <main className="min-h-screen bg-brand-beige">
       <MovingCompanyJsonLd />
+      <BreadcrumbJsonLd />
       <Header />
 
       <section className="relative w-full overflow-hidden bg-brand-black text-white border-b border-gray-800">

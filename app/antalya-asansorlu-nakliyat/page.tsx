@@ -149,12 +149,26 @@ export default function AsansorluNakliyatPage() {
     serviceType: "Asansörlü Nakliyat",
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Anasayfa", item: "https://www.azerasansor.com" },
+      { "@type": "ListItem", position: 2, name: "Asansörlü Nakliyat", item: "https://www.azerasansor.com/antalya-asansorlu-nakliyat" },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-brand-beige">
       <Script
         id="service-schema-antalya-asansorlu-nakliyat"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema-antalya-asansorlu-nakliyat"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
 
