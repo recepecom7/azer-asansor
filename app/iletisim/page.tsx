@@ -99,12 +99,13 @@ export default function ContactPage() {
             <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
               <h2 className="text-3xl font-bold mb-3">Hizmet Verdiğimiz</h2>
               <p className="text-gray-300 mb-4">Antalya merkez ve tüm ilçelere hizmet veriyoruz.</p>
-              <div className="rounded-xl overflow-hidden border border-white/10">
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-gray-900 aspect-video">
                 <iframe
                   title="Azer Asansör Konum"
-                  src="https://www.google.com/maps?q=Antalya&output=embed"
-                  className="w-full h-72"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345!2d30.63951!3d36.9162825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85f5859b0471249b:0x3cd2355f75303fb5!2sAzer%20Asans%C3%B6r!5e0!3m2!1str!2str!4v1"
+                  className="w-full h-full border-0"
                   loading="lazy"
+                  allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
