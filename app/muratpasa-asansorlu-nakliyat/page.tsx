@@ -15,7 +15,7 @@ const faqs = [
 
 export const metadata: Metadata = {
   title: "Muratpaşa Asansörlü Nakliyat | Antalya Nakliyat Hizmeti",
-  description: "Muratpaşa’da asansörlü nakliyat ve mobil asansör kiralama hizmeti ile hızlı ve güvenli taşıma çözümleri sunuyoruz.",
+  description: "Muratpaşa'da yüksek kat taşımalarında mobil asansör desteğiyle sigortalı ve hızlı nakliyat hizmeti. Aynı gün keşif imkanı.",
   alternates: {
     canonical: "https://www.azerasansor.com/muratpasa-asansorlu-nakliyat",
   },

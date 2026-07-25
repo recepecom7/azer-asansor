@@ -42,7 +42,7 @@ const whyUsItems = [
 
 const faqItems = [
   {
-    question: "Antalya evden eve nakliyat fiyatları neye göre belirlenir?",
+    question: "Antalya evden eve nakliyat fiyatları ne kadar?",
     answer:
       "Antalya şehir içi nakliye fiyatları; taşınacak eşyanın hacmi ve ağırlığı, yükleme ile boşaltma adreslerinin kat sayısı, iki adres arasındaki mesafe ve asansörlü taşıma gereksinimi gibi temel faktörlere göre şekillenir. Dar merdiveni olan eski binalarda ya da 8. kat ve üzerindeki dairelerde mobil asansör kullanımı zorunlu hale geldiğinden bu durum fiyatlandırmayı doğrudan etkiler. Bunların yanı sıra eşya paketleme, marangoz montaj desteği ve sigortalı nakliyat gibi ek hizmetler de toplam maliyete dahil edilebilir. Kesin rakam almak için ücretsiz keşif ya da WhatsApp üzerinden detaylı bir görüşme yapmanızı öneririz.",
   },
@@ -75,7 +75,7 @@ const faqItems = [
 
 export const metadata: Metadata = {
   // Title: 55 chars — primary keyword first, brand at end, no repetition
-  title: "Antalya Evden Eve Nakliyat – Sigortalı & Asansörlü | Azer Asansör",
+  title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
   // Description: 154 chars — action verb, USPs, geo qualifier, implicit CTA
   description:
     "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya. Hemen fiyat alın!",
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Antalya Evden Eve Nakliyat – Sigortalı & Asansörlü | Azer Asansör",
+    title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
     description:
       "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Tüm Antalya ilçelerinde hizmet.",
     url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Antalya Evden Eve Nakliyat – Sigortalı & Asansörlü | Azer Asansör",
+    title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
     description:
       "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği. Tüm ilçelerde hizmet – hemen fiyat alın!",
     images: ["https://www.azerasansor.com/images/muratpasa-nakliye.jpg"],
