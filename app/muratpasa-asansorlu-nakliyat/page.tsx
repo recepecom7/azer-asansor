@@ -4,7 +4,14 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
+import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
 import { Phone, MessageCircle } from "lucide-react";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  { label: "Anasayfa", href: "/" },
+  { label: "Hizmet Bölgeleri", href: "/antalya-hizmet-bolgeleri" },
+  { label: "Muratpaşa", href: "/muratpasa-asansorlu-nakliyat" },
+];
 
 const faqs = [
   { question: "Muratpaşa nakliyat fiyatları ne kadar?", answer: "Fiyat; kat sayısı, eşya miktarı, mesafe ve asansör kurulum ihtiyacına göre belirlenir." },
@@ -25,6 +32,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-brand-beige">
       <Header />
+      <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-muratpasa-asansorlu-nakliyat" />
       <section className="bg-brand-black text-white border-b border-white/10">
         <div className="container mx-auto px-4 py-10 md:py-14">
           <div className="max-w-5xl bg-gray-900 border border-white/10 rounded-2xl p-6">

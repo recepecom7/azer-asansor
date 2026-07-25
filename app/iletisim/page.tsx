@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
+import { TrustBar } from "@/components/TrustBar";
 import { Phone, MapPin, MessageCircle } from "lucide-react";
 
 const faqs = [
@@ -63,10 +64,11 @@ export default function ContactPage() {
             <p className="text-gray-200 text-lg mb-6">
               Antalya’da asansörlü nakliyat, mobil asansör kiralama ve evden eve taşıma hizmetleri için 7/24 bize ulaşabilirsiniz.
             </p>
-            <p className="text-sm text-gray-300">⭐ 5.0 Google puanı · 66+ müşteri yorumu</p>
           </div>
         </div>
       </section>
+
+      <TrustBar />
 
       <section className="py-10 md:py-14 bg-brand-black text-white">
         <div className="container mx-auto px-4">

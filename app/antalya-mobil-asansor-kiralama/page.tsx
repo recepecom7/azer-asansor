@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
+import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
 import { Phone, MessageCircle, ShieldCheck, Clock, Building2, MapPin } from "lucide-react";
 
 const useCases = [
@@ -117,14 +118,10 @@ export default function MobileElevatorPage() {
     serviceType: "Mobil Asansör Kiralama",
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Anasayfa", item: "https://www.azerasansor.com" },
-      { "@type": "ListItem", position: 2, name: "Mobil Asansör Kiralama", item: "https://www.azerasansor.com/antalya-mobil-asansor-kiralama" },
-    ],
-  };
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: "Anasayfa", href: "/" },
+    { label: "Mobil Asansör Kiralama", href: "/antalya-mobil-asansor-kiralama" },
+  ];
 
   return (
     <main className="min-h-screen bg-brand-beige">
@@ -133,12 +130,8 @@ export default function MobileElevatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Script
-        id="breadcrumb-schema-antalya-mobil-asansor-kiralama"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
       <Header />
+      <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-antalya-mobil-asansor-kiralama" />
 
       <section className="bg-brand-black text-white border-b border-white/10">
         <div className="container mx-auto px-4 py-10 md:py-16">

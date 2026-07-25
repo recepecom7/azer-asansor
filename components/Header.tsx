@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from './Button';
 import { Phone, ChevronDown } from 'lucide-react';
 
@@ -42,9 +43,31 @@ const navItems = [
 ];
 
 export const Header = () => {
+    const pathname = usePathname();
     const [openMenu, setOpenMenu] = useState<string | null>(null);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+    const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+    useEffect(() => {
+        if (!openMenu) return;
+
+        function handleKeyDown(e: KeyboardEvent) {
+            if (e.key === 'Escape') setOpenMenu(null);
+        }
+
+        function handleClickOutside(e: MouseEvent) {
+            const activeEl = dropdownRefs.current[openMenu as string];
+            if (activeEl && !activeEl.contains(e.target as Node)) setOpenMenu(null);
+        }
+
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [openMenu]);
 
     return (
         <header className="sticky top-0 z-50 w-full bg-brand-black/95 backdrop-blur-sm border-b border-gray-800 h-[72px]">
@@ -64,15 +87,35 @@ export const Header = () => {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-6">
-                    {navItems.map((item) =>
-                        item.children ? (
+                    {navItems.map((item) => {
+                        const isParentActive = item.children?.some((child) => child.href === pathname) ?? false;
+                        const isActive = item.href === pathname || isParentActive;
+
+                        return item.children ? (
                             <div
                                 key={item.label}
+                                ref={(el) => { dropdownRefs.current[item.label] = el; }}
                                 className="relative"
                                 onMouseEnter={() => setOpenMenu(item.label)}
                                 onMouseLeave={() => setOpenMenu(null)}
+                                onBlur={(e) => {
+                                    const wrapper = dropdownRefs.current[item.label];
+                                    if (wrapper && !wrapper.contains(e.relatedTarget as Node)) {
+                                        setOpenMenu(null);
+                                    }
+                                }}
                             >
-                                <button className="flex items-center gap-1 text-white font-medium hover:text-brand-yellow transition-colors relative group py-2">
+                                <button
+                                    type="button"
+                                    onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
+                                    onFocus={() => setOpenMenu(item.label)}
+                                    aria-haspopup="true"
+                                    aria-expanded={openMenu === item.label}
+                                    aria-current={isParentActive ? 'page' : undefined}
+                                    className={`flex items-center gap-1 font-medium transition-colors relative group py-2 ${
+                                        isParentActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
+                                    }`}
+                                >
                                     {item.label}
                                     <ChevronDown
                                         className={`w-4 h-4 transition-transform ${openMenu === item.label ? 'rotate-180' : ''}`}
@@ -86,7 +129,12 @@ export const Header = () => {
                                             <Link
                                                 key={child.href}
                                                 href={child.href}
-                                                className="block px-4 py-3 text-sm text-gray-300 hover:text-brand-yellow hover:bg-gray-800 transition-colors border-b border-gray-800 last:border-0"
+                                                aria-current={child.href === pathname ? 'page' : undefined}
+                                                className={`block px-4 py-3 text-sm transition-colors border-b border-gray-800 last:border-0 ${
+                                                    child.href === pathname
+                                                        ? 'text-brand-yellow bg-gray-800'
+                                                        : 'text-gray-300 hover:text-brand-yellow hover:bg-gray-800'
+                                                }`}
                                                 onClick={() => setOpenMenu(null)}
                                             >
                                                 {child.label}
@@ -99,13 +147,16 @@ export const Header = () => {
                             <Link
                                 key={item.label}
                                 href={item.href!}
-                                className="text-white font-medium hover:text-brand-yellow transition-colors relative group py-2"
+                                aria-current={isActive ? 'page' : undefined}
+                                className={`font-medium transition-colors relative group py-2 ${
+                                    isActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
+                                }`}
                             >
                                 {item.label}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-yellow transition-all group-hover:w-full"></span>
                             </Link>
-                        )
-                    )}
+                        );
+                    })}
                 </nav>
 
                 {/* Right side — CTA + Mobile burger */}
@@ -119,7 +170,7 @@ export const Header = () => {
 
                     {/* Mobile burger */}
                     <button
-                        className="md:hidden flex flex-col gap-1.5 p-2"
+                        className="md:hidden flex flex-col items-center justify-center gap-1.5 min-w-[44px] min-h-[44px]"
                         onClick={() => setMobileOpen(!mobileOpen)}
                         aria-label="Menü"
                     >
@@ -133,11 +184,17 @@ export const Header = () => {
             {/* Mobile Menu */}
             {mobileOpen && (
                 <div className="md:hidden bg-brand-black border-t border-gray-800 px-4 pb-4 max-h-screen overflow-y-auto">
-                    {navItems.map((item) =>
-                        item.children ? (
+                    {navItems.map((item) => {
+                        const isParentActive = item.children?.some((child) => child.href === pathname) ?? false;
+                        const isActive = item.href === pathname || isParentActive;
+
+                        return item.children ? (
                             <div key={item.label} className="border-b border-gray-800">
                                 <button
-                                    className="w-full flex items-center justify-between py-3 text-white font-medium"
+                                    aria-current={isParentActive ? 'page' : undefined}
+                                    className={`w-full flex items-center justify-between py-3 font-medium ${
+                                        isParentActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white'
+                                    }`}
                                     onClick={() =>
                                         setMobileExpanded(mobileExpanded === item.label ? null : item.label)
                                     }
@@ -153,7 +210,12 @@ export const Header = () => {
                                             <Link
                                                 key={child.href}
                                                 href={child.href}
-                                                className="block py-2 text-sm text-gray-300 hover:text-brand-yellow transition-colors"
+                                                aria-current={child.href === pathname ? 'page' : undefined}
+                                                className={`block py-2 text-sm transition-colors ${
+                                                    child.href === pathname
+                                                        ? 'text-brand-yellow underline underline-offset-4'
+                                                        : 'text-gray-300 hover:text-brand-yellow'
+                                                }`}
                                                 onClick={() => setMobileOpen(false)}
                                             >
                                                 {child.label}
@@ -166,13 +228,16 @@ export const Header = () => {
                             <Link
                                 key={item.label}
                                 href={item.href!}
-                                className="block py-3 text-white font-medium border-b border-gray-800 hover:text-brand-yellow transition-colors"
+                                aria-current={isActive ? 'page' : undefined}
+                                className={`block py-3 font-medium border-b border-gray-800 transition-colors ${
+                                    isActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
+                                }`}
                                 onClick={() => setMobileOpen(false)}
                             >
                                 {item.label}
                             </Link>
-                        )
-                    )}
+                        );
+                    })}
                 </div>
             )}
         </header>

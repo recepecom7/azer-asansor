@@ -78,11 +78,11 @@ export const Footer = () => {
                     <div className="flex flex-wrap justify-center items-center gap-3 text-xs text-gray-500">
                         <Link href="/" className="hover:text-brand-yellow transition-colors">Antalya Asansörlü Nakliyat</Link>
                         <span className="text-gray-700">|</span>
-                        <Link href="/" className="hover:text-brand-yellow transition-colors">Muratpaşa Asansör Kiralama</Link>
+                        <Link href="/muratpasa-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Muratpaşa Asansör Kiralama</Link>
                         <span className="text-gray-700">|</span>
-                        <Link href="/" className="hover:text-brand-yellow transition-colors">Kepez Evden Eve Taşıma</Link>
+                        <Link href="/kepez-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Kepez Evden Eve Taşıma</Link>
                         <span className="text-gray-700">|</span>
-                        <Link href="/" className="hover:text-brand-yellow transition-colors">Konyaaltı Eşya Taşıma</Link>
+                        <Link href="/konyaalti-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Konyaaltı Eşya Taşıma</Link>
                         <span className="text-gray-700">|</span>
                         <Link href="/antalya-parca-esya-tasima" className="hover:text-brand-yellow transition-colors">Antalya Parça Eşya Taşıma</Link>
                         <span className="text-gray-700">|</span>

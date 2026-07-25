@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
+import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
 import { Phone, MessageCircle, ShieldCheck, Package, Building2, MapPin, Clock } from "lucide-react";
 
 const serviceScopeItems = [
@@ -213,32 +214,18 @@ function MovingCompanyJsonLd() {
   );
 }
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Anasayfa", item: "https://www.azerasansor.com" },
-    { "@type": "ListItem", position: 2, name: "Evden Eve Nakliyat", item: "https://www.azerasansor.com/antalya-evden-eve-nakliyat" },
-  ],
-};
-
-function BreadcrumbJsonLd() {
-  return (
-    <script
-      id="breadcrumb-schema"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-    />
-  );
-}
+const breadcrumbItems: BreadcrumbItem[] = [
+  { label: "Anasayfa", href: "/" },
+  { label: "Evden Eve Nakliyat", href: "/antalya-evden-eve-nakliyat" },
+];
 
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default function EvdenEveNakliyatPage() {
   return (
     <main className="min-h-screen bg-brand-beige">
       <MovingCompanyJsonLd />
-      <BreadcrumbJsonLd />
       <Header />
+      <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-evden-eve-nakliyat" />
 
       <section className="relative w-full overflow-hidden bg-brand-black text-white border-b border-gray-800">
         <div className="absolute inset-0">

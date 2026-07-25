@@ -61,6 +61,8 @@ export function ContactForm() {
   const [status, setStatus]   = useState<SubmitStatus>("idle");
   const [message, setMessage] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [serviceError, setServiceError] = useState("");
 
   const isLoading = status === "loading";
 
@@ -74,6 +76,9 @@ export function ContactForm() {
       if (phoneError && isValidTurkishPhone(formatted)) setPhoneError("");
       return;
     }
+
+    if (name === "name" && nameError && value.trim()) setNameError("");
+    if (name === "serviceType" && serviceError && value) setServiceError("");
 
     setForm((prev) => ({ ...prev, [name]: value }));
   }
@@ -89,11 +94,25 @@ export function ContactForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // Client-side phone gate
+    // Client-side field gates
+    let hasError = false;
+
+    if (!form.name.trim()) {
+      setNameError("Lütfen adınızı ve soyadınızı girin.");
+      hasError = true;
+    }
+
+    if (!form.serviceType) {
+      setServiceError("Lütfen bir hizmet türü seçin.");
+      hasError = true;
+    }
+
     if (!isValidTurkishPhone(form.phone)) {
       setPhoneError("Lütfen geçerli bir Türkiye cep numarası girin (ör: 0532 111 22 33).");
-      return;
+      hasError = true;
     }
+
+    if (hasError) return;
 
     setStatus("loading");
     setMessage("");
@@ -184,9 +203,12 @@ export function ContactForm() {
               required
               disabled={isLoading}
               autoComplete="name"
-              className={inputClass}
+              className={`${inputClass} ${nameError ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
               style={{ backgroundColor: INPUT_BG }}
             />
+            {nameError && (
+              <p className="mt-1.5 text-xs text-red-400">{nameError}</p>
+            )}
           </div>
 
           {/* Phone */}
@@ -233,7 +255,7 @@ export function ContactForm() {
               onChange={handleChange}
               required
               disabled={isLoading}
-              className={`${inputClass} cursor-pointer`}
+              className={`${inputClass} cursor-pointer ${serviceError ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
               style={{ backgroundColor: INPUT_BG }}
             >
               <option value="" disabled style={{ backgroundColor: INPUT_BG }}>
@@ -245,6 +267,9 @@ export function ContactForm() {
                 </option>
               ))}
             </select>
+            {serviceError && (
+              <p className="mt-1.5 text-xs text-red-400">{serviceError}</p>
+            )}
           </div>
 
           {/* Note / Details */}

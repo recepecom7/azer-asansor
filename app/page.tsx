@@ -183,8 +183,9 @@ export default function Home() {
               Neden Azer Asansör? <br className="md:hidden" />
               <span className="text-brand-yellow text-xl md:text-2xl mt-2 block">(Geleneksel Taşıma vs. Asansörlü Sistem)</span>
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse whitespace-nowrap md:whitespace-normal">
+            <div className="relative">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse whitespace-nowrap md:whitespace-normal">
                 <thead>
                   <tr className="border-b border-gray-700">
                     <th className="py-4 px-4 text-gray-400 font-semibold">Karşılaştırma Kriteri</th>
@@ -214,7 +215,12 @@ export default function Home() {
                     <td className="py-4 px-4 text-brand-yellow font-medium">Sabit Fiyat, Gizli Ücret Yok</td>
                   </tr>
                 </tbody>
-              </table>
+                </table>
+              </div>
+              <div
+                aria-hidden="true"
+                className="md:hidden pointer-events-none absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-gray-900 to-transparent"
+              />
             </div>
           </div>
         </div>

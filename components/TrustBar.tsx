@@ -1,4 +1,5 @@
 import { Star, ShieldCheck, Clock, MapPin, Building2 } from "lucide-react";
+import { REVIEW_COUNT } from "@/lib/constants";
 
 export function TrustBar() {
   return (
@@ -18,10 +19,9 @@ export function TrustBar() {
               ))}
             </div>
 
-            {/* Update review count manually every 1–2 months */}
             <p className="text-white font-bold text-lg">
               5.0 Google Değerlendirmesi
-              <span className="text-gray-300 font-medium"> · 82+ Yorum</span>
+              <span className="text-gray-300 font-medium"> · {REVIEW_COUNT}+ Yorum</span>
             </p>
 
             <p className="text-gray-400 text-sm mt-1">

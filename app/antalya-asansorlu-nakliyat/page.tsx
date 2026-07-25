@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
+import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
 import { Phone, MessageCircle, ShieldCheck, Clock, Building2, MapPin, PhoneCall, Package, Route } from "lucide-react";
 
 const needItems = [
@@ -149,14 +150,10 @@ export default function AsansorluNakliyatPage() {
     serviceType: "Asansörlü Nakliyat",
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Anasayfa", item: "https://www.azerasansor.com" },
-      { "@type": "ListItem", position: 2, name: "Asansörlü Nakliyat", item: "https://www.azerasansor.com/antalya-asansorlu-nakliyat" },
-    ],
-  };
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: "Anasayfa", href: "/" },
+    { label: "Asansörlü Nakliyat", href: "/antalya-asansorlu-nakliyat" },
+  ];
 
   return (
     <main className="min-h-screen bg-brand-beige">
@@ -165,12 +162,8 @@ export default function AsansorluNakliyatPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <Script
-        id="breadcrumb-schema-antalya-asansorlu-nakliyat"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
       <Header />
+      <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-antalya-asansorlu-nakliyat" />
 
       <section className="relative w-full overflow-hidden bg-brand-black text-white border-b border-gray-800">
         <div className="absolute inset-0">
