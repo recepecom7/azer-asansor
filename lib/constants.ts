@@ -1,1 +1,1 @@
-export const REVIEW_COUNT = 96;
+export const REVIEW_COUNT = 100;

@@ -175,7 +175,7 @@ export default function OfisTasimaPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · 66+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
             <p className="text-sm text-gray-400 mt-2">
               Kurumsal firmalar ve küçük işletmeler için profesyonel ofis taşıma çözümleri sunuyoruz.
             </p>
