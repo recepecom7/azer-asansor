@@ -127,6 +127,15 @@ export function ContactForm() {
 
       if (data.success) {
         setStatus("success");
+
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-18038829941/FORM_LABEL_PLACEHOLDER",
+            value: 1.0,
+            currency: "TRY",
+          });
+        }
+
         setMessage(data.message);
         setForm({ name: "", phone: "", serviceType: "", note: "" });
       } else {

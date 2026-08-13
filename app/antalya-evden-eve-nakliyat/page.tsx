@@ -236,7 +236,7 @@ export default function EvdenEveNakliyatPage() {
             fill
             className="object-cover object-center"
             priority
-            quality={92}
+            quality={75}
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
@@ -253,13 +253,6 @@ export default function EvdenEveNakliyatPage() {
               Antalya&apos;da evden eve nakliyat hizmeti ile eşyalarınızı güvenli, hızlı ve planlı şekilde yeni adresinize taşıyoruz. Paketleme, taşıma ve yerleştirme süreçlerini profesyonel ekip ile yönetiyoruz.
             </p>
 
-            <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mb-8">
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Paketleme Dahil Hizmet</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Asansörlü Taşıma Seçeneği</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Antalya Geneli Hizmet</li>
-            </ul>
-
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:+905424669631" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full text-base md:text-lg px-7">
@@ -275,6 +268,13 @@ export default function EvdenEveNakliyatPage() {
               </a>
             </div>
             <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
+
+            <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mt-8">
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Paketleme Dahil Hizmet</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Asansörlü Taşıma Seçeneği</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Antalya Geneli Hizmet</li>
+            </ul>
           </div>
         </div>
       </section>
