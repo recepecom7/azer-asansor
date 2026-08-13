@@ -18,10 +18,7 @@ export function ConversionTracker() {
 
       const href = link.getAttribute('href') || ''
 
-      console.log('[ConversionTracker] click event on:', href)
-
       if (href.startsWith('tel:')) {
-        console.log('[ConversionTracker] tel: click detected, href:', href)
         window.gtag?.('event', 'conversion', {
           send_to: 'AW-18038829941/5ySFCOrdrpQcEPXmyplD',
           value: 1.0,
@@ -30,7 +27,6 @@ export function ConversionTracker() {
       }
 
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-        console.log('[ConversionTracker] whatsapp click detected, href:', href)
         window.gtag?.('event', 'conversion', {
           send_to: 'AW-18038829941/S_QXCLmZwZwcEPXmyplD',
           value: 1.0,
