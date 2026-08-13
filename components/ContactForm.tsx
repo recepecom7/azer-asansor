@@ -130,7 +130,7 @@ export function ContactForm() {
 
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
           window.gtag("event", "conversion", {
-            send_to: "AW-18038829941/FORM_LABEL_PLACEHOLDER",
+            send_to: "AW-18038829941/EpIOCPLj--AcEPXmyplD",
             value: 1.0,
             currency: "TRY",
           });
