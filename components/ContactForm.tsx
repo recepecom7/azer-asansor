@@ -134,6 +134,7 @@ export function ContactForm() {
             value: 1.0,
             currency: "TRY",
           });
+          window.gtag("event", "form_submit", { event_category: "contact" });
         }
 
         setMessage(data.message);

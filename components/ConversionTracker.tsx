@@ -24,6 +24,7 @@ export function ConversionTracker() {
           value: 1.0,
           currency: 'TRY',
         })
+        window.gtag?.('event', 'phone_click', { event_category: 'contact' })
       }
 
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
@@ -32,6 +33,7 @@ export function ConversionTracker() {
           value: 1.0,
           currency: 'TRY',
         })
+        window.gtag?.('event', 'whatsapp_click', { event_category: 'contact' })
       }
     }
 
