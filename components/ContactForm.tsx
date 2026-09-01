@@ -137,6 +137,10 @@ export function ContactForm() {
           window.gtag("event", "form_submit", { event_category: "contact" });
         }
 
+        if (typeof window !== "undefined" && window.posthog) {
+          window.posthog.capture("quote_form_submitted");
+        }
+
         setMessage(data.message);
         setForm({ name: "", phone: "", serviceType: "", note: "" });
       } else {

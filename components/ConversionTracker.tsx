@@ -6,6 +6,7 @@ declare global {
   interface Window {
     dataLayer: unknown[]
     gtag?: (...args: any[]) => void
+    posthog?: { capture: (...args: any[]) => void }
   }
 }
 
@@ -25,6 +26,7 @@ export function ConversionTracker() {
           currency: 'TRY',
         })
         window.gtag?.('event', 'phone_click', { event_category: 'contact' })
+        window.posthog?.capture('phone_clicked')
       }
 
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
@@ -34,6 +36,7 @@ export function ConversionTracker() {
           currency: 'TRY',
         })
         window.gtag?.('event', 'whatsapp_click', { event_category: 'contact' })
+        window.posthog?.capture('whatsapp_clicked')
       }
     }
 
