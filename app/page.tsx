@@ -180,8 +180,8 @@ export default function Home() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="bg-gray-900 border border-gray-800 rounded-3xl p-6 md:p-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Neden Azer Asansör? <br className="md:hidden" />
-              <span className="text-brand-yellow text-xl md:text-2xl mt-2 block">(Geleneksel Taşıma vs. Asansörlü Sistem)</span>
+              Geleneksel Taşıma vs. Asansörlü Sistem <br className="md:hidden" />
+              <span className="text-brand-yellow text-xl md:text-2xl mt-2 block">Karşılaştırması</span>
             </h2>
             <div className="relative">
               <div className="overflow-x-auto">
