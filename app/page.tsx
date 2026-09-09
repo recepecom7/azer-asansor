@@ -42,7 +42,7 @@ const services = [
     description:
       "Antalya ofis taşıma hizmeti ile iş kaybı yaşamadan hızlı ve planlı taşınma sağlıyoruz. Kurumsal çözümler ile süreci minimum kesinti ile yönetiyoruz.",
     icon: Clock,
-    href: "/iletisim",
+    href: "/antalya-ofis-tasima",
   },
   {
     title: "Beyaz Eşya Taşıma",

@@ -14,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/antalya-asansorlu-nakliyat", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-ofis-tasima", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-sehirlerarasi-nakliyat", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-istanbul-nakliyat", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/antalya-izmir-nakliyat", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/antalya-ankara-nakliyat", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/antalya-bursa-nakliyat", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/antalya-adana-nakliyat", priority: 0.8, changeFrequency: "monthly" },
 
     { path: "/antalya-mobil-asansor-kiralama", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-kiralik-asansor", priority: 0.9, changeFrequency: "weekly" },

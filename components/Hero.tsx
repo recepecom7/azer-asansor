@@ -39,7 +39,7 @@ export const Hero = ({
             <div className="container mx-auto px-4 relative z-10 py-14 md:py-20">
                 <div className="max-w-2xl">
                     <p className="text-brand-yellow font-semibold text-base md:text-lg mb-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.45)]">
-                        Mobil Asansör ile Hızlı ve Güvenli Taşıma
+                        Antalya&apos;da Hızlı ve Güvenli Asansörlü Nakliyat
                     </p>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 [text-shadow:0_2px_10px_rgba(0,0,0,0.45)]">
                         {title || "Antalya Asansörlü Nakliyat"}

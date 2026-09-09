@@ -16,6 +16,11 @@ const navItems = [
             { label: 'Antalya Asansörlü Nakliyat', href: '/antalya-asansorlu-nakliyat' },
             { label: 'Antalya Ofis Taşıma', href: '/antalya-ofis-tasima' },
             { label: 'Antalya Şehirlerarası Nakliyat', href: '/antalya-sehirlerarasi-nakliyat' },
+            { label: 'Antalya İstanbul Nakliyat', href: '/antalya-istanbul-nakliyat' },
+            { label: 'Antalya İzmir Nakliyat', href: '/antalya-izmir-nakliyat' },
+            { label: 'Antalya Ankara Nakliyat', href: '/antalya-ankara-nakliyat' },
+            { label: 'Antalya Bursa Nakliyat', href: '/antalya-bursa-nakliyat' },
+            { label: 'Antalya Adana Nakliyat', href: '/antalya-adana-nakliyat' },
         ],
     },
     {
