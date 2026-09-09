@@ -175,6 +175,7 @@ export default async function AsansorluNakliyatPage() {
             fill
             className="object-cover object-center"
             priority
+            fetchPriority="high"
             quality={95}
             sizes="100vw"
           />

@@ -292,6 +292,7 @@ export default async function EvdenEveNakliyatPage() {
             fill
             className="object-cover object-center"
             priority
+            fetchPriority="high"
             quality={75}
             sizes="100vw"
           />
