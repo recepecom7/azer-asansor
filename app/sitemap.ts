@@ -31,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/aksu-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/dosemealti-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
 
+    { path: "/blog/antalya-evden-eve-nakliyat-asansorlu-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/antalya-evden-eve-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-asansorlu-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-mobil-asansor-kiralama-fiyatlari", priority: 0.8, changeFrequency: "monthly" },

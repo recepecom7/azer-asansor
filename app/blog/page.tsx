@@ -14,6 +14,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "Eylülde Evden Eve Nakliyat mı Asansörlü Nakliyat mı Seçmeli?",
+    href: "/blog/antalya-evden-eve-nakliyat-asansorlu-nakliyat-eylul",
+    text: "Kat sayısına göre hangi hizmeti seçmeniz gerektiğine dair pratik karar rehberi.",
+  },
+  {
+    title: "Eylülde Antalya Evden Eve Nakliyat: Avantajlar ve İpuçları",
+    href: "/blog/antalya-evden-eve-nakliyat-eylul",
+    text: "Sezon sonu, okul dönemi ve serin hava koşullarına göre eylülde taşınmanın avantajları.",
+  },
+  {
     title: "Antalya Evden Eve Nakliyat Fiyatları 2026",
     href: "/blog/antalya-evden-eve-nakliyat-fiyatlari",
     text: "Ev taşıma fiyatlarını etkileyen faktörler ve ücretsiz keşif ile net teklif süreci.",

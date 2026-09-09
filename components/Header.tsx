@@ -38,6 +38,7 @@ const navItems = [
             { label: 'Dış Cephe Asansörü', href: '/antalya-dis-cephe-asansoru' },
         ],
     },
+    { label: 'Blog', href: '/blog' },
     { label: 'Hakkımızda', href: '/hakkimizda' },
     { label: 'İletişim', href: '/iletisim' },
 ];
