@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
-import { REVIEW_COUNT } from "@/lib/constants";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 import { Phone, MessageCircle, ShieldCheck, Building2, Clock, Package, MapPin } from "lucide-react";
 
 const scopeItems = [
@@ -110,7 +110,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OfisTasimaPage() {
+export default async function OfisTasimaPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -175,7 +176,7 @@ export default function OfisTasimaPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</p>
             <p className="text-sm text-gray-400 mt-2">
               Kurumsal firmalar ve küçük işletmeler için profesyonel ofis taşıma çözümleri sunuyoruz.
             </p>
@@ -405,7 +406,7 @@ export default function OfisTasimaPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet</p>
+          <p className="text-sm text-gray-400 mt-6">{rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Antalya geneli hizmet</p>
         </div>
       </section>
 

@@ -7,8 +7,8 @@ import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
-import { REVIEW_COUNT } from "@/lib/constants";
-import { Phone, MessageCircle, ShieldCheck, Package, Building2, MapPin, Clock } from "lucide-react";
+import { getPlaceDetails } from "@/lib/googlePlaces";
+import { Phone, MessageCircle, ShieldCheck, Package, MapPin, Clock, Star } from "lucide-react";
 
 const serviceScopeItems = [
   "Eşya paketleme ve ambalajlama",
@@ -26,20 +26,35 @@ const processSteps = [
   "Yeni adrese yerleştirme yapılır",
 ];
 
-const priceFactors = [
-  "Eşya miktarı",
-  "Kat sayısı",
-  "Mesafe",
-  "Asansör ihtiyacı",
-  "Paketleme hizmeti",
-];
-
 const whyUsItems = [
   { title: "Deneyimli ekip", text: "Antalya genelinde taşınma süreçlerini planlı şekilde yöneten deneyimli ekibimizle çalışıyoruz." },
   { title: "Sigortalı taşıma", text: "Eşyalarınızın güvenliği için taşıma süreci kontrollü ilerler ve uygun durumlarda sigortalı destek sunulur." },
   { title: "Hızlı ve planlı süreç", text: "Taşınma günü, ekip planı ve taşıma adımları önceden belirlenerek süreç gereksiz bekleme olmadan tamamlanır." },
   { title: "Asansörlü taşıma desteği", text: "Yüksek katlı binalarda mobil asansör desteği ile eşyalar daha güvenli ve düzenli şekilde taşınır." },
   { title: "Ücretsiz keşif", text: "Eşya miktarı, kat sayısı ve mesafeye göre net fiyatlandırma için ücretsiz keşif imkanı sunuyoruz." },
+];
+
+const testimonials = [
+  {
+    author: "Erhan Kara",
+    text: "Güler yüzlü esnaflar işini temiz yaptılar, saatinde gelip evimi taşıdılar. Eşyalarımı güzelce paketleyip mobilya montajını yaptılar, her şey için çok teşekkür ederiz.",
+  },
+  {
+    author: "Selman Karacan",
+    text: "Gerçekten işini çok dürüst yapan, verdikleri hizmeti dolu dolu sunan bir işletme. Daha önce bir çok kez taşınmış birisi olarak bu kadar memnun olduğum bir taşıma hizmeti sunan biri olmamıştı.",
+  },
+  {
+    author: "Acelya Arslan",
+    text: "3 yıl içinde 2 defa taşınma durumum oldu, ikisinde de Azer Nakliyat ile çalıştım. Çalışanlar işlerinde hızlı ve pratikler, eşyaları muntazam ve dikkatli şekilde taşıyıp yerleştiriyorlar.",
+  },
+  {
+    author: "Defne Kalayci",
+    text: "Binamızın altındaki market nedeniyle 7. kata asansörün ulaşması oldukça zor görünüyordu. Buna rağmen profesyonel yaklaşımları ve tecrübeleri sayesinde hiçbir sorun yaşamadan taşıma tamamlandı.",
+  },
+  {
+    author: "Tuana Vuran",
+    text: "1.5 yıl önce de hizmet almıştım, memnun kaldığım için tekrar bu yıl aradım ve gene her zamanki gibi çok ilgili ve titiz davrandılar. Çalışanların hepsi kendi ailesinden birini taşıyor gibi ilgili.",
+  },
 ];
 
 const faqItems = [
@@ -122,7 +137,8 @@ export const metadata: Metadata = {
 };
 
 // ── Structured Data ────────────────────────────────────────────────────────────
-const movingCompanySchema = {
+function getMovingCompanySchema(rating: number, reviewCount: number) {
+  return {
   "@context": "https://schema.org",
   "@type": "MovingCompany",
   name: "Azer Asansör",
@@ -198,19 +214,57 @@ const movingCompanySchema = {
   ],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: `${REVIEW_COUNT}`,
+    ratingValue: rating.toFixed(1),
+    reviewCount: `${reviewCount}`,
     bestRating: "5",
     worstRating: "1",
   },
-};
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Erhan Kara" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Güler yüzlü esnaflar işini temiz yaptılar, saatinde gelip evimi taşıdılar. Eşyalarımı güzelce paketleyip mobilya montajını yaptılar, her şey için çok teşekkür ederiz.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Selman Karacan" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Gerçekten işini çok dürüst yapan, verdikleri hizmeti dolu dolu sunan bir işletme. Daha önce bir çok kez taşınmış birisi olarak bu kadar memnun olduğum bir taşıma hizmeti sunan biri olmamıştı.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Acelya Arslan" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "3 yıl içinde 2 defa taşınma durumum oldu, ikisinde de Azer Nakliyat ile çalıştım. Çalışanlar işlerinde hızlı ve pratikler, eşyaları muntazam ve dikkatli şekilde taşıyıp yerleştiriyorlar.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Defne Kalayci" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Binamızın altındaki market nedeniyle 7. kata asansörün ulaşması oldukça zor görünüyordu. Buna rağmen profesyonel yaklaşımları ve tecrübeleri sayesinde hiçbir sorun yaşamadan taşıma tamamlandı.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Tuana Vuran" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "1.5 yıl önce de hizmet almıştım, memnun kaldığım için tekrar bu yıl aradım ve gene her zamanki gibi çok ilgili ve titiz davrandılar. Çalışanların hepsi kendi ailesinden birini taşıyor gibi ilgili.",
+    },
+  ],
+  };
+}
 
-function MovingCompanyJsonLd() {
+function MovingCompanyJsonLd({ rating, reviewCount }: { rating: number; reviewCount: number }) {
   return (
     <script
       id="moving-company-schema"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(movingCompanySchema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(getMovingCompanySchema(rating, reviewCount)) }}
     />
   );
 }
@@ -221,10 +275,12 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 
 // ── Page ───────────────────────────────────────────────────────────────────────
-export default function EvdenEveNakliyatPage() {
+export default async function EvdenEveNakliyatPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
+
   return (
     <main className="min-h-screen bg-brand-beige">
-      <MovingCompanyJsonLd />
+      <MovingCompanyJsonLd rating={rating} reviewCount={reviewCount} />
       <Header />
       <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-evden-eve-nakliyat" />
 
@@ -267,7 +323,7 @@ export default function EvdenEveNakliyatPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</p>
 
             <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mt-8">
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma</li>
@@ -383,30 +439,6 @@ export default function EvdenEveNakliyatPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-10 md:py-16 bg-brand-black text-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
-              Antalya Evden Eve Nakliyat Fiyatları
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Fiyatlar sabit değildir ve aşağıdaki faktörlere göre değişir:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {priceFactors.map((factor) => (
-                <div key={factor} className="bg-[#111827] border border-white/10 rounded-2xl p-6 text-gray-300 flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-brand-yellow flex-shrink-0" />
-                  {factor}
-                </div>
-              ))}
-            </div>
-            <p className="text-gray-300 text-lg leading-relaxed mt-7">
-              Net fiyat için ücretsiz keşif ile aynı gün teklif alabilirsiniz.
-            </p>
           </div>
         </div>
       </section>
@@ -589,7 +621,7 @@ export default function EvdenEveNakliyatPage() {
                   </Button>
                 </a>
               </div>
-              <p className="text-sm text-gray-400 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
+              <p className="text-sm text-gray-400 mt-5">⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</p>
             </div>
           </div>
         </div>
@@ -605,6 +637,12 @@ export default function EvdenEveNakliyatPage() {
                 Antalya Evden Eve Nakliyat Fiyatları 2026
               </Link>
             </p>
+            <p className="text-gray-300 mt-3">
+              Eylülde taşınmayı planlıyorsanız:{" "}
+              <Link href="/blog/antalya-evden-eve-nakliyat-eylul" className="text-brand-yellow hover:underline font-medium">
+                Eylülde Antalya Evden Eve Nakliyat: Avantajlar ve İpuçları
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -616,6 +654,27 @@ export default function EvdenEveNakliyatPage() {
         highlight="Sorular"
         defaultOpenIndex={0}
       />
+
+      <section className="py-10 md:py-16 bg-brand-black text-white border-t border-gray-800">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            Müşterilerimiz Ne Diyor?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.author} className="bg-gray-900 border border-white/10 rounded-2xl p-6">
+                <div className="flex items-center gap-1 text-brand-yellow mb-3" aria-label="5 yıldız değerlendirme">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" aria-hidden="true" />
+                  ))}
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-3">&ldquo;{testimonial.text}&rdquo;</p>
+                <p className="text-white font-semibold">{testimonial.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-10 md:py-16 bg-brand-black text-white border-t border-gray-800">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -662,7 +721,7 @@ export default function EvdenEveNakliyatPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum</p>
+          <p className="text-sm text-gray-400 mt-6">{rating.toFixed(1)} Google puanı · {reviewCount}+ yorum</p>
         </div>
       </section>
 

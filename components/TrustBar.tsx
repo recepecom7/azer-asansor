@@ -1,7 +1,9 @@
 import { Star, ShieldCheck, Clock, MapPin, Building2 } from "lucide-react";
-import { REVIEW_COUNT } from "@/lib/constants";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 
-export function TrustBar() {
+export async function TrustBar() {
+  const { rating, reviewCount } = await getPlaceDetails();
+
   return (
     <section
       className="bg-brand-black border-t border-white/10 border-b border-white/10"
@@ -20,8 +22,8 @@ export function TrustBar() {
             </div>
 
             <p className="text-white font-bold text-lg">
-              5.0 Google Değerlendirmesi
-              <span className="text-gray-300 font-medium"> · {REVIEW_COUNT}+ Yorum</span>
+              {rating.toFixed(1)} Google Değerlendirmesi
+              <span className="text-gray-300 font-medium"> · {reviewCount}+ Yorum</span>
             </p>
 
             <p className="text-gray-400 text-sm mt-1">

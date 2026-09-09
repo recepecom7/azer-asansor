@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
-import { REVIEW_COUNT } from "@/lib/constants";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 import { Phone, MessageCircle } from "lucide-react";
 
 const serviceCards = [
@@ -73,7 +73,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -117,7 +118,7 @@ export default function AboutPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</p>
           </div>
         </div>
       </section>
@@ -236,7 +237,7 @@ export default function AboutPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet</p>
+          <p className="text-sm text-gray-400 mt-6">{rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Antalya geneli hizmet</p>
         </div>
       </section>
 

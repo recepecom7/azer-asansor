@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
-import { REVIEW_COUNT } from "@/lib/constants";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 import { Phone, MessageCircle, ShieldCheck, Clock, Building2, MapPin } from "lucide-react";
 
 const useCases = [
@@ -105,7 +105,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MobileElevatorPage() {
+export default async function MobileElevatorPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -164,7 +165,7 @@ export default function MobileElevatorPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ 5.0 Google puanı · {REVIEW_COUNT}+ müşteri yorumu</p>
+            <p className="text-sm text-gray-300 mt-5">⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</p>
           </div>
         </div>
       </section>
@@ -411,7 +412,7 @@ export default function MobileElevatorPage() {
               </Button>
             </a>
           </div>
-          <p className="text-sm text-gray-400 mt-6">5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet</p>
+          <p className="text-sm text-gray-400 mt-6">{rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Antalya geneli hizmet</p>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import { LucideIcon, Phone, MessageCircle, Armchair, Refrigerator, BrickWall, Trash2, Truck, Building2 } from 'lucide-react';
 import { Button } from './Button';
 import Link from 'next/link';
-import { REVIEW_COUNT } from '@/lib/constants';
+import { getPlaceDetails } from '@/lib/googlePlaces';
 
 export interface ServiceItem {
     title: string;
@@ -28,13 +28,15 @@ interface ServicesProps {
     ctaDescription?: string;
 }
 
-export const Services = ({
+export const Services = async ({
     title = 'Mobil Asansör',
     highlight = 'Hizmetleri',
     services = defaultServices,
     ctaTitle = 'Hizmetlerimiz hakkında bilgi almak için hemen arayın.',
     ctaDescription = 'Azer Asansör ile güvenli, hızlı ve profesyonel çözümler.',
 }: ServicesProps) => {
+    const { rating, reviewCount } = await getPlaceDetails();
+
     return (
         <section id="services" className="py-24 bg-brand-black text-white">
             <div className="container mx-auto px-4">
@@ -102,7 +104,7 @@ export const Services = ({
                         </a>
                     </div>
                     <p className="text-sm text-gray-400 text-center mt-5">
-                        5.0 Google puanı · {REVIEW_COUNT}+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
+                        {rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
                     </p>
                 </div>
             </div>

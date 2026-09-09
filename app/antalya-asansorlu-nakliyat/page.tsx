@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
-import { REVIEW_COUNT } from "@/lib/constants";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 import { Phone, MessageCircle, ShieldCheck, Clock, Building2, MapPin, PhoneCall, Package, Route } from "lucide-react";
 
 const needItems = [
@@ -129,7 +129,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AsansorluNakliyatPage() {
+export default async function AsansorluNakliyatPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -210,7 +211,7 @@ export default function AsansorluNakliyatPage() {
               </a>
             </div>
             <p className="text-sm text-gray-300 mt-5">
-              ⭐ 5.0 Google puanı · {REVIEW_COUNT}+ yorum · Antalya geneli hizmet
+              ⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Antalya geneli hizmet
             </p>
           </div>
         </div>
@@ -444,7 +445,7 @@ export default function AsansorluNakliyatPage() {
             </a>
           </div>
           <p className="text-sm text-gray-400 text-center mt-6">
-            5.0 Google puanı · {REVIEW_COUNT}+ yorum · Ortalama dönüş süresi: 5–10 dakika
+            {rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Ortalama dönüş süresi: 5–10 dakika
           </p>
         </div>
       </section>
