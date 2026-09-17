@@ -6,6 +6,7 @@ import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { TrustBar } from "@/components/TrustBar";
 import { Phone, MapPin, MessageCircle } from "lucide-react";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 
 const faqs = [
   {
@@ -37,7 +38,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.azerasansor.com/iletisim" },
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -46,6 +48,13 @@ export default function ContactPage() {
     telephone: "+90 542 466 96 31",
     serviceType: ["Asansörlü Nakliyat", "Mobil Asansör Kiralama", "Evden Eve Nakliyat"],
     url: "https://www.azerasansor.com",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: rating.toFixed(1),
+      reviewCount: reviewCount.toString(),
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   return (

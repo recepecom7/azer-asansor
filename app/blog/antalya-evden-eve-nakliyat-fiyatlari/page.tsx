@@ -8,28 +8,66 @@ import { FAQ } from "@/components/FAQ";
 import { Phone, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Antalya Evden Eve Nakliyat Fiyatları 2026",
+  title: "Antalya Evden Eve Nakliyat Fiyatları 2026: 7 Kritik Etken",
   description:
-    "Antalya evden eve nakliyat fiyatlarını etkileyen faktörleri öğrenin. Ücretsiz keşif ile net fiyat alın.",
+    "Antalya evden eve nakliyat fiyatları 2026: 1+1 için 9.500 TL'den başlar. Fiyatı etkileyen 7 faktör ve güncel şehir içi/şehirler arası fiyat aralıkları.",
   alternates: {
     canonical: "https://www.azerasansor.com/blog/antalya-evden-eve-nakliyat-fiyatlari",
   },
 };
 
-const faqs = [
-  { question: "Antalya evden eve nakliyat fiyatları ne kadar?", answer: "Fiyatlar taşınacak eşya miktarı, kat sayısı, mesafe ve ek hizmetlere göre değişir. En doğru bilgi için ücretsiz keşif önerilir." },
-  { question: "Net fiyat nasıl belirlenir?", answer: "Eşya yoğunluğu, bina yapısı, taşıma mesafesi ve asansör ihtiyacı birlikte değerlendirilerek net teklif hazırlanır." },
-  { question: "Asansörlü taşıma fiyatı etkiler mi?", answer: "Asansörlü taşıma bazı durumlarda ek planlama gerektirir, ancak süreci hızlandırdığı için toplam operasyonu daha verimli hale getirebilir." },
-  { question: "Ücretsiz keşif var mı?", answer: "Evet, ücretsiz keşif ile ihtiyaçlar belirlenir ve buna göre net fiyatlandırma yapılır." },
+const priceRanges = [
+  { type: "1+1 daire", range: "9.500 – 13.000 TL" },
+  { type: "2+1 daire", range: "13.000 – 18.000 TL" },
+  { type: "3+1 daire", range: "18.000 – 25.000 TL" },
+  { type: "4+1 daire", range: "25.000 – 35.000 TL" },
+];
+
+const factors = [
+  { title: "Eşya miktarı", text: "Eşya arttıkça araç kapasitesi, ekip büyüklüğü ve taşıma süresi değişir. Daha yoğun taşınmalarda planlama kapsamı genişlediği için teklif buna göre güncellenir." },
+  { title: "Kat sayısı ve asansör ihtiyacı", text: "Yüksek katlı veya dar merdivenli binalarda mobil asansör desteği süreç güvenliği açısından önemlidir. Bu ihtiyaç fiyatlandırma kalemlerine yansıyabilir." },
+  { title: "Mesafe", text: "Şehir içi kısa mesafeler ile şehirler arası uzun mesafeler farklı yakıt, araç ve iş gücü maliyeti gerektirir; bu fark doğrudan fiyata yansır." },
+  { title: "Paketleme hizmeti", text: "Paketleme kapsamı hem malzeme hem de işçilik planını etkiler. Profesyonel paketleme, taşıma sırasında hasar riskini azaltır ama ek maliyet oluşturur." },
+  { title: "Sigortalı taşıma", text: "Eşyaların sigorta kapsamına alınması, olası hasar durumunda güvence sağlar ve fiyata küçük bir kalem olarak eklenir." },
+  { title: "Mobilya söküm-montaj", text: "Gardırop, TV ünitesi gibi büyük mobilyaların demontaj ve montajı, marangoz desteği gerektirdiği için ek ücrete tabi olabilir." },
+  { title: "Taşınma günü ve sezon", text: "Yaz ayları, hafta sonları ve ay başı/sonu gibi yoğun dönemlerde talep arttığı için fiyatlar bir miktar yükselebilir." },
 ];
 
 const blogPostingSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: "Antalya Evden Eve Nakliyat Fiyatları 2026",
+  headline: "Antalya Evden Eve Nakliyat Fiyatları Neden Değişir? 7 Kritik Etken",
   datePublished: "2026-01-15",
-  dateModified: "2026-07-25",
+  dateModified: "2026-09-17",
 };
+
+const faqs = [
+  {
+    question: "Antalya'da evden eve nakliyat fiyatı ortalama ne kadar?",
+    answer:
+      "Şehir içi taşımalarda fiyatlar 1+1 için 9.500 TL'den başlar, daire büyüklüğüne göre 35.000 TL'ye kadar çıkabilir. Kesin fiyat için ücretsiz keşif önerilir.",
+  },
+  {
+    question: "Asansörlü nakliyat ekstra ücret gerektirir mi?",
+    answer:
+      "Genellikle küçük bir ek ücret gerektirir, ancak süreci hızlandırıp hasar riskini azalttığı için toplamda avantajlı bir seçenektir.",
+  },
+  {
+    question: "Yazın taşınmak neden daha pahalı?",
+    answer:
+      "Yaz aylarında taşınma talebi arttığı için ekip ve araç yoğunluğu yükselir, bu da fiyatları bir miktar artırabilir. Erken randevu bu farkı azaltabilir.",
+  },
+  {
+    question: "Sigorta gerçekten gerekli mi?",
+    answer:
+      "Zorunlu değildir ama özellikle değerli mobilya ve eşyalarda önerilir; olası hasar durumunda maddi kaybı önler.",
+  },
+  {
+    question: "Şehirler arası nakliyat neden bu kadar daha pahalı?",
+    answer:
+      "Mesafe, yakıt maliyeti, yol süresi ve gerekirse konaklama gibi ek giderler şehirler arası nakliyatın şehir içine kıyasla daha maliyetli olmasına neden olur.",
+  },
+];
 
 export default function Page() {
   return (
@@ -42,27 +80,78 @@ export default function Page() {
       <Header />
       <section className="py-12 md:py-16 bg-brand-black text-white border-b border-gray-800">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Antalya Evden Eve Nakliyat Fiyatları 2026</h1>
-          <p className="text-sm text-gray-400 mb-4">Güncelleme: 25 Temmuz 2026</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Antalya Evden Eve Nakliyat Fiyatları Neden Değişir? 7 Kritik Etken</h1>
+          <p className="text-sm text-gray-400 mb-4">Güncelleme: 17 Eylül 2026</p>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Antalya’da evden eve nakliyat fiyatları sabit değildir. Taşınma planı her evde farklı olduğu için fiyatlandırma; eşya miktarı, kat sayısı, mesafe ve operasyon detaylarına göre şekillenir.
+            Antalya&apos;da{" "}
+            <Link className="text-brand-yellow hover:underline" href="/antalya-evden-eve-nakliyat">
+              antalya evden eve nakliyat
+            </Link>{" "}
+            fiyatları sabit değildir. Taşınma planı her evde farklı olduğu için fiyatlandırma; eşya miktarı, kat sayısı, mesafe ve operasyon detaylarına göre şekillenir. Bu yazıda fiyatı belirleyen 7 kritik etkeni ve güncel fiyat aralıklarını bulabilirsiniz.
           </p>
         </div>
       </section>
 
       <section className="py-10 md:py-14 bg-brand-black text-white">
-        <div className="container mx-auto px-4 max-w-5xl space-y-8">
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6"><h2 className="text-3xl font-bold mb-3">Antalya evden eve nakliyat fiyatları neye göre değişir?</h2><p className="text-gray-300">Fiyatı belirleyen ana unsurlar; eşya hacmi, taşınma günü planı, bina erişimi ve operasyon süresidir. Bu yüzden her taşınma için ayrı değerlendirme yapılır.</p></div>
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6"><h2 className="text-3xl font-bold mb-3">Eşya miktarı fiyatı nasıl etkiler?</h2><p className="text-gray-300">Eşya arttıkça araç kapasitesi, ekip büyüklüğü ve taşıma süresi değişir. Daha yoğun taşınmalarda planlama kapsamı genişlediği için teklif buna göre güncellenir.</p></div>
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6"><h2 className="text-3xl font-bold mb-3">Kat sayısı ve asansör ihtiyacı</h2><p className="text-gray-300">Yüksek katlı veya dar merdivenli binalarda <Link className="text-brand-yellow hover:underline" href="/antalya-mobil-asansor-kiralama">Antalya mobil asansör kiralama</Link> desteği süreç güvenliği açısından önemlidir. Bu ihtiyaç fiyatlandırma kalemlerine yansıyabilir.</p></div>
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6"><h2 className="text-3xl font-bold mb-3">Paketleme hizmeti fiyatı etkiler mi?</h2><p className="text-gray-300">Evet, paketleme kapsamı hem malzeme hem de işçilik planını etkiler. Profesyonel paketleme, taşıma sırasında hasar riskini azaltır.</p></div>
-          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6"><h2 className="text-3xl font-bold mb-3">Ücretsiz keşif ile net fiyat nasıl alınır?</h2><p className="text-gray-300">Ekip sahada veya telefon ön değerlendirmesi ile ihtiyaçları netleştirir. Ardından size özel teklif sunulur. İlgili hizmetler: <Link className="text-brand-yellow hover:underline" href="/antalya-evden-eve-nakliyat">Antalya evden eve nakliyat</Link> ve <Link className="text-brand-yellow hover:underline" href="/antalya-asansorlu-nakliyat">Antalya asansörlü nakliyat</Link>.</p></div>
+        <div className="container mx-auto px-4 max-w-5xl space-y-6">
+          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold mb-5">Antalya Evden Eve Nakliyat Fiyatları Neye Göre Belirlenir?</h2>
+            <div className="space-y-4">
+              {factors.map((factor, index) => (
+                <div key={factor.title} className="bg-[#111827] border border-white/10 rounded-xl p-4">
+                  <p className="text-white font-semibold mb-1">{index + 1}. {factor.title}</p>
+                  <p className="text-gray-300">{factor.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold mb-5">Şehir İçi Evden Eve Nakliyat Fiyatları 2026</h2>
+            <div className="space-y-2">
+              {priceRanges.map((item) => (
+                <div key={item.type} className="flex items-center justify-between bg-[#111827] border border-white/10 rounded-xl px-4 py-3">
+                  <span className="text-white font-semibold">{item.type}</span>
+                  <span className="text-brand-yellow font-semibold">{item.range}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-300 mt-5">
+              Bu aralıklar şehir içi standart taşımalar içindir. Asansörlü taşıma, ek paketleme ve mobilya söküm-montaj gibi hizmetler toplam fiyatı değiştirebilir.
+            </p>
+          </div>
+
+          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold mb-3">Şehirler Arası Nakliyat Neden Daha Pahalı?</h2>
+            <p className="text-gray-300">
+              Şehirler arası taşımalarda mesafe, yakıt maliyeti ve yol süresi şehir içi taşımaya kıyasla daha yüksek bir maliyet oluşturur. Kesin fiyat için ücretsiz keşif ya da{" "}
+              <Link className="text-brand-yellow hover:underline" href="/antalya-sehirlerarasi-nakliyat">
+                Antalya şehirlerarası nakliyat
+              </Link>{" "}
+              ekibimizle görüşmenizi öneririz.
+            </p>
+          </div>
+
+          <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-3xl font-bold mb-3">Ücretsiz Keşif ile Net Fiyat Nasıl Alınır?</h2>
+            <p className="text-gray-300">
+              Ekip sahada veya telefon ön değerlendirmesi ile ihtiyaçları netleştirir. Ardından size özel teklif sunulur. İlgili hizmetler:{" "}
+              <Link className="text-brand-yellow hover:underline" href="/antalya-evden-eve-nakliyat">
+                Antalya evden eve nakliyat
+              </Link>{" "}
+              ve{" "}
+              <Link className="text-brand-yellow hover:underline" href="/antalya-asansorlu-nakliyat">
+                Antalya asansörlü nakliyat
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="py-10 bg-brand-black text-white border-t border-gray-800">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <p className="text-gray-300 text-lg mb-6">Antalya’da ev taşıma fiyatı almak için hemen arayın veya WhatsApp’tan yazın.</p>
+          <p className="text-gray-300 text-lg mb-6">Antalya&apos;da ev taşıma fiyatı almak için hemen arayın veya WhatsApp&apos;tan yazın.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
             <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>

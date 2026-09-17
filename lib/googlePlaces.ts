@@ -3,16 +3,51 @@ const FALLBACK_RATING = 5;
 const FALLBACK_REVIEW_COUNT = 119;
 const REVALIDATE_SECONDS = 86400;
 
+export interface PlaceReview {
+  author: string;
+  text: string;
+}
+
+const FALLBACK_REVIEWS: PlaceReview[] = [
+  {
+    author: "Erhan Kara",
+    text: "Güler yüzlü esnaflar işini temiz yaptılar, saatinde gelip evimi taşıdılar. Eşyalarımı güzelce paketleyip mobilya montajını yaptılar, her şey için çok teşekkür ederiz.",
+  },
+  {
+    author: "Selman Karacan",
+    text: "Gerçekten işini çok dürüst yapan, verdikleri hizmeti dolu dolu sunan bir işletme. Daha önce bir çok kez taşınmış birisi olarak bu kadar memnun olduğum bir taşıma hizmeti sunan biri olmamıştı.",
+  },
+  {
+    author: "Acelya Arslan",
+    text: "3 yıl içinde 2 defa taşınma durumum oldu, ikisinde de Azer Nakliyat ile çalıştım. Çalışanlar işlerinde hızlı ve pratikler, eşyaları muntazam ve dikkatli şekilde taşıyıp yerleştiriyorlar.",
+  },
+  {
+    author: "Defne Kalayci",
+    text: "Binamızın altındaki market nedeniyle 7. kata asansörün ulaşması oldukça zor görünüyordu. Buna rağmen profesyonel yaklaşımları ve tecrübeleri sayesinde hiçbir sorun yaşamadan taşıma tamamlandı.",
+  },
+  {
+    author: "Tuana Vuran",
+    text: "1.5 yıl önce de hizmet almıştım, memnun kaldığım için tekrar bu yıl aradım ve gene her zamanki gibi çok ilgili ve titiz davrandılar. Çalışanların hepsi kendi ailesinden birini taşıyor gibi ilgili.",
+  },
+];
+
 interface PlaceDetails {
   rating: number;
   reviewCount: number;
+  reviews: PlaceReview[];
+}
+
+interface GooglePlaceReview {
+  authorAttribution?: { displayName?: string };
+  text?: { text?: string };
+  originalText?: { text?: string };
 }
 
 export async function getPlaceDetails(): Promise<PlaceDetails> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
 
   if (!apiKey) {
-    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT };
+    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
   }
 
   try {
@@ -21,23 +56,33 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
       {
         headers: {
           "X-Goog-Api-Key": apiKey,
-          "X-Goog-FieldMask": "rating,userRatingCount",
+          "X-Goog-FieldMask": "rating,userRatingCount,reviews",
         },
         next: { revalidate: REVALIDATE_SECONDS },
       }
     );
 
     if (!response.ok) {
-      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT };
+      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
     }
 
     const data = await response.json();
 
+    const reviews: PlaceReview[] = Array.isArray(data.reviews)
+      ? data.reviews
+          .map((review: GooglePlaceReview) => ({
+            author: review.authorAttribution?.displayName ?? "Google Kullanıcısı",
+            text: review.originalText?.text ?? review.text?.text ?? "",
+          }))
+          .filter((review: PlaceReview) => review.text.length > 0)
+      : [];
+
     return {
       rating: data.rating ?? FALLBACK_RATING,
       reviewCount: data.userRatingCount ?? FALLBACK_REVIEW_COUNT,
+      reviews: reviews.length > 0 ? reviews : FALLBACK_REVIEWS,
     };
   } catch {
-    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT };
+    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
   }
 }

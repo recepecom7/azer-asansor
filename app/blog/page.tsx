@@ -24,9 +24,14 @@ const posts = [
     text: "Sezon sonu, okul dönemi ve serin hava koşullarına göre eylülde taşınmanın avantajları.",
   },
   {
-    title: "Antalya Evden Eve Nakliyat Fiyatları 2026",
+    title: "Antalya Evden Eve Nakliyat Fiyatları Neden Değişir? 7 Kritik Etken",
     href: "/blog/antalya-evden-eve-nakliyat-fiyatlari",
-    text: "Ev taşıma fiyatlarını etkileyen faktörler ve ücretsiz keşif ile net teklif süreci.",
+    text: "1+1 için 9.500 TL'den başlayan güncel fiyat aralıkları ve fiyatı belirleyen 7 faktör.",
+  },
+  {
+    title: "Antalya'da Ev Taşıma Ne Kadar Sürer? 1+1'den 4+1'e Gerçek Süre Hesabı",
+    href: "/blog/antalya-ev-tasima-suresi",
+    text: "Daire tipine göre 3-14 saat değişen gerçek süre hesabı ve ilçe bazlı ipuçları.",
   },
   {
     title: "Antalya Asansörlü Nakliyat Fiyatları 2026",

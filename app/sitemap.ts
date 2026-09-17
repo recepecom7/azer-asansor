@@ -30,15 +30,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     { path: "/antalya-hizmet-bolgeleri", priority: 0.8, changeFrequency: "weekly" },
     { path: "/muratpasa-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/muratpasa-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/kepez-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/kepez-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/konyaalti-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/konyaalti-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/lara-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/lara-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/aksu-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/aksu-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/dosemealti-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/dosemealti-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
 
     { path: "/blog/antalya-evden-eve-nakliyat-asansorlu-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/antalya-ev-tasima-suresi", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-asansorlu-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-mobil-asansor-kiralama-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
   ] as const;

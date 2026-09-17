@@ -7,6 +7,7 @@ import { WhyUs } from "@/components/WhyUs";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 import {
   Truck, Building2, Armchair, Refrigerator,
   BrickWall, Award, ShieldCheck,
@@ -120,7 +121,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const { rating, reviewCount } = await getPlaceDetails();
   const homepageSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -136,7 +138,14 @@ export default function Home() {
           "addressLocality": "Antalya",
           "addressCountry": "TR"
         },
-        "description": "Antalya asansörlü nakliyat ve evden eve taşıma hizmetleri. 22. kata kadar mobil asansör kiralama."
+        "description": "Antalya asansörlü nakliyat ve evden eve taşıma hizmetleri. 22. kata kadar mobil asansör kiralama.",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": rating.toFixed(1),
+          "reviewCount": reviewCount.toString(),
+          "bestRating": "5",
+          "worstRating": "1"
+        }
       }
     ]
   };

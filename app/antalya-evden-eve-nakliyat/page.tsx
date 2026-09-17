@@ -93,9 +93,9 @@ const faqItems = [
 export const metadata: Metadata = {
   // Title: 55 chars — primary keyword first, brand at end, no repetition
   title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
-  // Description: 154 chars — action verb, USPs, geo qualifier, implicit CTA
+  // Description: 156 chars — action verb, USPs, geo qualifier, implicit CTA
   description:
-    "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya. Hemen fiyat alın!",
+    "Antalya'da sigortalı evden eve nakliyat: paketleme, mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu, Döşemealtı'nda hizmet. Hemen fiyat alın!",
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
   },
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
     description:
-      "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Tüm Antalya ilçelerinde hizmet.",
+      "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu ve Döşemealtı'nda hizmet.",
     url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
     siteName: "Azer Asansör",
     locale: "tr_TR",
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
     description:
-      "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği. Tüm ilçelerde hizmet – hemen fiyat alın!",
+      "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu, Döşemealtı'nda hizmet – hemen fiyat alın!",
     images: ["https://www.azerasansor.com/images/muratpasa-nakliye.jpg"],
   },
 };

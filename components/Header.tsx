@@ -25,14 +25,30 @@ const navItems = [
     },
     {
         label: 'Hizmet Bölgeleri',
-        children: [
-            { label: 'Antalya Hizmet Bölgeleri', href: '/antalya-hizmet-bolgeleri' },
-            { label: 'Muratpaşa Asansörlü Nakliyat', href: '/muratpasa-asansorlu-nakliyat' },
-            { label: 'Kepez Asansörlü Nakliyat', href: '/kepez-asansorlu-nakliyat' },
-            { label: 'Konyaaltı Asansörlü Nakliyat', href: '/konyaalti-asansorlu-nakliyat' },
-            { label: 'Lara Asansörlü Nakliyat', href: '/lara-asansorlu-nakliyat' },
-            { label: 'Aksu Asansörlü Nakliyat', href: '/aksu-asansorlu-nakliyat' },
-            { label: 'Döşemealtı Asansörlü Nakliyat', href: '/dosemealti-asansorlu-nakliyat' },
+        topLink: { label: 'Antalya Hizmet Bölgeleri', href: '/antalya-hizmet-bolgeleri' },
+        columns: [
+            {
+                title: 'Asansörlü Nakliyat',
+                children: [
+                    { label: 'Muratpaşa Asansörlü', href: '/muratpasa-asansorlu-nakliyat' },
+                    { label: 'Kepez Asansörlü', href: '/kepez-asansorlu-nakliyat' },
+                    { label: 'Konyaaltı Asansörlü', href: '/konyaalti-asansorlu-nakliyat' },
+                    { label: 'Lara Asansörlü', href: '/lara-asansorlu-nakliyat' },
+                    { label: 'Aksu Asansörlü', href: '/aksu-asansorlu-nakliyat' },
+                    { label: 'Döşemealtı Asansörlü', href: '/dosemealti-asansorlu-nakliyat' },
+                ],
+            },
+            {
+                title: 'Evden Eve Nakliyat',
+                children: [
+                    { label: 'Muratpaşa Evden Eve Nakliyat', href: '/muratpasa-evden-eve-nakliyat' },
+                    { label: 'Kepez Evden Eve Nakliyat', href: '/kepez-evden-eve-nakliyat' },
+                    { label: 'Konyaaltı Evden Eve Nakliyat', href: '/konyaalti-evden-eve-nakliyat' },
+                    { label: 'Lara Evden Eve Nakliyat', href: '/lara-evden-eve-nakliyat' },
+                    { label: 'Aksu Evden Eve Nakliyat', href: '/aksu-evden-eve-nakliyat' },
+                    { label: 'Döşemealtı Evden Eve Nakliyat', href: '/dosemealti-evden-eve-nakliyat' },
+                ],
+            },
         ],
     },
     {
@@ -93,10 +109,89 @@ export const Header = () => {
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-6">
                     {navItems.map((item) => {
-                        const isParentActive = item.children?.some((child) => child.href === pathname) ?? false;
+                        const flatChildren = item.columns
+                            ? item.columns.flatMap((col) => col.children)
+                            : item.children;
+                        const isParentActive = flatChildren?.some((child) => child.href === pathname) ?? false;
                         const isActive = item.href === pathname || isParentActive;
 
-                        return item.children ? (
+                        return item.columns ? (
+                            <div
+                                key={item.label}
+                                ref={(el) => { dropdownRefs.current[item.label] = el; }}
+                                className="relative"
+                                onMouseEnter={() => setOpenMenu(item.label)}
+                                onMouseLeave={() => setOpenMenu(null)}
+                                onBlur={(e) => {
+                                    const wrapper = dropdownRefs.current[item.label];
+                                    if (wrapper && !wrapper.contains(e.relatedTarget as Node)) {
+                                        setOpenMenu(null);
+                                    }
+                                }}
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
+                                    onFocus={() => setOpenMenu(item.label)}
+                                    aria-haspopup="true"
+                                    aria-expanded={openMenu === item.label}
+                                    aria-current={isParentActive ? 'page' : undefined}
+                                    className={`flex items-center gap-1 font-medium transition-colors relative group py-2 ${
+                                        isParentActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
+                                    }`}
+                                >
+                                    {item.label}
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${openMenu === item.label ? 'rotate-180' : ''}`}
+                                    />
+                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-yellow transition-all group-hover:w-full"></span>
+                                </button>
+
+                                {openMenu === item.label && (
+                                    <div className="absolute top-full left-0 mt-1 w-[520px] bg-brand-black border border-gray-700 rounded-lg shadow-xl overflow-hidden">
+                                        <Link
+                                            href={item.topLink.href}
+                                            aria-current={item.topLink.href === pathname ? 'page' : undefined}
+                                            className={`block px-4 py-3 text-sm font-semibold border-b border-gray-800 transition-colors ${
+                                                item.topLink.href === pathname
+                                                    ? 'text-brand-yellow bg-gray-800'
+                                                    : 'text-white hover:text-brand-yellow hover:bg-gray-800'
+                                            }`}
+                                            onClick={() => setOpenMenu(null)}
+                                        >
+                                            {item.topLink.label}
+                                        </Link>
+                                        <div className="grid grid-cols-2">
+                                            {item.columns.map((col, colIdx) => (
+                                                <div
+                                                    key={col.title}
+                                                    className={colIdx === 0 ? 'border-r border-gray-800' : ''}
+                                                >
+                                                    <p className="px-4 pt-3 pb-1 text-xs font-bold uppercase tracking-wide text-white">
+                                                        {col.title}
+                                                    </p>
+                                                    {col.children.map((child) => (
+                                                        <Link
+                                                            key={child.href}
+                                                            href={child.href}
+                                                            aria-current={child.href === pathname ? 'page' : undefined}
+                                                            className={`block px-4 py-2.5 text-sm transition-colors ${
+                                                                child.href === pathname
+                                                                    ? 'text-brand-yellow bg-gray-800'
+                                                                    : 'text-gray-300 hover:text-brand-yellow hover:bg-gray-800'
+                                                            }`}
+                                                            onClick={() => setOpenMenu(null)}
+                                                        >
+                                                            {child.label}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ) : item.children ? (
                             <div
                                 key={item.label}
                                 ref={(el) => { dropdownRefs.current[item.label] = el; }}
@@ -190,10 +285,68 @@ export const Header = () => {
             {mobileOpen && (
                 <div className="md:hidden bg-brand-black border-t border-gray-800 px-4 pb-4 max-h-screen overflow-y-auto">
                     {navItems.map((item) => {
-                        const isParentActive = item.children?.some((child) => child.href === pathname) ?? false;
+                        const flatChildren = item.columns
+                            ? item.columns.flatMap((col) => col.children)
+                            : item.children;
+                        const isParentActive = flatChildren?.some((child) => child.href === pathname) ?? false;
                         const isActive = item.href === pathname || isParentActive;
 
-                        return item.children ? (
+                        return item.columns ? (
+                            <div key={item.label} className="border-b border-gray-800">
+                                <button
+                                    aria-current={isParentActive ? 'page' : undefined}
+                                    className={`w-full flex items-center justify-between py-3 font-medium ${
+                                        isParentActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white'
+                                    }`}
+                                    onClick={() =>
+                                        setMobileExpanded(mobileExpanded === item.label ? null : item.label)
+                                    }
+                                >
+                                    {item.label}
+                                    <ChevronDown
+                                        className={`w-4 h-4 transition-transform ${mobileExpanded === item.label ? 'rotate-180' : ''}`}
+                                    />
+                                </button>
+                                {mobileExpanded === item.label && (
+                                    <div className="pl-4 pb-2">
+                                        <Link
+                                            href={item.topLink.href}
+                                            aria-current={item.topLink.href === pathname ? 'page' : undefined}
+                                            className={`block py-2 text-sm font-semibold transition-colors ${
+                                                item.topLink.href === pathname
+                                                    ? 'text-brand-yellow underline underline-offset-4'
+                                                    : 'text-white hover:text-brand-yellow'
+                                            }`}
+                                            onClick={() => setMobileOpen(false)}
+                                        >
+                                            {item.topLink.label}
+                                        </Link>
+                                        {item.columns.map((col) => (
+                                            <div key={col.title}>
+                                                <p className="pt-3 pb-1 text-xs font-bold uppercase tracking-wide text-white border-t border-gray-800">
+                                                    {col.title}
+                                                </p>
+                                                {col.children.map((child) => (
+                                                    <Link
+                                                        key={child.href}
+                                                        href={child.href}
+                                                        aria-current={child.href === pathname ? 'page' : undefined}
+                                                        className={`block py-2 text-sm transition-colors ${
+                                                            child.href === pathname
+                                                                ? 'text-brand-yellow underline underline-offset-4'
+                                                                : 'text-gray-300 hover:text-brand-yellow'
+                                                        }`}
+                                                        onClick={() => setMobileOpen(false)}
+                                                    >
+                                                        {child.label}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ) : item.children ? (
                             <div key={item.label} className="border-b border-gray-800">
                                 <button
                                     aria-current={isParentActive ? 'page' : undefined}
