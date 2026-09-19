@@ -1,7 +1,7 @@
 const PLACE_ID = "ChIJmyRxBJuF9YURtT8wdV810jw";
 const FALLBACK_RATING = 5;
 const FALLBACK_REVIEW_COUNT = 119;
-const REVALIDATE_SECONDS = 86400;
+const REVALIDATE_SECONDS = 43200;
 
 export interface PlaceReview {
   author: string;
@@ -47,6 +47,7 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
 
   if (!apiKey) {
+    console.log("[googlePlaces] falling back: GOOGLE_PLACES_API_KEY is missing");
     return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
   }
 
@@ -63,10 +64,19 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
     );
 
     if (!response.ok) {
+      console.log(
+        `[googlePlaces] falling back: non-OK response (status ${response.status} ${response.statusText})`
+      );
       return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
     }
 
     const data = await response.json();
+    console.log("[googlePlaces] raw API response:", JSON.stringify(data));
+
+    if (!data || Object.keys(data).length === 0) {
+      console.log("[googlePlaces] falling back: empty data in response");
+      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
+    }
 
     const reviews: PlaceReview[] = Array.isArray(data.reviews)
       ? data.reviews
@@ -82,7 +92,8 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
       reviewCount: data.userRatingCount ?? FALLBACK_REVIEW_COUNT,
       reviews: reviews.length > 0 ? reviews : FALLBACK_REVIEWS,
     };
-  } catch {
+  } catch (error) {
+    console.log("[googlePlaces] falling back: request threw an error", error);
     return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
   }
 }
