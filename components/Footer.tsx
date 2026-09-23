@@ -2,30 +2,60 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, MapPin } from 'lucide-react';
 
-export const Footer = () => {
-    const links = [
-        ['Anasayfa', '/'],
-        ['Antalya Nakliyat', '/antalya-nakliyat'],
-        ['Evden Eve Nakliyat', '/antalya-evden-eve-nakliyat'],
-        ['Asansörlü Nakliyat', '/antalya-asansorlu-nakliyat'],
-        ['Ofis Taşıma', '/antalya-ofis-tasima'],
-        ['Şehirlerarası Nakliyat', '/antalya-sehirlerarasi-nakliyat'],
-        ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
-        ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
-        ['Parça Eşya Taşıma', '/antalya-parca-esya-tasima'],
-        ['Eşya Depolama', '/antalya-esya-depolama'],
-        ['Piyano ve Ağır Eşya Taşıma', '/antalya-piyano-ve-agir-esya-tasima'],
-        ['Blog', '/blog'],
-        ['Hizmet Bölgeleri', '/antalya-hizmet-bolgeleri'],
-        ['Hakkımızda', '/hakkimizda'],
-        ['İletişim', '/iletisim'],
-    ];
+const SERVICE_LINKS = [
+    ['Antalya Nakliyat', '/antalya-nakliyat'],
+    ['Evden Eve Nakliyat', '/antalya-evden-eve-nakliyat'],
+    ['Asansörlü Nakliyat', '/antalya-asansorlu-nakliyat'],
+    ['Ofis Taşıma', '/antalya-ofis-tasima'],
+    ['Şehirlerarası Nakliyat', '/antalya-sehirlerarasi-nakliyat'],
+    ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
+    ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
+    ['Parça Eşya Taşıma', '/antalya-parca-esya-tasima'],
+    ['Eşya Depolama', '/antalya-esya-depolama'],
+    ['Piyano ve Ağır Eşya Taşıma', '/antalya-piyano-ve-agir-esya-tasima'],
+];
 
+const REGION_LINKS = [
+    ['Muratpaşa Evden Eve Nakliyat', '/muratpasa-evden-eve-nakliyat'],
+    ['Konyaaltı Evden Eve Nakliyat', '/konyaalti-evden-eve-nakliyat'],
+    ['Lara Evden Eve Nakliyat', '/lara-evden-eve-nakliyat'],
+    ['Kepez Evden Eve Nakliyat', '/kepez-evden-eve-nakliyat'],
+    ['Aksu Evden Eve Nakliyat', '/aksu-evden-eve-nakliyat'],
+    ['Döşemealtı Evden Eve Nakliyat', '/dosemealti-evden-eve-nakliyat'],
+    ['Tüm Bölgeler', '/antalya-hizmet-bolgeleri'],
+];
+
+const CORPORATE_LINKS = [
+    ['Anasayfa', '/'],
+    ['Blog', '/blog'],
+    ['Hakkımızda', '/hakkimizda'],
+    ['İletişim', '/iletisim'],
+];
+
+const LinkColumn = ({ title, links }: { title: string; links: string[][] }) => (
+    <div>
+        <h3 className="text-lg font-bold mb-6 text-brand-yellow">{title}</h3>
+        <ul className="space-y-3">
+            {links.map(([label, href]) => (
+                <li key={href}>
+                    <Link
+                        href={href}
+                        className="text-gray-400 hover:text-brand-yellow transition-colors"
+                    >
+                        {label}
+                    </Link>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
+
+export const Footer = () => {
     return (
         <footer className="bg-brand-black text-white pt-20 pb-10 border-t border-gray-800">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-                    <div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
+                    <div className="col-span-2 lg:col-span-1">
                         <Link href="/" className="inline-block mb-6">
                             <Image
                                 src="/images/logo.png"
@@ -35,14 +65,10 @@ export const Footer = () => {
                                 className="h-16 w-auto object-contain"
                             />
                         </Link>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="text-gray-400 leading-relaxed mb-6">
                             Antalya ve çevre illerde güvenli, hızlı ve profesyonel
                             nakliyat ve kiralık asansör hizmetleri.
                         </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-lg font-bold mb-6 text-brand-yellow">İletişim</h3>
                         <ul className="space-y-4">
                             <li className="flex items-center gap-3 text-gray-300">
                                 <Phone className="w-5 h-5 text-brand-yellow" />
@@ -57,46 +83,9 @@ export const Footer = () => {
                         </ul>
                     </div>
 
-                    <div>
-                        <h3 className="text-lg font-bold mb-6 text-brand-yellow">Hızlı Bağlantılar</h3>
-                        <ul className="space-y-3">
-                            {links.map(([label, href]) => (
-                                <li key={label}>
-                                    <Link
-                                        href={href}
-                                        className="text-gray-400 hover:text-brand-yellow transition-colors"
-                                    >
-                                        {label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="border-t border-gray-800 pt-8 pb-8 text-center">
-                    <h4 className="text-gray-400 font-semibold mb-4 text-sm uppercase tracking-wider">Hizmet Bölgelerimiz & Hizmetlerimiz</h4>
-                    <div className="flex flex-wrap justify-center items-center gap-3 text-xs text-gray-500">
-                        <Link href="/antalya-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Antalya Asansörlü Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/muratpasa-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Muratpaşa Evden Eve Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/konyaalti-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Konyaaltı Evden Eve Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/lara-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Lara Evden Eve Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/kepez-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Kepez Evden Eve Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/aksu-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Aksu Evden Eve Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/dosemealti-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Döşemealtı Evden Eve Nakliyat</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/antalya-parca-esya-tasima" className="hover:text-brand-yellow transition-colors">Antalya Parça Eşya Taşıma</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/antalya-esya-depolama" className="hover:text-brand-yellow transition-colors">Antalya Sigortalı Eşya Depolama</Link>
-                        <span className="text-gray-700">|</span>
-                        <Link href="/antalya-piyano-ve-agir-esya-tasima" className="hover:text-brand-yellow transition-colors">Antalya Piyano Taşıma</Link>
-                    </div>
+                    <LinkColumn title="Hizmetlerimiz" links={SERVICE_LINKS} />
+                    <LinkColumn title="Hizmet Bölgeleri" links={REGION_LINKS} />
+                    <LinkColumn title="Kurumsal" links={CORPORATE_LINKS} />
                 </div>
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
