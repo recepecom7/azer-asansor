@@ -5,6 +5,7 @@ import { Phone, MapPin } from 'lucide-react';
 export const Footer = () => {
     const links = [
         ['Anasayfa', '/'],
+        ['Antalya Nakliyat', '/antalya-nakliyat'],
         ['Evden Eve Nakliyat', '/antalya-evden-eve-nakliyat'],
         ['Asansörlü Nakliyat', '/antalya-asansorlu-nakliyat'],
         ['Ofis Taşıma', '/antalya-ofis-tasima'],
@@ -76,13 +77,19 @@ export const Footer = () => {
                 <div className="border-t border-gray-800 pt-8 pb-8 text-center">
                     <h4 className="text-gray-400 font-semibold mb-4 text-sm uppercase tracking-wider">Hizmet Bölgelerimiz & Hizmetlerimiz</h4>
                     <div className="flex flex-wrap justify-center items-center gap-3 text-xs text-gray-500">
-                        <Link href="/" className="hover:text-brand-yellow transition-colors">Antalya Asansörlü Nakliyat</Link>
+                        <Link href="/antalya-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Antalya Asansörlü Nakliyat</Link>
                         <span className="text-gray-700">|</span>
-                        <Link href="/muratpasa-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Muratpaşa Asansör Kiralama</Link>
+                        <Link href="/muratpasa-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Muratpaşa Evden Eve Nakliyat</Link>
                         <span className="text-gray-700">|</span>
-                        <Link href="/kepez-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Kepez Evden Eve Taşıma</Link>
+                        <Link href="/konyaalti-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Konyaaltı Evden Eve Nakliyat</Link>
                         <span className="text-gray-700">|</span>
-                        <Link href="/konyaalti-asansorlu-nakliyat" className="hover:text-brand-yellow transition-colors">Konyaaltı Eşya Taşıma</Link>
+                        <Link href="/lara-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Lara Evden Eve Nakliyat</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/kepez-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Kepez Evden Eve Nakliyat</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/aksu-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Aksu Evden Eve Nakliyat</Link>
+                        <span className="text-gray-700">|</span>
+                        <Link href="/dosemealti-evden-eve-nakliyat" className="hover:text-brand-yellow transition-colors">Döşemealtı Evden Eve Nakliyat</Link>
                         <span className="text-gray-700">|</span>
                         <Link href="/antalya-parca-esya-tasima" className="hover:text-brand-yellow transition-colors">Antalya Parça Eşya Taşıma</Link>
                         <span className="text-gray-700">|</span>
