@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function AntalyaAsansorluTasimaRedirectPage() {
-    redirect("/antalya-asansorlu-nakliyat");
+    permanentRedirect("/antalya-asansorlu-nakliyat");
 }
