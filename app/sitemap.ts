@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/iletisim", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
 
+    { path: "/antalya-nakliyat", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-evden-eve-nakliyat", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-asansorlu-nakliyat", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-ofis-tasima", priority: 0.9, changeFrequency: "weekly" },
