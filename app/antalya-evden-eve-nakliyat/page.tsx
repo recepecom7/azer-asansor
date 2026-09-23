@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
@@ -276,6 +276,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default async function EvdenEveNakliyatPage() {
   const { rating, reviewCount } = await getPlaceDetails();
+  const ratingText = rating.toFixed(1).replace(".", ",");
 
   return (
     <main className="min-h-screen bg-brand-beige">
@@ -283,57 +284,16 @@ export default async function EvdenEveNakliyatPage() {
       <Header />
       <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-evden-eve-nakliyat" />
 
-      <section className="relative w-full overflow-hidden bg-brand-black text-white border-b border-gray-800">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/muratpasa-nakliye.jpg"
-            alt="Antalya asansörlü nakliyat hizmeti mobil asansör ile taşıma"
-            fill
-            className="object-cover object-center"
-            priority
-            fetchPriority="high"
-            quality={75}
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
-        </div>
-        <div className="container mx-auto px-4 py-10 md:py-16 relative z-10">
-          <div className="max-w-5xl bg-gray-900/90 border border-white/10 rounded-2xl p-6">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
-              Antalya Evden Eve Nakliyat
-            </h1>
-            <p className="text-brand-yellow font-semibold mb-3">
-              Antalya&apos;da Sigortalı ve Asansörlü Evden Eve Nakliyat Hizmeti
-            </p>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-7">
-              Antalya&apos;da evden eve nakliyat hizmeti ile eşyalarınızı güvenli, hızlı ve planlı şekilde yeni adresinize taşıyoruz. Paketleme, taşıma ve yerleştirme süreçlerini profesyonel ekip ile yönetiyoruz.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631" className="w-full sm:w-auto">
-                <Button variant="primary" className="w-full text-base md:text-lg px-7">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Hemen Ara - Ücretsiz Fiyat Al
-                </Button>
-              </a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button variant="whatsapp" className="w-full text-base md:text-lg px-7">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp&apos;tan Hızlı Teklif Al
-                </Button>
-              </a>
-            </div>
-            <p className="text-sm text-gray-300 mt-5">⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</p>
-
-            <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mt-8">
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Paketleme Dahil Hizmet</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Asansörlü Taşıma Seçeneği</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Antalya Geneli Hizmet</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Antalya Evden Eve Nakliyat"
+        subtitle="Ev eşyalarınızı paketleme, söküm ve kurulum, taşıma ve yeni evinizde yerleştirme dahil tek ekiple taşıyoruz. Yüksek katlarda 22. kata kadar ulaşan mobil asansör kullanıyoruz. Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı'nda aktif hizmet veriyoruz."
+        eyebrow="Antalya'da Sigortalı Evden Eve Nakliyat"
+        checklist={["Paketleme ve Ambalajlama", "Marangozlu Söküm ve Kurulum", "Sigortalı Taşıma", "Aynı Gün Hizmet İmkânı"]}
+        subline="Antalya'da evden eve nakliyatta yerel, hızlı ve güvenli çözüm."
+        showRating
+        ratingText={ratingText}
+        reviewCount={reviewCount}
+      />
 
       {/* ── LEAD CAPTURE FORM ─────────────────────────────────────────────────── */}
       <section

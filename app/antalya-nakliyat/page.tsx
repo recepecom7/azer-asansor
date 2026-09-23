@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Script from "next/script";
 import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
@@ -182,31 +182,16 @@ export default async function AntalyaNakliyatPage() {
       <Header />
       <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-antalya-nakliyat" />
 
-      <section className="relative w-full overflow-hidden bg-brand-black text-white border-b border-gray-800">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-real.jpg"
-            alt="Antalya nakliyat hizmeti mobil asansör ile taşıma"
-            fill
-            className="object-cover object-center"
-            priority
-            fetchPriority="high"
-            quality={95}
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/35" />
-        </div>
-        <div className="container mx-auto px-4 py-14 md:py-20 relative z-10">
-          <div className="max-w-3xl bg-black/30 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-[1px]">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">Antalya Nakliyat Hizmetleri</h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-7">
-              Evden eve, ofis ve şehirlerarası taşıma. 22. kata kadar mobil asansör desteği.
-            </p>
-            <ContactButtons />
-            <p className="text-sm text-gray-300 mt-5">★ {ratingText} · Google&apos;da {reviewCount} yorum</p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Antalya Nakliyat Hizmetleri"
+        subtitle="Evden eve, ofis ve şehirlerarası taşımada tek ekiple çalışıyoruz. Yüksek katlarda 22. kata kadar ulaşan mobil asansörümüzle eşyalarınızı merdiven kullanmadan taşıyoruz. Muratpaşa, Konyaaltı, Lara, Kepez, Aksu, Döşemealtı ve Kemer'de hizmet veriyoruz."
+        eyebrow="Antalya'da Güvenilir Nakliyat Firması"
+        checklist={["Evden Eve ve Ofis Taşıma", "Şehirlerarası Nakliyat", "22. Kata Kadar Mobil Asansör", "Sigortalı Taşıma"]}
+        subline="Antalya'da ev, ofis ve şehirlerarası nakliyatta yerel, hızlı ve güvenli çözüm."
+        showRating
+        ratingText={ratingText}
+        reviewCount={reviewCount}
+      />
 
       <section className="py-14 bg-brand-black text-white">
         <div className="container mx-auto px-4 max-w-6xl">
