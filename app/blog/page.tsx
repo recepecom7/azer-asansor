@@ -26,7 +26,7 @@ const posts = [
   {
     title: "Antalya Evden Eve Nakliyat Fiyatları Neden Değişir? 7 Kritik Etken",
     href: "/blog/antalya-evden-eve-nakliyat-fiyatlari",
-    text: "1+1 için 9.500 TL'den başlayan güncel fiyat aralıkları ve fiyatı belirleyen 7 faktör.",
+    text: "Eşya miktarından sezona, nakliyat fiyatını belirleyen 7 faktör ve ücretsiz keşifle net fiyat alma.",
   },
   {
     title: "Antalya'da Ev Taşıma Ne Kadar Sürer? 1+1'den 4+1'e Gerçek Süre Hesabı",

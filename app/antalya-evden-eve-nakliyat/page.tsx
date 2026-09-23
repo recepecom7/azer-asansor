@@ -149,7 +149,6 @@ function getMovingCompanySchema(rating: number, reviewCount: number) {
     "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği ile profesyonel taşımacılık hizmeti.",
   telephone: "+905424669631",
   email: "info@azerasansor.com",
-  priceRange: "TL",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Antalya",

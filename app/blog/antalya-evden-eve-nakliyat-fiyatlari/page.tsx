@@ -10,18 +10,35 @@ import { Phone, MessageCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Antalya Evden Eve Nakliyat Fiyatları 2026: 7 Kritik Etken",
   description:
-    "Antalya evden eve nakliyat fiyatları 2026: 1+1 için 9.500 TL'den başlar. Fiyatı etkileyen 7 faktör ve güncel şehir içi/şehirler arası fiyat aralıkları.",
+    "Antalya evden eve nakliyat fiyatlarını belirleyen 7 kritik etken: eşya miktarı, kat, mesafe, paketleme ve daha fazlası. Ücretsiz keşif ile net fiyat alın.",
   alternates: {
     canonical: "https://www.azerasansor.com/blog/antalya-evden-eve-nakliyat-fiyatlari",
   },
+  openGraph: {
+    title: "Antalya Evden Eve Nakliyat Fiyatları Neden Değişir? 7 Kritik Etken",
+    description:
+      "Eşya miktarı, kat, mesafe, paketleme ve sezon: Antalya'da nakliyat fiyatını belirleyen 7 etken. Ücretsiz keşif ile net fiyat alın.",
+    url: "https://www.azerasansor.com/blog/antalya-evden-eve-nakliyat-fiyatlari",
+    siteName: "Azer Asansör",
+    locale: "tr_TR",
+    type: "article",
+    images: [
+      {
+        url: "https://www.azerasansor.com/images/hero-real.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Antalya evden eve nakliyat - Azer Asansör",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antalya Evden Eve Nakliyat Fiyatları Neden Değişir? 7 Kritik Etken",
+    description:
+      "Eşya miktarı, kat, mesafe, paketleme ve sezon: Antalya'da nakliyat fiyatını belirleyen 7 etken. Ücretsiz keşif ile net fiyat alın.",
+    images: ["https://www.azerasansor.com/images/hero-real.jpg"],
+  },
 };
-
-const priceRanges = [
-  { type: "1+1 daire", range: "9.500 – 13.000 TL" },
-  { type: "2+1 daire", range: "13.000 – 18.000 TL" },
-  { type: "3+1 daire", range: "18.000 – 25.000 TL" },
-  { type: "4+1 daire", range: "25.000 – 35.000 TL" },
-];
 
 const factors = [
   { title: "Eşya miktarı", text: "Eşya arttıkça araç kapasitesi, ekip büyüklüğü ve taşıma süresi değişir. Daha yoğun taşınmalarda planlama kapsamı genişlediği için teklif buna göre güncellenir." },
@@ -45,7 +62,7 @@ const faqs = [
   {
     question: "Antalya'da evden eve nakliyat fiyatı ortalama ne kadar?",
     answer:
-      "Şehir içi taşımalarda fiyatlar 1+1 için 9.500 TL'den başlar, daire büyüklüğüne göre 35.000 TL'ye kadar çıkabilir. Kesin fiyat için ücretsiz keşif önerilir.",
+      "Sabit bir fiyat yoktur; eşya miktarı, kat sayısı, asansör ihtiyacı, mesafe ve ek hizmetlere göre her taşınma ayrı fiyatlandırılır. Net fiyat için WhatsApp'tan evinizin fotoğraflarını gönderebilir veya ücretsiz keşif isteyebilirsiniz.",
   },
   {
     question: "Asansörlü nakliyat ekstra ücret gerektirir mi?",
@@ -87,7 +104,7 @@ export default function Page() {
             <Link className="text-brand-yellow hover:underline" href="/antalya-evden-eve-nakliyat">
               antalya evden eve nakliyat
             </Link>{" "}
-            fiyatları sabit değildir. Taşınma planı her evde farklı olduğu için fiyatlandırma; eşya miktarı, kat sayısı, mesafe ve operasyon detaylarına göre şekillenir. Bu yazıda fiyatı belirleyen 7 kritik etkeni ve güncel fiyat aralıklarını bulabilirsiniz.
+            fiyatları sabit değildir. Taşınma planı her evde farklı olduğu için fiyatlandırma; eşya miktarı, kat sayısı, mesafe ve operasyon detaylarına göre şekillenir. Bu yazıda fiyatı belirleyen 7 kritik etkeni ve net fiyatı nasıl alabileceğinizi bulabilirsiniz.
           </p>
         </div>
       </section>
@@ -107,18 +124,14 @@ export default function Page() {
           </div>
 
           <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
-            <h2 className="text-3xl font-bold mb-5">Şehir İçi Evden Eve Nakliyat Fiyatları 2026</h2>
-            <div className="space-y-2">
-              {priceRanges.map((item) => (
-                <div key={item.type} className="flex items-center justify-between bg-[#111827] border border-white/10 rounded-xl px-4 py-3">
-                  <span className="text-white font-semibold">{item.type}</span>
-                  <span className="text-brand-yellow font-semibold">{item.range}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-gray-300 mt-5">
-              Bu aralıklar şehir içi standart taşımalar içindir. Asansörlü taşıma, ek paketleme ve mobilya söküm-montaj gibi hizmetler toplam fiyatı değiştirebilir.
+            <h2 className="text-3xl font-bold mb-3">Size Özel Net Fiyat Alın</h2>
+            <p className="text-gray-300 text-lg mb-5">
+              Her taşınma farklıdır. Net fiyatınızı öğrenmek için WhatsApp&apos;tan evinizin fotoğraflarını gönderin veya arayın. Ücretsiz keşif, sürpriz ücret yok.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Fotoğraf Gönder</Button></a>
+              <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+            </div>
           </div>
 
           <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
