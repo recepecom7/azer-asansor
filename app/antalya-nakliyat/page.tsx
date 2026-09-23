@@ -8,6 +8,7 @@ import { FAQ } from "@/components/FAQ";
 import { Button } from "@/components/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumb, BreadcrumbItem } from "@/components/Breadcrumb";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 import { Phone, MessageCircle, Check } from "lucide-react";
 
 const PAGE_URL = "https://www.azerasansor.com/antalya-nakliyat";
@@ -79,13 +80,6 @@ const processSteps = [
   "Yeni adresinizde eşyalarınızı yerleştirelim.",
 ];
 
-const whyUsItems = [
-  "Kendi mobil asansörlerimiz var. Asansör için üçüncü bir firmaya bağlı değiliz, planlama tek elden yürür.",
-  "22. kata kadar dış cepheden taşıma yapabiliyoruz.",
-  "Google'da 122 müşteri yorumunda 5,0 puanımız var.",
-  "Keşiften yerleştirmeye kadar aynı ekip çalışır.",
-];
-
 const faqItems = [
   {
     question: "Antalya'da nakliyat firması seçerken nelere dikkat etmeliyim?",
@@ -123,7 +117,7 @@ const faqGuides = [
 export const metadata: Metadata = {
   title: { absolute: "Antalya Nakliyat Firması | Ev, Ofis ve Asansörlü Taşıma" },
   description:
-    "Antalya'da evden eve, ofis ve şehirlerarası nakliyat. 22. kata kadar mobil asansörle taşıma. Google'da 5,0 puan, 122 yorum. Ücretsiz keşif için arayın.",
+    "Antalya'da evden eve, ofis ve şehirlerarası nakliyat. 22. kata kadar mobil asansörle taşıma. Ücretsiz keşif için hemen arayın.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -168,7 +162,16 @@ function ContactButtons() {
 
 const linkClass = "text-brand-yellow hover:underline";
 
-export default function AntalyaNakliyatPage() {
+export default async function AntalyaNakliyatPage() {
+  const { rating, reviewCount } = await getPlaceDetails();
+  const ratingText = rating.toFixed(1).replace(".", ",");
+  const whyUsItems = [
+    "Kendi mobil asansörlerimiz var. Asansör için üçüncü bir firmaya bağlı değiliz, planlama tek elden yürür.",
+    "22. kata kadar dış cepheden taşıma yapabiliyoruz.",
+    `Google'da ${reviewCount} müşteri yorumunda ${ratingText} puanımız var.`,
+    "Keşiften yerleştirmeye kadar aynı ekip çalışır.",
+  ];
+
   return (
     <main className="min-h-screen bg-brand-beige">
       <Script
@@ -200,7 +203,7 @@ export default function AntalyaNakliyatPage() {
               Evden eve, ofis ve şehirlerarası taşıma. 22. kata kadar mobil asansör desteği.
             </p>
             <ContactButtons />
-            <p className="text-sm text-gray-300 mt-5">★ 5,0 · Google&apos;da 122 yorum</p>
+            <p className="text-sm text-gray-300 mt-5">★ {ratingText} · Google&apos;da {reviewCount} yorum</p>
           </div>
         </div>
       </section>
