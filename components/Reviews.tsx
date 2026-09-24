@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 
-const CARD_BG = "#0D172B";
+const EYEBROW_COLOR = "#b8960a"; // darkened brand-yellow for readability on light bg
 
 interface Review {
   name: string;
@@ -32,21 +32,23 @@ const reviews: Review[] = [
 
 export function Reviews() {
   return (
-    <section className="bg-[#0d1420]" aria-label="Müşteri yorumları">
+    <section className="bg-[#f5f6f7]" aria-label="Müşteri yorumları">
       <div className="container mx-auto px-5 py-9 md:px-4 md:py-12">
         <div className="mb-8 text-center md:mb-10">
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-brand-yellow">
+          <p
+            className="mb-2 text-xs font-bold uppercase tracking-widest"
+            style={{ color: EYEBROW_COLOR }}
+          >
             Müşteri Yorumları
           </p>
-          <h2 className="text-2xl font-bold text-white md:text-3xl">Müşterilerimiz Ne Diyor?</h2>
+          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">Müşterilerimiz Ne Diyor?</h2>
         </div>
 
         <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="rounded-2xl border border-white/10 p-6"
-              style={{ backgroundColor: CARD_BG }}
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
             >
               <div className="mb-3 flex items-center justify-between">
                 <div className="flex items-center gap-0.5" aria-label="5 yıldız değerlendirme">
@@ -54,13 +56,13 @@ export function Reviews() {
                     <Star key={star} size={16} className="text-brand-yellow" fill="currentColor" aria-hidden="true" />
                   ))}
                 </div>
-                <span className="text-xs text-white/50">Google&apos;da doğrulandı</span>
+                <span className="text-xs text-gray-400">Google&apos;da doğrulandı</span>
               </div>
 
-              <p className="text-[15px] font-bold text-white">{review.name}</p>
-              <p className="mb-3 text-xs text-white/40">{review.timeAgo}</p>
+              <p className="text-[15px] font-bold text-gray-900">{review.name}</p>
+              <p className="mb-3 text-xs text-gray-400">{review.timeAgo}</p>
 
-              <p className="text-sm leading-relaxed text-white/70" style={{ lineHeight: 1.6 }}>
+              <p className="text-sm leading-relaxed text-gray-700" style={{ lineHeight: 1.6 }}>
                 {review.text}
               </p>
             </div>
