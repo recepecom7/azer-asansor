@@ -30,6 +30,7 @@ const CORPORATE_LINKS = [
     ['Blog', '/blog'],
     ['Hakkımızda', '/hakkimizda'],
     ['İletişim', '/iletisim'],
+    ['KVKK Aydınlatma Metni', '/kvkk-aydinlatma-metni'],
 ];
 
 const LinkColumn = ({ title, links }: { title: string; links: string[][] }) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent, ChangeEvent } from "react";
+import Link from "next/link";
 import {
   Phone,
   User,
@@ -344,6 +345,13 @@ export function ContactForm() {
           )}
         </button>
 
+        <p className="text-center text-xs text-gray-500">
+          Kişisel verileriniz{" "}
+          <Link href="/kvkk-aydinlatma-metni" className="underline hover:text-gray-300">
+            KVKK Aydınlatma Metni
+          </Link>{" "}
+          kapsamında işlenir.
+        </p>
 
       </form>
     </div>
