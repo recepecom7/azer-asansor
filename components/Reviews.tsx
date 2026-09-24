@@ -5,7 +5,6 @@ const EYEBROW_COLOR = "#b8960a"; // darkened brand-yellow for readability on lig
 interface Review {
   name: string;
   rating: number;
-  timeAgo: string;
   text: string;
 }
 
@@ -13,19 +12,16 @@ const reviews: Review[] = [
   {
     name: "Oğuzhan T.",
     rating: 5,
-    timeAgo: "1 ay önce",
     text: "Çok profesyonel ekip, gerçekten 2 kere eşyalarımı taşıdılar. Her şeyi güzelce söküp paketleme yapıp yeni yerine güzelce monte ettiler ve hızlı taşıma yapıldı. Her şey için teşekkür ederim, herkese de tavsiye ederim.",
   },
   {
     name: "Mustafa B.",
     rating: 5,
-    timeAgo: "4 ay önce",
     text: "Antalya Konyaaltı'ndan Lara'ya bizi sorunsuz taşıdılar. Gerçekten çok teşekkür ederim, işinin ehli, hızlı ve profesyonel bir ekip. Kesinlikle tavsiye ederim.",
   },
   {
     name: "Tuğra O.",
     rating: 5,
-    timeAgo: "2 ay önce",
     text: "Lara Fener'deki evimizden her şey dahil bu firmaya işimizi verdik. Çatalından askısına kadar her şeyi elimizi bile sürdürtmeden Alanya Oba'daki evimize sorunsuz bir şekilde ve hatta bozuk olan dolap kapaklarını ve yatak bazasını tamir ederek en iyi şekilde yardımcı oldular. Her şey için çok teşekkür ederiz. İyi ki sizi tercih etmişiz. 🙏🙏",
   },
 ];
@@ -59,8 +55,7 @@ export function Reviews() {
                 <span className="text-xs text-gray-400">Google&apos;da doğrulandı</span>
               </div>
 
-              <p className="text-[15px] font-bold text-gray-900">{review.name}</p>
-              <p className="mb-3 text-xs text-gray-400">{review.timeAgo}</p>
+              <p className="mb-3 text-[15px] font-bold text-gray-900">{review.name}</p>
 
               <p className="text-sm leading-relaxed text-gray-700" style={{ lineHeight: 1.6 }}>
                 {review.text}
