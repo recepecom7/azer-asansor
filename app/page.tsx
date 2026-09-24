@@ -14,7 +14,7 @@ import { Award, ShieldCheck, Clock, Check, HardHat } from "lucide-react";
 const benefits = [
   { title: "Antalya'da Deneyimli Taşıma Ekibi", description: "Yüksek kat taşımacılığı, evden eve nakliyat ve mobil asansör kullanımı konusunda saha deneyimine sahip ekibimizle çalışıyoruz.", icon: Award },
   { title: "22. Kata Kadar Mobil Asansör Desteği", description: "Dar merdivenli veya yüksek katlı binalarda eşyalarınızı bina dışından, hızlı ve kontrollü şekilde taşıyoruz.", icon: HardHat },
-  { title: "Sigortalı ve Kontrollü Taşıma Süreci", description: "Eşyalarınızın güvenliği için taşıma sürecini planlı şekilde yürütüyor, uygun durumlarda sigortalı taşıma desteği sunuyoruz.", icon: ShieldCheck },
+  { title: "Kontrollü Taşıma Süreci", description: "Eşyalarınızın güvenliği için taşıma sürecini planlı şekilde yürütüyor, her adımı titizlikle takip ediyoruz.", icon: ShieldCheck },
   { title: "Antalya Geneli Hızlı Hizmet", description: "Muratpaşa, Kepez, Konyaaltı, Lara, Aksu, Döşemealtı ve Antalya'nın çevre bölgelerine hızlı ekip yönlendirmesi sağlıyoruz.", icon: Clock },
   { title: "Ücretsiz Keşif ve Net Fiyat Bilgisi", description: "Taşınacak eşya, kat sayısı, mesafe ve asansör kurulum alanına göre size özel fiyat bilgisi sunuyoruz.", icon: Check },
 ];
