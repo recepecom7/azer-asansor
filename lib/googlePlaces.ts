@@ -79,8 +79,6 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
     }
 
     const data = await response.json();
-    console.log("[googlePlaces] raw API response:", JSON.stringify(data));
-
     if (!data || Object.keys(data).length === 0) {
       console.log("[googlePlaces] falling back: empty data in response");
       return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
