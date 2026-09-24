@@ -7,6 +7,7 @@ import { WhyUs } from "@/components/WhyUs";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
+import { Reviews } from "@/components/Reviews";
 import { getPlaceDetails } from "@/lib/googlePlaces";
 import {
   Truck, Building2, Armchair, Refrigerator,
@@ -167,6 +168,8 @@ export default async function Home() {
           <ContactForm />
         </div>
       </section>
+
+      <Reviews />
 
       <Services
         title="Hizmetlerimiz"
