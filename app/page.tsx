@@ -6,6 +6,7 @@ import { Services } from "@/components/Services";
 import { WhyUs } from "@/components/WhyUs";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ServiceAreas } from "@/components/ServiceAreas";
+import { FinalCTA } from "@/components/FinalCTA";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
@@ -144,6 +145,9 @@ export default async function Home() {
         highlight="Sorular"
         ctaText="Antalya asansörlü nakliyat veya mobil asansör kiralama hizmeti için hemen arayın ya da WhatsApp'tan hızlı teklif alın."
       />
+
+      <FinalCTA />
+
       <Footer />
     </main>
   );
