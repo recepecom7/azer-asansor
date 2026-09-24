@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import { ConversionTracker } from "@/components/ConversionTracker";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
-import { getPlaceDetails } from "@/lib/googlePlaces";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -71,105 +70,11 @@ export const metadata: Metadata = {
   },
 };
 
-async function getLocalBusinessSchema() {
-  const { rating, reviewCount } = await getPlaceDetails();
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Azer Asansör - Antalya Kiralık Asansör & Evden Eve Nakliyat",
-    "description": "Antalya'da 7/24 profesyonel kiralık asansör, mobil asansör ve yük asansörü kiralama hizmetleri. 22. kata kadar ulaşan asansörlerimizle güvenli taşımacılık.",
-    "image": "https://www.azerasansor.com/images/hero-real.jpg",
-    "url": "https://www.azerasansor.com",
-    "telephone": "+905424669631",
-    "email": "info@azerasansor.com",
-    "priceRange": "₺₺",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Antalya",
-      "addressLocality": "Antalya",
-      "addressRegion": "Antalya",
-      "addressCountry": "TR",
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.8969,
-      "longitude": 30.7133,
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      "opens": "00:00",
-      "closes": "23:59",
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": rating.toFixed(1),
-      "reviewCount": reviewCount.toString(),
-      "bestRating": "5",
-      "worstRating": "1",
-    },
-    "sameAs": ["https://wa.me/905424669631"],
-    "areaServed": [
-      "Muratpaşa",
-      "Kepez",
-      "Konyaaltı",
-      "Lara",
-      "Aksu",
-      "Döşemealtı",
-      "Antalya",
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Asansör Hizmetleri",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mobil Asansör Kiralama",
-            "url": "https://www.azerasansor.com/antalya-mobil-asansor-kiralama",
-            "description":
-              "Antalya'da 22. kata kadar ulaşan 400kg kapasiteli mobil asansör kiralama hizmeti",
-          },
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Dış Cephe Asansörü",
-            "url": "https://www.azerasansor.com/antalya-dis-cephe-asansoru",
-            "description":
-              "İnşaat ve tadilat projeleri için yüksek katlara ulaşan dış cephe asansörü kiralama",
-          },
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Evden Eve Nakliyat Desteği",
-            "description":
-              "Yüksek katlara güvenli eşya taşıma ve nakliyat desteği için asansör kurulumu",
-          },
-        },
-      ],
-    },
-  };
-}
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const localBusinessSchema = await getLocalBusinessSchema();
   return (
     <html lang="tr" suppressHydrationWarning>
       <head>
@@ -201,13 +106,6 @@ export default async function RootLayout({
       <body className={inter.className}>
         {children}
         <MobileStickyCTA />
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
         <ConversionTracker />
       </body>
     </html>

@@ -11,7 +11,6 @@ import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 import { Reviews } from "@/components/Reviews";
-import { getPlaceDetails } from "@/lib/googlePlaces";
 import { Award, ShieldCheck, Clock, Check, HardHat } from "lucide-react";
 
 const benefits = [
@@ -74,36 +73,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
-  const { rating, reviewCount } = await getPlaceDetails();
-  const homepageSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Azer Asansör",
-        "image": "https://www.azerasansor.com/images/logo.png",
-        "@id": "https://www.azerasansor.com/#localbusiness",
-        "url": "https://www.azerasansor.com/",
-        "telephone": "+905424669631",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Antalya",
-          "addressCountry": "TR"
-        },
-        "description": "Antalya asansörlü nakliyat ve evden eve taşıma hizmetleri. 22. kata kadar mobil asansör kiralama.",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": rating.toFixed(1),
-          "reviewCount": reviewCount.toString(),
-          "bestRating": "5",
-          "worstRating": "1"
-        }
-      }
-    ]
-  };
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.azerasansor.com/#business",
+  "name": "Azer Asansör - Antalya Kiralık Asansör & Evden Eve Nakliyat",
+  "url": "https://www.azerasansor.com",
+  "telephone": "+905424669631",
+  "email": "info@azerasansor.com",
+  "foundingDate": "2011",
+  "serviceType": ["Evden Eve Nakliyat", "Asansörlü Nakliyat", "Kiralık Asansör", "Şehirlerarası Nakliyat"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Antalya",
+    "addressRegion": "Antalya",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.9162825,
+    "longitude": 30.63951
+  },
+  "areaServed": ["Muratpaşa", "Kepez", "Konyaaltı", "Lara", "Aksu", "Döşemealtı", "Kemer", "Antalya"],
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": "https://www.google.com/maps/place/?q=place_id:ChIJmyRxBJuF9YURtT8wdV810jw",
+  "priceRange": "₺₺"
+};
 
-
+export default function Home() {
   return (
     <main className="min-h-screen bg-brand-beige">
       <script
