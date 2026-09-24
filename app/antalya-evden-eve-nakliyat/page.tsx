@@ -192,7 +192,12 @@ export default async function EvdenEveNakliyatPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Evden eve nakliyat sürecinde tüm aşamaları sizin yerinize planlıyor ve uyguluyoruz.
+              Evden eve nakliyat sürecinde tüm aşamaları sizin yerinize planlıyor ve uyguluyoruz. Paketleme,
+              demontaj, taşıma ve kurulumun tek ekipten çıkmasını isteyen müşterilerimiz için{" "}
+              <Link href="/antalya-anahtar-teslim-paket" className="text-brand-yellow hover:underline">
+                anahtar teslim nakliyat paketi
+              </Link>{" "}
+              de sunuyoruz.
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Evden Eve Nakliyat Hizmetine Neler Dahil?

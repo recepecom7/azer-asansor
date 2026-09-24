@@ -254,7 +254,12 @@ export default async function AsansorluNakliyatPage() {
             <Link href="/antalya-evden-eve-nakliyat" className="font-semibold text-white hover:text-brand-yellow transition-colors">
               Antalya evden eve nakliyat
             </Link>{" "}
-            sayfalarımızı inceleyebilirsiniz.
+            sayfalarımızı inceleyebilirsiniz. Paketleme, demontaj, taşıma ve kurulumun tek ekipten çıkmasını
+            isteyenler için{" "}
+            <Link href="/antalya-anahtar-teslim-paket" className="font-semibold text-white hover:text-brand-yellow transition-colors">
+              komple nakliyat hizmeti
+            </Link>{" "}
+            de sunuyoruz.
           </p>
           </div>
         </div>

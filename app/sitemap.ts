@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
 
     { path: "/antalya-nakliyat", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/antalya-anahtar-teslim-paket", priority: 0.8, changeFrequency: "monthly" },
     { path: "/antalya-evden-eve-nakliyat", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-asansorlu-nakliyat", priority: 0.9, changeFrequency: "weekly" },
     { path: "/antalya-ofis-tasima", priority: 0.9, changeFrequency: "weekly" },

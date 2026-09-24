@@ -14,6 +14,7 @@ const navItems = [
         children: [
             { label: 'Antalya Evden Eve Nakliyat', href: '/antalya-evden-eve-nakliyat' },
             { label: 'Antalya Asansörlü Nakliyat', href: '/antalya-asansorlu-nakliyat' },
+            { label: 'Anahtar Teslim Paket', href: '/antalya-anahtar-teslim-paket' },
             { label: 'Antalya Ofis Taşıma', href: '/antalya-ofis-tasima' },
             { label: 'Antalya Şehirlerarası Nakliyat', href: '/antalya-sehirlerarasi-nakliyat' },
             { label: 'Antalya İstanbul Nakliyat', href: '/antalya-istanbul-nakliyat' },

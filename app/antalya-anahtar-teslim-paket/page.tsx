@@ -64,12 +64,32 @@ export default function AnahtarTeslimPaketPage() {
     serviceType: "Anahtar Teslim Nakliyat",
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Anasayfa", item: "https://www.azerasansor.com" },
+      { "@type": "ListItem", position: 2, name: "Hizmetler", item: "https://www.azerasansor.com/antalya-nakliyat" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Anahtar Teslim Nakliyat",
+        item: "https://www.azerasansor.com/antalya-anahtar-teslim-paket",
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-brand-beige">
       <script
         id="service-schema-antalya-anahtar-teslim-paket"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        id="breadcrumb-schema-antalya-anahtar-teslim-paket"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <Header />
 
