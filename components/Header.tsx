@@ -107,7 +107,7 @@ export const Header = () => {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-6">
+                <nav className="hidden lg:flex items-center gap-6">
                     {navItems.map((item) => {
                         const flatChildren = item.columns
                             ? item.columns.flatMap((col) => col.children)
@@ -136,7 +136,7 @@ export const Header = () => {
                                     aria-haspopup="true"
                                     aria-expanded={openMenu === item.label}
                                     aria-current={isParentActive ? 'page' : undefined}
-                                    className={`flex items-center gap-1 font-medium transition-colors relative group py-2 ${
+                                    className={`flex items-center gap-1 whitespace-nowrap font-medium transition-colors relative group py-2 ${
                                         isParentActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
                                     }`}
                                 >
@@ -212,7 +212,7 @@ export const Header = () => {
                                     aria-haspopup="true"
                                     aria-expanded={openMenu === item.label}
                                     aria-current={isParentActive ? 'page' : undefined}
-                                    className={`flex items-center gap-1 font-medium transition-colors relative group py-2 ${
+                                    className={`flex items-center gap-1 whitespace-nowrap font-medium transition-colors relative group py-2 ${
                                         isParentActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
                                     }`}
                                 >
@@ -248,7 +248,7 @@ export const Header = () => {
                                 key={item.label}
                                 href={item.href!}
                                 aria-current={isActive ? 'page' : undefined}
-                                className={`font-medium transition-colors relative group py-2 ${
+                                className={`whitespace-nowrap font-medium transition-colors relative group py-2 ${
                                     isActive ? 'text-brand-yellow underline underline-offset-4' : 'text-white hover:text-brand-yellow'
                                 }`}
                             >
@@ -260,9 +260,9 @@ export const Header = () => {
                 </nav>
 
                 {/* Right side — CTA + Mobile burger */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-shrink-0 items-center gap-3">
                     <a data-cta-location="header" href="tel:+905424669631">
-                        <Button variant="primary" className="text-sm px-5 py-2">
+                        <Button variant="primary" className="text-sm px-5 py-2 min-h-[44px] whitespace-nowrap">
                             <Phone className="w-4 h-4 mr-2" />
                             Hemen Ara
                         </Button>
@@ -270,7 +270,7 @@ export const Header = () => {
 
                     {/* Mobile burger */}
                     <button
-                        className="md:hidden flex flex-col items-center justify-center gap-1.5 min-w-[44px] min-h-[44px]"
+                        className="lg:hidden flex flex-col items-center justify-center gap-1.5 min-w-[44px] min-h-[44px]"
                         onClick={() => setMobileOpen(!mobileOpen)}
                         aria-label="Menü"
                     >
@@ -283,7 +283,7 @@ export const Header = () => {
 
             {/* Mobile Menu */}
             {mobileOpen && (
-                <div className="md:hidden bg-brand-black border-t border-gray-800 px-4 pb-4 max-h-screen overflow-y-auto">
+                <div className="lg:hidden bg-brand-black border-t border-gray-800 px-4 pb-4 max-h-screen overflow-y-auto">
                     {navItems.map((item) => {
                         const flatChildren = item.columns
                             ? item.columns.flatMap((col) => col.children)
