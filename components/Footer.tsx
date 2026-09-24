@@ -66,7 +66,7 @@ export const Footer = () => {
     return (
         <footer className="bg-[#060d16] text-white">
             <div className="container mx-auto px-5 py-12 md:px-4">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
                     <div>
                         <Link href="/" className="inline-block">
                             <Image
