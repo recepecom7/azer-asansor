@@ -78,8 +78,7 @@ export const Footer = () => {
                             />
                         </Link>
                         <p className="mt-3 max-w-[200px] text-[13px] leading-relaxed text-white/50">
-                            Antalya ve çevre illerde güvenli, hızlı ve profesyonel nakliyat ve kiralık asansör
-                            hizmetleri.
+                            Antalya&apos;da asansörlü evden eve nakliyat ve kiralık mobil asansör hizmeti.
                         </p>
                         <a
                             data-cta-location="footer"
