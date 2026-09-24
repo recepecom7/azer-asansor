@@ -1,113 +1,106 @@
-import { LucideIcon, Phone, MessageCircle, Armchair, Refrigerator, BrickWall, Trash2, Truck, Building2 } from 'lucide-react';
-import { Button } from './Button';
-import Link from 'next/link';
-import { getPlaceDetails } from '@/lib/googlePlaces';
+import Image from "next/image";
+import Link from "next/link";
+import { Home, ArrowUp, Truck, MapPin, Building2, PackageCheck, LucideIcon } from "lucide-react";
 
-export interface ServiceItem {
-    title: string;
-    description: string;
-    icon: LucideIcon;
-    href?: string;
-    featured?: boolean;
+const HERO_IMAGE = "/images/hero-real.jpg";
+
+interface ServiceCard {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  href: string;
+  objectPosition: string;
 }
 
-const defaultServices: ServiceItem[] = [
-    { title: 'Mobilya Taşıma Hizmetleri', description: 'Büyük, hacimli ve ağır mobilyaların bina içine zarar vermeden, hızlı ve güvenli şekilde yüksek katlara çıkarılması veya indirilmesi.', icon: Armchair },
-    { title: 'Beyaz Eşya Taşıma', description: 'Buzdolabı, çamaşır makinesi, bulaşık makinesi gibi beyaz eşyaların mobil asansör ile güvenle taşınması.', icon: Refrigerator },
-    { title: 'İnşaat Malzemesi Çıkarma & İndirme', description: 'İnşaat ve tadilat süreçlerinde ağır ve hassas malzemelerin kontrollü ve güvenli şekilde taşınması.', icon: BrickWall },
-    { title: 'Moloz İndirme Hizmeti', description: 'Tadilat sonrası oluşan molozların çevreye zarar vermeden, hızlı ve düzenli şekilde indirilmesi.', icon: Trash2 },
-    { title: 'Evden Eve Taşımacılığa Destek', description: 'Taşınma sürecinde eşyaların yüksek katlara sorunsuz, güvenli ve zamanında taşınmasına destek sağlanması.', icon: Truck },
-    { title: 'Yüksek Katlara Özel Taşıma Çözümleri', description: 'Mobil asansör ile istenilen her türlü eşyanın yüksek katlara güvenle çıkarılması veya indirilmesi.', icon: Building2 },
+const SERVICES: ServiceCard[] = [
+  {
+    icon: Home,
+    title: "Evden Eve Nakliyat",
+    description: "Tüm eşyalarınızı paketleyip güvenle yeni adresinize taşıyoruz.",
+    href: "/antalya-evden-eve-nakliyat",
+    objectPosition: "center",
+  },
+  {
+    icon: ArrowUp,
+    title: "Asansörlü Nakliyat",
+    description: "22. kata kadar mobil asansörle hasarsız taşıma.",
+    href: "/antalya-asansorlu-nakliyat",
+    objectPosition: "right top",
+  },
+  {
+    icon: Truck,
+    title: "Kiralık Asansör",
+    description: "Sadece asansör mü lazım? Saatlik kiralama hizmeti sunuyoruz.",
+    href: "/antalya-kiralik-asansor",
+    objectPosition: "left top",
+  },
+  {
+    icon: MapPin,
+    title: "Şehirlerarası Taşıma",
+    description: "Antalya'dan Türkiye'nin her iline güvenli nakliyat.",
+    href: "/antalya-sehirlerarasi-nakliyat",
+    objectPosition: "right center",
+  },
+  {
+    icon: Building2,
+    title: "Ofis Taşıma",
+    description: "Kurumsal taşımalarda hızlı, planlı ve kesintisiz hizmet.",
+    href: "/antalya-ofis-tasima",
+    objectPosition: "left center",
+  },
+  {
+    icon: PackageCheck,
+    title: "Anahtar Teslim Paket",
+    description: "Paketleme, demontaj, taşıma ve kurulum tek ekipten.",
+    href: "/antalya-anahtar-teslim-paket",
+    objectPosition: "center bottom",
+  },
 ];
 
-interface ServicesProps {
-    title?: string;
-    highlight?: string;
-    services?: ServiceItem[];
-    ctaTitle?: string;
-    ctaDescription?: string;
+export function Services() {
+  return (
+    <section className="bg-[#0a0f1a]" aria-label="Hizmetlerimiz">
+      <div className="container mx-auto px-5 py-9 md:px-4 md:py-12">
+        <div className="mb-8 text-center md:mb-10">
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-brand-yellow">
+            Hizmetlerimiz
+          </p>
+          <h2 className="text-2xl font-bold text-white md:text-3xl">Nasıl Yardımcı Olabiliriz?</h2>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+          {SERVICES.map(({ icon: Icon, title, description, href, objectPosition }) => (
+            <Link
+              key={href}
+              href={href}
+              className="group overflow-hidden rounded-xl border border-white/10 bg-[#0d1420] transition-colors hover:border-white/20"
+            >
+              <div className="relative h-40 w-full">
+                <Image
+                  src={HERO_IMAGE}
+                  alt={title}
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  style={{ objectPosition }}
+                  sizes="(min-width: 768px) 33vw, 50vw"
+                />
+              </div>
+
+              <div className="p-5">
+                <Icon className="h-6 w-6 text-brand-yellow" aria-hidden="true" />
+                <p className="mt-3 text-[17px] font-bold text-white">{title}</p>
+                <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-white/60">
+                  {description}
+                </p>
+                <span className="mt-3 inline-block text-[13px] text-brand-yellow group-hover:underline">
+                  Detaylar →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
-
-export const Services = async ({
-    title = 'Mobil Asansör',
-    highlight = 'Hizmetleri',
-    services = defaultServices,
-    ctaTitle = 'Hizmetlerimiz hakkında bilgi almak için hemen arayın.',
-    ctaDescription = 'Azer Asansör ile güvenli, hızlı ve profesyonel çözümler.',
-}: ServicesProps) => {
-    const { rating, reviewCount } = await getPlaceDetails();
-
-    return (
-        <section id="services" className="py-24 bg-brand-black text-white">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        <span className="text-white">{title}</span>{' '}
-                        <span className="text-brand-yellow">{highlight}</span>
-                    </h2>
-                    <div className="w-24 h-1 bg-brand-yellow mx-auto rounded-full"></div>
-                </div>
-
-                <p className="text-gray-300 max-w-4xl mx-auto text-base md:text-lg leading-relaxed text-center mb-4">
-                    Antalya&apos;da asansörlü nakliyat ve mobil asansör kiralama başta olmak üzere tüm taşıma hizmetlerimizi aşağıdan inceleyebilirsiniz. Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı bölgelerinde aktif hizmet veriyoruz.
-                </p>
-                <p className="text-brand-yellow max-w-4xl mx-auto text-base md:text-lg text-center mb-10 font-medium">
-                    En çok tercih edilen hizmetlerimiz Antalya asansörlü nakliyat ve mobil asansör kiralama çözümleridir.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                    {services.map((service, index) => (
-                        <Link
-                            key={index}
-                            href={service.href || '#services'}
-                            className={`p-7 md:p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 group block ${
-                                service.featured
-                                    ? 'bg-gray-900 border-2 border-brand-yellow/60 hover:shadow-brand-yellow/20 lg:scale-[1.02]'
-                                    : 'bg-gray-900 border border-gray-800 hover:shadow-brand-yellow/10'
-                            }`}
-                        >
-                            <div className="w-14 h-14 rounded-xl bg-gray-800 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
-                                <service.icon className="w-7 h-7 text-brand-yellow group-hover:text-brand-black" />
-                            </div>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-brand-yellow transition-colors">
-                                {service.title}
-                            </h3>
-                            <p className="text-gray-400 leading-relaxed md:leading-8">
-                                {service.description}
-                            </p>
-                            <p className="mt-5 text-brand-yellow font-medium">
-                                Detayları Gör →
-                            </p>
-                        </Link>
-                    ))}
-                </div>
-
-                <div className="bg-gray-900 rounded-3xl p-8 md:p-12 text-center border border-gray-800">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                        {ctaTitle}
-                    </h3>
-                    <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-                        {ctaDescription}
-                    </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a data-cta-location="services" href="tel:+905424669631">
-                            <Button variant="primary" className="min-w-[180px] text-lg">
-                                <Phone className="w-5 h-5 mr-2" />
-                                Hemen Ara – Ücretsiz Fiyat Al
-                            </Button>
-                        </a>
-                        <a data-cta-location="services" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
-                            <Button variant="whatsapp" className="min-w-[180px] text-lg">
-                                <MessageCircle className="w-5 h-5 mr-2" />
-                                WhatsApp&apos;tan Hızlı Teklif Al
-                            </Button>
-                        </a>
-                    </div>
-                    <p className="text-sm text-gray-400 text-center mt-5">
-                        {rating.toFixed(1)} Google puanı · {reviewCount}+ yorum · Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya
-                    </p>
-                </div>
-            </div>
-        </section>
-    );
-};

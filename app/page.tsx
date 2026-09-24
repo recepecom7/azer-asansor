@@ -9,58 +9,7 @@ import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 import { Reviews } from "@/components/Reviews";
 import { getPlaceDetails } from "@/lib/googlePlaces";
-import {
-  Truck, Building2, Armchair, Refrigerator,
-  BrickWall, Award, ShieldCheck,
-  Clock, Check, HardHat,
-} from "lucide-react";
-
-const services = [
-  {
-    title: "Antalya Evden Eve Nakliyat Hizmeti",
-    description:
-      "Antalya'da evden eve nakliyat hizmeti ile eşyalarınızı sigortalı ve güvenli şekilde yeni adresinize taşıyoruz. Paketleme, taşıma ve yerleştirme dahil tüm süreci profesyonel ekip ile yönetiyoruz.",
-    icon: Truck,
-    href: "/antalya-evden-eve-nakliyat",
-  },
-  {
-    title: "Antalya Asansörlü Nakliyat Hizmeti",
-    description:
-      "Antalya asansörlü nakliyat hizmetimiz ile yüksek katlara hızlı ve güvenli taşıma sağlıyoruz. Mobil asansör sistemi sayesinde eşyalar merdiven kullanılmadan hasarsız şekilde taşınır.",
-    icon: Building2,
-    href: "/antalya-asansorlu-nakliyat",
-    featured: true,
-  },
-  {
-    title: "Antalya Mobil Asansör Kiralama",
-    description:
-      "Antalya mobil asansör kiralama hizmeti ile 22. kata kadar hızlı kurulum ve güvenli taşıma sağlanır. Dar merdivenli binalar ve yüksek kat taşımaları için ideal çözümdür.",
-    icon: Armchair,
-    href: "/antalya-mobil-asansor-kiralama",
-    featured: true,
-  },
-  {
-    title: "Antalya Ofis Taşıma Hizmeti",
-    description:
-      "Antalya ofis taşıma hizmeti ile iş kaybı yaşamadan hızlı ve planlı taşınma sağlıyoruz. Kurumsal çözümler ile süreci minimum kesinti ile yönetiyoruz.",
-    icon: Clock,
-    href: "/antalya-ofis-tasima",
-  },
-  {
-    title: "Beyaz Eşya Taşıma",
-    description:
-      "Buzdolabı, çamaşır makinesi gibi ağır eşyalar mobil asansör ile güvenli şekilde taşınır ve taşıma sırasında hasar riski minimuma indirilir.",
-    icon: Refrigerator,
-    href: "/antalya-asansorlu-tasima",
-  },
-  {
-    title: "İnşaat Malzemesi Taşıma",
-    description:
-      "İnşaat ve tadilat süreçlerinde ağır malzemelerin mobil asansör ile hızlı ve güvenli şekilde taşınmasını sağlıyoruz.",
-    icon: BrickWall,
-    href: "/antalya-dis-cephe-asansoru",
-  },
-];
+import { Award, ShieldCheck, Clock, Check, HardHat } from "lucide-react";
 
 const benefits = [
   { title: "Antalya'da Deneyimli Taşıma Ekibi", description: "Yüksek kat taşımacılığı, evden eve nakliyat ve mobil asansör kullanımı konusunda saha deneyimine sahip ekibimizle çalışıyoruz.", icon: Award },
@@ -171,13 +120,7 @@ export default async function Home() {
 
       <Reviews />
 
-      <Services
-        title="Hizmetlerimiz"
-        highlight=""
-        services={services}
-        ctaTitle="Antalya'da Asansörlü Nakliyat İçin Hemen Fiyat Alın"
-        ctaDescription="Aynı gün keşif, hızlı kurulum ve sigortalı taşıma için Azer Asansör ekibiyle iletişime geçin."
-      />
+      <Services />
       <WhyUs
         title="Neden"
         highlight="Azer Asansör?"
