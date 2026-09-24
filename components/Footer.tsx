@@ -2,62 +2,73 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, MapPin } from 'lucide-react';
 
-const SERVICE_LINKS = [
-    ['Antalya Nakliyat', '/antalya-nakliyat'],
+const SERVICE_LINKS: [string, string][] = [
     ['Evden Eve Nakliyat', '/antalya-evden-eve-nakliyat'],
     ['Asansörlü Nakliyat', '/antalya-asansorlu-nakliyat'],
-    ['Ofis Taşıma', '/antalya-ofis-tasima'],
+    ['Kiralık Asansör', '/antalya-kiralik-asansor'],
     ['Şehirlerarası Nakliyat', '/antalya-sehirlerarasi-nakliyat'],
-    ['Mobil Asansör Kiralama', '/antalya-mobil-asansor-kiralama'],
-    ['Dış Cephe Asansörü', '/antalya-dis-cephe-asansoru'],
-    ['Parça Eşya Taşıma', '/antalya-parca-esya-tasima'],
-    ['Eşya Depolama', '/antalya-esya-depolama'],
-    ['Piyano ve Ağır Eşya Taşıma', '/antalya-piyano-ve-agir-esya-tasima'],
+    ['Ofis Taşıma', '/antalya-ofis-tasima'],
+    ['Anahtar Teslim Paket', '/antalya-anahtar-teslim-paket'],
 ];
 
-const REGION_LINKS = [
-    ['Muratpaşa Evden Eve Nakliyat', '/muratpasa-evden-eve-nakliyat'],
-    ['Konyaaltı Evden Eve Nakliyat', '/konyaalti-evden-eve-nakliyat'],
-    ['Lara Evden Eve Nakliyat', '/lara-evden-eve-nakliyat'],
-    ['Kepez Evden Eve Nakliyat', '/kepez-evden-eve-nakliyat'],
-    ['Aksu Evden Eve Nakliyat', '/aksu-evden-eve-nakliyat'],
-    ['Döşemealtı Evden Eve Nakliyat', '/dosemealti-evden-eve-nakliyat'],
-    ['Tüm Bölgeler', '/antalya-hizmet-bolgeleri'],
+const REGION_LINKS: [string, string][] = [
+    ['Muratpaşa', '/muratpasa-evden-eve-nakliyat'],
+    ['Kepez', '/kepez-evden-eve-nakliyat'],
+    ['Konyaaltı', '/konyaalti-evden-eve-nakliyat'],
+    ['Lara', '/lara-evden-eve-nakliyat'],
+    ['Aksu', '/aksu-evden-eve-nakliyat'],
+    ['Döşemealtı', '/dosemealti-evden-eve-nakliyat'],
+    ['Kemer', '/kemer-evden-eve-nakliyat'],
 ];
 
-const CORPORATE_LINKS = [
+const CORPORATE_LINKS: [string, string][] = [
     ['Anasayfa', '/'],
-    ['Blog', '/blog'],
     ['Hakkımızda', '/hakkimizda'],
+    ['Blog', '/blog'],
     ['İletişim', '/iletisim'],
     ['KVKK Aydınlatma Metni', '/kvkk-aydinlatma-metni'],
 ];
 
-const LinkColumn = ({ title, links }: { title: string; links: string[][] }) => (
+const LinkColumn = ({
+    title,
+    links,
+    moreLabel,
+    moreHref,
+}: {
+    title: string;
+    links: [string, string][];
+    moreLabel?: string;
+    moreHref?: string;
+}) => (
     <div>
-        <h3 className="text-lg font-bold mb-6 text-brand-yellow">{title}</h3>
+        <h3 className="mb-4 text-[13px] font-bold uppercase tracking-wide text-brand-yellow">{title}</h3>
         <ul className="space-y-3">
             {links.map(([label, href]) => (
                 <li key={href}>
-                    <Link
-                        href={href}
-                        className="text-gray-400 hover:text-brand-yellow transition-colors"
-                    >
+                    <Link href={href} className="text-[13px] text-white/60 transition-colors hover:text-white">
                         {label}
                     </Link>
                 </li>
             ))}
         </ul>
+        {moreLabel && moreHref && (
+            <Link
+                href={moreHref}
+                className="mt-3 inline-block text-[13px] text-brand-yellow transition-colors hover:underline"
+            >
+                {moreLabel}
+            </Link>
+        )}
     </div>
 );
 
 export const Footer = () => {
     return (
-        <footer className="bg-brand-black text-white pt-20 pb-10 border-t border-gray-800">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
-                    <div className="col-span-2 lg:col-span-1">
-                        <Link href="/" className="inline-block mb-6">
+        <footer className="bg-[#060d16] text-white">
+            <div className="container mx-auto px-5 py-12 md:px-4">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div>
+                        <Link href="/" className="inline-block">
                             <Image
                                 src="/images/logo.png"
                                 alt="Azer Asansör"
@@ -66,39 +77,49 @@ export const Footer = () => {
                                 className="h-16 w-auto object-contain"
                             />
                         </Link>
-                        <p className="text-gray-400 leading-relaxed mb-6">
-                            Antalya ve çevre illerde güvenli, hızlı ve profesyonel
-                            nakliyat ve kiralık asansör hizmetleri.
+                        <p className="mt-3 max-w-[200px] text-[13px] leading-relaxed text-white/50">
+                            Antalya ve çevre illerde güvenli, hızlı ve profesyonel nakliyat ve kiralık asansör
+                            hizmetleri.
                         </p>
-                        <ul className="space-y-4">
-                            <li className="flex items-center gap-3 text-gray-300">
-                                <Phone className="w-5 h-5 text-brand-yellow" />
-                                <a data-cta-location="footer" href="tel:+905424669631" className="hover:text-brand-yellow transition-colors">
-                                    +90 542 466 96 31
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-3 text-gray-300">
-                                <MapPin className="w-5 h-5 text-brand-yellow mt-1" />
-                                <span>Antalya, Türkiye</span>
-                            </li>
-                        </ul>
+                        <a
+                            data-cta-location="footer"
+                            href="tel:+905424669631"
+                            className="mt-4 flex items-center gap-2 text-[14px] text-white transition-colors hover:text-brand-yellow"
+                        >
+                            <Phone className="h-4 w-4 text-brand-yellow" />
+                            +90 542 466 96 31
+                        </a>
+                        <div className="mt-2 flex items-start gap-2 text-[13px] text-white/50">
+                            <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-yellow" />
+                            <span>Antalya, Türkiye</span>
+                        </div>
+                        <p className="mt-2 text-[11px] text-white/30">
+                            Azer Asansör - Antalya Kiralık Asansör &amp; Evden Eve Nakliyat
+                        </p>
                     </div>
 
-                    <LinkColumn title="Hizmetlerimiz" links={SERVICE_LINKS} />
-                    <LinkColumn title="Hizmet Bölgeleri" links={REGION_LINKS} />
+                    <LinkColumn
+                        title="Hizmetlerimiz"
+                        links={SERVICE_LINKS}
+                        moreLabel="Tüm Hizmetler →"
+                        moreHref="/antalya-nakliyat"
+                    />
+                    <LinkColumn
+                        title="Hizmet Bölgeleri"
+                        links={REGION_LINKS}
+                        moreLabel="Tüm Bölgeler →"
+                        moreHref="/hizmet-bolgeleri"
+                    />
                     <LinkColumn title="Kurumsal" links={CORPORATE_LINKS} />
                 </div>
+            </div>
 
-                <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} Azer Asansör. Tüm hakları saklıdır.</p>
-                    <a
-                        href="https://defora.digital"
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        className="block mt-3 text-gray-300 hover:text-brand-yellow transition-colors font-medium"
-                    >
-                        Web Tasarım: Defora Digital
-                    </a>
+            <div className="border-t border-white/10">
+                <div className="container mx-auto flex flex-col items-center gap-2 px-5 py-5 text-center md:flex-row md:justify-between md:px-4 md:text-left">
+                    <p className="text-xs text-white/40">
+                        &copy; {new Date().getFullYear()} Azer Asansör · Tüm hakları saklıdır.
+                    </p>
+                    <p className="text-xs text-white/30">Tasarım: Defora Digital</p>
                 </div>
             </div>
         </footer>
