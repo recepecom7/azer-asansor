@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { Services } from "@/components/Services";
 import { WhyUs } from "@/components/WhyUs";
+import { HowItWorks } from "@/components/HowItWorks";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
@@ -130,6 +131,8 @@ export default async function Home() {
         imageAlt="Antalya mobil asansör kurulumu"
         ctaText="Antalya asansörlü nakliyat veya mobil asansör kiralama için hemen arayın ya da WhatsApp'tan hızlı teklif alın."
       />
+
+      <HowItWorks />
 
       <FAQ
         faqs={faqs}
