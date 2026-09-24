@@ -5,6 +5,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { Services } from "@/components/Services";
 import { WhyUs } from "@/components/WhyUs";
 import { HowItWorks } from "@/components/HowItWorks";
+import { ServiceAreas } from "@/components/ServiceAreas";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
@@ -133,6 +134,8 @@ export default async function Home() {
       />
 
       <HowItWorks />
+
+      <ServiceAreas />
 
       <FAQ
         faqs={faqs}
