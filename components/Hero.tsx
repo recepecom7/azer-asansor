@@ -49,7 +49,7 @@ export const Hero = ({
 
     // fullHeight mobile min-height: screen minus header (72px) and MobileStickyCTA (73px + safe area)
     return (
-        <section id="hero" className={`relative w-full flex items-center overflow-hidden ${fullHeight ? 'min-h-[calc(100svh-145px-env(safe-area-inset-bottom))]' : ''} md:min-h-[600px] lg:min-h-[85vh]`}>
+        <section id="hero" className={`relative w-full flex ${isCustom ? 'items-center' : 'items-start md:items-center'} overflow-hidden ${fullHeight ? 'min-h-[calc(100svh-145px-env(safe-area-inset-bottom))]' : ''} md:min-h-[600px] lg:min-h-[85vh]`}>
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -67,18 +67,18 @@ export const Hero = ({
             </div>
 
             {/* Content */}
-            <div className="container mx-auto px-5 md:px-4 relative z-10 py-6 md:py-20">
+            <div className={`container mx-auto px-5 md:px-4 relative z-10 ${isCustom ? 'py-6' : 'pt-8 pb-6'} md:py-20`}>
                 <div className="max-w-2xl">
                     <p className={`text-brand-yellow font-semibold ${isCustom ? 'text-[15px]' : 'text-[16px]'} md:text-lg mb-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.45)]`}>
                         {resolvedEyebrow}
                     </p>
-                    <h1 className={`${isCustom ? 'text-[34px]' : 'text-[36px]'} leading-[1.15] md:text-5xl md:leading-tight lg:text-6xl font-bold text-white mb-4 md:mb-5 [text-shadow:0_2px_10px_rgba(0,0,0,0.45)]`}>
+                    <h1 className={`${isCustom ? 'text-[34px]' : 'text-[36px] text-balance'} leading-[1.15] md:text-5xl md:leading-tight lg:text-6xl font-bold text-white mb-4 md:mb-5 [text-shadow:0_2px_10px_rgba(0,0,0,0.45)]`}>
                         {title || DEFAULT_TITLE}
                     </h1>
                     <p className={`${isCustom ? 'text-[18px] max-md:[@media(max-height:700px)]:text-[17px]' : 'text-[19px]'} leading-[1.55] md:text-xl md:leading-relaxed text-white mb-5 md:mb-7 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]`}>
                         {subtitle || DEFAULT_SUBTITLE}
                     </p>
-                    {resolvedChecklist && <ul className={`grid gap-2.5 md:gap-2 ${isCustom ? 'text-[18px]' : 'text-[19px]'} leading-[1.5] md:text-base md:leading-normal text-white mb-2 md:mb-8 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]`}>
+                    {resolvedChecklist && <ul className={`grid gap-2.5 ${isCustom ? 'text-[18px] leading-[1.5] md:gap-2 md:text-base md:leading-normal' : 'text-[19px] leading-[1.5]'} text-white mb-2 md:mb-8 [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]`}>
                         {resolvedChecklist.map((item, i) => (
                             <li key={item} className={`flex items-center gap-2 ${isDefaultChecklist && i === 0 ? 'font-bold' : ''}`}>
                                 <span className="text-brand-yellow">✓</span>{item}

@@ -3,7 +3,7 @@ import { getPlaceDetails, PLACE_ID } from "@/lib/googlePlaces";
 
 const MAPS_URL = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
 const STAR_COUNT = 5;
-const STAR_SIZE = "h-5 w-5 md:h-4 md:w-4";
+const STAR_SIZE = "h-5 w-5 md:h-[18px] md:w-[18px]";
 
 // Places data shown outside a map needs "Google Maps" text attribution:
 // sans-serif, weight 400, 12-16px, white/#1F1F1F/#5E5E5E, never translated.
@@ -37,8 +37,8 @@ export async function GoogleRatingBadge() {
           );
         })}
       </span>
-      <span className="font-semibold text-[19px] md:text-sm">{ratingText}</span>
-      <span className="text-gray-100 text-[16px] md:text-sm">· {reviewCount} yorum</span>
+      <span className="font-semibold text-[19px] md:text-[17px]">{ratingText}</span>
+      <span className="text-gray-100 text-[16px] md:text-[15px]">· {reviewCount} yorum</span>
       <span
         translate="no"
         className="text-white text-[13px] md:text-xs"
