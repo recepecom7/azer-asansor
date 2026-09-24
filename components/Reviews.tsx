@@ -1,6 +1,5 @@
 import { Star } from "lucide-react";
 
-const MAPS_URL = "https://www.google.com/maps/place/?q=place_id:ChIJmyRxBJuF9YURtT8wdV810jw";
 const CARD_BG = "#0D172B";
 
 interface Review {
@@ -12,19 +11,19 @@ interface Review {
 
 const reviews: Review[] = [
   {
-    name: "Oğuzhan Taşkıran",
+    name: "Oğuzhan T.",
     rating: 5,
     timeAgo: "1 ay önce",
     text: "Çok profesyonel ekip, gerçekten 2 kere eşyalarımı taşıdılar. Her şeyi güzelce söküp paketleme yapıp yeni yerine güzelce monte ettiler ve hızlı taşıma yapıldı. Her şey için teşekkür ederim, herkese de tavsiye ederim.",
   },
   {
-    name: "Mustafa Bülbül",
+    name: "Mustafa B.",
     rating: 5,
     timeAgo: "4 ay önce",
     text: "Antalya Konyaaltı'ndan Lara'ya bizi sorunsuz taşıdılar. Gerçekten çok teşekkür ederim, işinin ehli, hızlı ve profesyonel bir ekip. Kesinlikle tavsiye ederim.",
   },
   {
-    name: "Tuğra (OkanTGR)",
+    name: "Tuğra O.",
     rating: 5,
     timeAgo: "2 ay önce",
     text: "Lara Fener'deki evimizden her şey dahil bu firmaya işimizi verdik. Çatalından askısına kadar her şeyi elimizi bile sürdürtmeden Alanya Oba'daki evimize sorunsuz bir şekilde ve hatta bozuk olan dolap kapaklarını ve yatak bazasını tamir ederek en iyi şekilde yardımcı oldular. Her şey için çok teşekkür ederiz. İyi ki sizi tercih etmişiz. 🙏🙏",
@@ -66,17 +65,6 @@ export function Reviews() {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 text-center md:mt-10">
-          <a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-brand-yellow hover:underline"
-          >
-            Tüm Google Yorumlarını Gör →
-          </a>
         </div>
       </div>
     </section>
