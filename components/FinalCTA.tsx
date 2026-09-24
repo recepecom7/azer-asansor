@@ -31,8 +31,8 @@ export function FinalCTA() {
             target="_blank"
             rel="noopener noreferrer"
             data-cta-location="final_cta"
-            className={`${CTA_BASE} bg-white hover:bg-gray-100`}
-            style={{ color: DARK }}
+            className={`${CTA_BASE} text-white hover:brightness-110`}
+            style={{ backgroundColor: "#25D366" }}
           >
             <MessageCircle className="h-5 w-5" />
             WhatsApp&apos;tan Fiyat Al
