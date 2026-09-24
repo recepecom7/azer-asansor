@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import Script from 'next/script';
 
 export interface FAQItem {
     question: string;
@@ -43,7 +42,9 @@ export const FAQ = ({
 
     return (
         <section className="py-20 bg-brand-black text-white">
-            <Script
+            {/* Plain <script> (not next/script) so the schema is in the server HTML,
+                not deferred into the client hydration payload. */}
+            <script
                 id={schemaId}
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -67,6 +68,7 @@ export const FAQ = ({
                         >
                             <button
                                 className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-800 transition-colors"
+                                aria-expanded={openIndex === index}
                                 onClick={() =>
                                     setOpenIndex(openIndex === index ? null : index)
                                 }
@@ -79,11 +81,12 @@ export const FAQ = ({
                                         }`}
                                 />
                             </button>
-                            {openIndex === index && (
-                                <div className="px-6 pb-6 text-gray-300 leading-relaxed border-t border-gray-800 pt-4">
-                                    {faq.answer}
-                                </div>
-                            )}
+                            <div
+                                className={`px-6 text-gray-300 leading-relaxed border-t border-gray-800 ${openIndex === index ? 'max-h-none pb-6 pt-4' : 'max-h-0 overflow-hidden border-t-0 py-0'
+                                    }`}
+                            >
+                                {faq.answer}
+                            </div>
                         </div>
                     ))}
                 </div>
