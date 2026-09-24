@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
-import { getPlaceDetails, PLACE_ID } from "@/lib/googlePlaces";
+import { getPlaceDetails } from "@/lib/googlePlaces";
 
-const MAPS_URL = `https://www.google.com/maps/place/?q=place_id:${PLACE_ID}`;
+const MAPS_URL = "https://share.google/oxPCOCI4Em4QD2Jee";
 const STAR_COUNT = 5;
 const STAR_SIZE = "h-5 w-5 md:h-[18px] md:w-[18px]";
 
