@@ -33,36 +33,20 @@ function sanitizePhone(raw: string): string {
   return digits; // "5XXXXXXXXX"
 }
 
-// ── Whitelist constants ────────────────────────────────────────────────────────
-const VALID_SERVICES = new Set([
-  "Evden Eve Nakliyat",
-  "Asansörlü Taşıma",
-  "Ofis/İşyeri Taşıma",
-  "Sadece Asansör Hizmeti",
-]);
-
 // ── POST handler ───────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, phone, serviceType, note } = body as {
-      name?:        string;
-      phone?:       string;
-      serviceType?: string;
-      note?:        string;
+    const { name, phone, note } = body as {
+      name?:  string;
+      phone?: string;
+      note?:  string;
     };
 
     // ── Validate required fields ─────────────────────────────────────────────
-    if (!name?.trim() || !phone?.trim() || !serviceType?.trim()) {
+    if (!name?.trim() || !phone?.trim()) {
       return NextResponse.json(
-        { success: false, message: "Ad, telefon ve hizmet türü zorunludur." },
-        { status: 400 }
-      );
-    }
-
-    if (!VALID_SERVICES.has(serviceType.trim())) {
-      return NextResponse.json(
-        { success: false, message: "Geçersiz hizmet türü." },
+        { success: false, message: "Ad ve telefon zorunludur." },
         { status: 400 }
       );
     }
@@ -87,7 +71,7 @@ export async function POST(req: NextRequest) {
     const trimmedNote = note?.trim().slice(0, 160) ?? "";
     const noteLine = trimmedNote ? `\nNot: ${trimmedNote}` : "";
 
-    const rawSms = `Azer Asansor Yeni Talep!\nIsim: ${name.trim()}\nTel: ${cleanPhone}\nHizmet: ${serviceType.trim()}${noteLine}`;
+    const rawSms = `Azer Asansor Yeni Talep!\nIsim: ${name.trim()}\nTel: ${cleanPhone}${noteLine}`;
 
     const smsBody = sanitizeTurkish(rawSms);
 

@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Phone,
   User,
-  Briefcase,
   MessageSquare,
   Loader2,
   CheckCircle2,
@@ -16,7 +15,6 @@ import {
 interface FormState {
   name: string;
   phone: string;
-  serviceType: string;
   note: string;
 }
 
@@ -24,13 +22,6 @@ type SubmitStatus = "idle" | "loading" | "success" | "error";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 const NOTE_MAX_LENGTH = 160; // Guarantees total SMS stays within 2 segments max
-
-const SERVICES = [
-  "Evden Eve Nakliyat",
-  "Asansörlü Taşıma",
-  "Ofis/İşyeri Taşıma",
-  "Sadece Asansör Hizmeti",
-] as const;
 
 // ── Phone formatting ───────────────────────────────────────────────────────────
 // Strips non-digits, removes leading +90 or 90, normalises to 10-digit "5XXXXXXXXX"
@@ -64,17 +55,16 @@ const AMBER      = "#f2c94c";
 
 // ── Component ─────────────────────────────────────────────────────────────────
 export function ContactForm() {
-  const [form, setForm]       = useState<FormState>({ name: "", phone: "", serviceType: "", note: "" });
+  const [form, setForm]       = useState<FormState>({ name: "", phone: "", note: "" });
   const [status, setStatus]   = useState<SubmitStatus>("idle");
   const [message, setMessage] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [nameError, setNameError] = useState("");
-  const [serviceError, setServiceError] = useState("");
 
   const isLoading = status === "loading";
 
   // ── Handlers ─────────────────────────────────────────────────────────────
-  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
 
     if (name === "phone") {
@@ -85,7 +75,6 @@ export function ContactForm() {
     }
 
     if (name === "name" && nameError && value.trim()) setNameError("");
-    if (name === "serviceType" && serviceError && value) setServiceError("");
 
     setForm((prev) => ({ ...prev, [name]: value }));
   }
@@ -106,11 +95,6 @@ export function ContactForm() {
 
     if (!form.name.trim()) {
       setNameError("Lütfen adınızı ve soyadınızı girin.");
-      hasError = true;
-    }
-
-    if (!form.serviceType) {
-      setServiceError("Lütfen bir hizmet türü seçin.");
       hasError = true;
     }
 
@@ -150,7 +134,7 @@ export function ContactForm() {
         }
 
         setMessage(data.message);
-        setForm({ name: "", phone: "", serviceType: "", note: "" });
+        setForm({ name: "", phone: "", note: "" });
       } else {
         setStatus("error");
         setMessage(data.message || "Bir hata oluştu. Lütfen tekrar deneyin.");
@@ -213,7 +197,7 @@ export function ContactForm() {
           <div>
             <label htmlFor="cf-name" className={labelClass}>
               <User className="inline w-3 h-3 mr-1 opacity-70" />
-              Ad Soyad
+              İsim
             </label>
             <input
               id="cf-name"
@@ -261,68 +245,24 @@ export function ContactForm() {
           </div>
         </div>
 
-        {/* ── Row 2: Service Type + Note ───────────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-          {/* Service Type */}
-          <div>
-            <label htmlFor="cf-service" className={labelClass}>
-              <Briefcase className="inline w-3 h-3 mr-1 opacity-70" />
-              Hizmet Türü
-            </label>
-            <select
-              id="cf-service"
-              name="serviceType"
-              value={form.serviceType}
-              onChange={handleChange}
-              required
-              disabled={isLoading}
-              className={`${inputClass} cursor-pointer ${serviceError ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
-              style={{ backgroundColor: INPUT_BG }}
-            >
-              <option value="" disabled style={{ backgroundColor: INPUT_BG }}>
-                Hizmet seçin...
-              </option>
-              {SERVICES.map((s) => (
-                <option key={s} value={s} style={{ backgroundColor: INPUT_BG }}>
-                  {s}
-                </option>
-              ))}
-            </select>
-            {serviceError && (
-              <p className="mt-1.5 text-xs text-red-400">{serviceError}</p>
-            )}
-          </div>
-
-          {/* Note / Details */}
-          <div>
-            <label htmlFor="cf-note" className={labelClass}>
-              <MessageSquare className="inline w-3 h-3 mr-1 opacity-70" />
-              Ek Detaylar
-            </label>
-            <textarea
-              id="cf-note"
-              name="note"
-              value={form.note}
-              onChange={handleChange}
-              placeholder="Örn: 3+1 evimi taşımak istiyorum, asansör gerekli."
-              disabled={isLoading}
-              rows={3}
-              maxLength={NOTE_MAX_LENGTH}
-              className={`${inputClass} resize-none`}
-              style={{ backgroundColor: INPUT_BG }}
-            />
-            {/* Live character counter */}
-            <p className={`text-right text-xs mt-1 tabular-nums ${
-              form.note.length >= NOTE_MAX_LENGTH
-                ? "text-red-400"
-                : form.note.length >= NOTE_MAX_LENGTH * 0.85
-                ? "text-amber-400"
-                : "text-gray-600"
-            }`}>
-              {form.note.length}/{NOTE_MAX_LENGTH}
-            </p>
-          </div>
+        {/* ── Row 2: Details ───────────────────────────────────────────────── */}
+        <div>
+          <label htmlFor="cf-note" className={labelClass}>
+            <MessageSquare className="inline w-3 h-3 mr-1 opacity-70" />
+            Detaylar
+          </label>
+          <textarea
+            id="cf-note"
+            name="note"
+            value={form.note}
+            onChange={handleChange}
+            placeholder="Örn: 3+1 ev, 5. kat, asansör gerekli"
+            disabled={isLoading}
+            rows={3}
+            maxLength={NOTE_MAX_LENGTH}
+            className={`${inputClass} resize-none`}
+            style={{ backgroundColor: INPUT_BG }}
+          />
         </div>
 
         {/* ── Submit ───────────────────────────────────────────────────────── */}
