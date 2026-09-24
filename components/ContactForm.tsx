@@ -50,6 +50,12 @@ function isValidTurkishPhone(raw: string): boolean {
   return false;
 }
 
+// All formats accepted by isValidTurkishPhone end in the 10-digit "5XXXXXXXXX"
+// "0542 466 96 31" -> "+905424669631" (gtag hashes it)
+function toE164TurkishPhone(raw: string): string {
+  return `+90${raw.replace(/\D/g, "").slice(-10)}`;
+}
+
 // ── Inline styles (brand-specific HEX values outside Tailwind palette) ─────────
 const CARD_BG    = "#0D172B";
 const INPUT_BG   = "#16223f";
@@ -129,6 +135,7 @@ export function ContactForm() {
         setStatus("success");
 
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag?.("set", "user_data", { phone_number: toE164TurkishPhone(form.phone) });
           window.gtag("event", "conversion", {
             send_to: "AW-18038829941/EpIOCPLj--AcEPXmyplD",
             value: 1.0,
