@@ -50,7 +50,7 @@ const SERVICES: ServiceCard[] = [
 export function Services() {
   return (
     <section className="bg-[#0a0f1a]" aria-label="Hizmetlerimiz">
-      <div className="container mx-auto px-5 py-9 md:px-4 md:py-12">
+      <div className="container mx-auto px-5 pt-9 pb-20 md:px-4 md:py-12">
         <div className="mb-8 text-center md:mb-10">
           <p className="mb-2 text-xs font-bold uppercase tracking-widest text-brand-yellow">
             Hizmetlerimiz
@@ -66,7 +66,7 @@ export function Services() {
               className="group overflow-hidden rounded-xl border border-white/10 bg-[#0d1420] p-5 transition-colors hover:border-white/20"
             >
               <Icon className="h-6 w-6 text-brand-yellow" aria-hidden="true" />
-              <p className="mt-2 text-[17px] font-bold text-white">{title}</p>
+              <p className="mt-2 text-[15px] font-bold text-white md:text-[17px]">{title}</p>
               <p className="mt-1.5 text-[13px] leading-relaxed text-white/60">
                 {description}
               </p>
