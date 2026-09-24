@@ -131,55 +131,6 @@ export default async function Home() {
         ctaText="Antalya asansörlü nakliyat veya mobil asansör kiralama için hemen arayın ya da WhatsApp'tan hızlı teklif alın."
       />
 
-      <section className="py-16 bg-brand-black text-white border-t border-gray-800">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="bg-gray-900 border border-gray-800 rounded-3xl p-6 md:p-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Geleneksel Taşıma vs. Asansörlü Sistem <br className="md:hidden" />
-              <span className="text-brand-yellow text-xl md:text-2xl mt-2 block">Karşılaştırması</span>
-            </h2>
-            <div className="relative">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse whitespace-nowrap md:whitespace-normal">
-                <thead>
-                  <tr className="border-b border-gray-700">
-                    <th className="py-4 px-4 text-gray-400 font-semibold">Karşılaştırma Kriteri</th>
-                    <th className="py-4 px-4 text-gray-400 font-semibold">Geleneksel Taşıma</th>
-                    <th className="py-4 px-4 text-brand-yellow font-bold text-lg">Azer Asansörlü Nakliyat</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-800">
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 font-medium text-white">Taşıma Süresi</td>
-                    <td className="py-4 px-4 text-gray-300">Saatler Sürer</td>
-                    <td className="py-4 px-4 text-brand-yellow font-medium">Saniyeler İçinde Çıkarılır</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 font-medium text-white">Hasar Riski</td>
-                    <td className="py-4 px-4 text-gray-300">Merdivenlerde Yüksek Çizilme Riski</td>
-                    <td className="py-4 px-4 text-brand-yellow font-medium">Dış Cepheden Sıfır Hasar Garantisi</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 font-medium text-white">Maksimum Yükseklik</td>
-                    <td className="py-4 px-4 text-gray-300">Kat Arttıkça İmkansızlaşır</td>
-                    <td className="py-4 px-4 text-brand-yellow font-medium">22. Kata Kadar Güvenli Erişim</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 font-medium text-white">İşçilik Maliyeti</td>
-                    <td className="py-4 px-4 text-gray-300">Ekstra Eleman Ücreti Gerektirir</td>
-                    <td className="py-4 px-4 text-brand-yellow font-medium">Sabit Fiyat, Gizli Ücret Yok</td>
-                  </tr>
-                </tbody>
-                </table>
-              </div>
-              <div
-                aria-hidden="true"
-                className="md:hidden pointer-events-none absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-gray-900 to-transparent"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
       <FAQ
         faqs={faqs}
         schemaId="faq-homepage"
