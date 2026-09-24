@@ -1,24 +1,26 @@
 interface TrustItem {
-  title: string;
+  label: string;
+  value: string;
   sub: string;
 }
 
 const TRUST_ITEMS: TrustItem[] = [
-  { title: "Kendi Filomuz", sub: "Asansör ve nakliye araçlarımız bize ait, taşeron yok" },
-  { title: "Anahtar Teslim", sub: "Paketleme, demontaj ve kurulum dahil" },
-  { title: "10.000+", sub: "Taşıma ve asansör hizmeti" },
-  { title: "7/24", sub: "Antalya başta olmak üzere tüm Türkiye" },
+  { label: "FİLO", value: "Kendi asansör ve araç filomuz", sub: "Taşeron yok" },
+  { label: "HİZMET", value: "Anahtar teslim", sub: "Paketleme, demontaj, kurulum dahil" },
+  { label: "DENEYİM", value: "10.000+ taşıma", sub: "2011'den beri" },
+  { label: "KAPSAM", value: "7/24 · Tüm Türkiye", sub: "Antalya başta olmak üzere" },
 ];
 
 export function TrustBar() {
   return (
     <section className="bg-[#0a0f1a]" aria-label="Güven göstergeleri">
       <div className="container mx-auto px-5 py-7 md:px-7 md:py-7 lg:px-4 lg:py-8">
-        <ul className="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-white/10">
-          {TRUST_ITEMS.map(({ title, sub }) => (
-            <li key={title} className="text-left lg:px-6 lg:text-center lg:first:pl-0 lg:last:pr-0">
-              <p className="text-[28px] font-bold leading-tight text-white lg:text-[32px]">{title}</p>
-              <p className="mt-1 text-[13px] leading-snug text-white/60 lg:mt-2 lg:text-sm">{sub}</p>
+        <ul className="grid grid-cols-2 gap-5 lg:grid-cols-4">
+          {TRUST_ITEMS.map(({ label, value, sub }) => (
+            <li key={label} className="border-t-[3px] border-brand-yellow pt-3">
+              <p className="text-[11px] font-medium uppercase tracking-widest text-white/50">{label}</p>
+              <p className="mt-1.5 text-xl font-bold leading-snug text-white">{value}</p>
+              <p className="mt-1 text-[13px] leading-snug text-white/55">{sub}</p>
             </li>
           ))}
         </ul>
