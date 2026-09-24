@@ -256,7 +256,7 @@ export function ContactForm() {
             name="note"
             value={form.note}
             onChange={handleChange}
-            placeholder="Örn: 3+1 ev, 5. kat, asansör gerekli"
+            placeholder="Taşınma detaylarınızı kısaca yazın"
             disabled={isLoading}
             rows={3}
             maxLength={NOTE_MAX_LENGTH}
