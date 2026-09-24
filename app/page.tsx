@@ -71,6 +71,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.azerasansor.com",
   },
+  openGraph: {
+    title: "Antalya Asansörlü Evden Eve Nakliyat | Azer Asansör",
+    description:
+      "Antalya'da asansörlü evden eve nakliyat ve kiralık mobil asansör hizmeti. 22. kata kadar ulaşım, ücretsiz keşif, 7/24 hizmet.",
+    url: "https://www.azerasansor.com",
+    siteName: "Azer Asansör",
+    type: "website",
+  },
 };
 
 const homepageSchema = {
