@@ -18,6 +18,7 @@ export function ConversionTracker() {
       if (!link) return
 
       const href = link.getAttribute('href') || ''
+      const ctaLocation = link.closest('[data-cta-location]')?.getAttribute('data-cta-location') || 'unknown'
 
       if (href.startsWith('tel:')) {
         window.gtag?.('event', 'conversion', {
@@ -25,8 +26,8 @@ export function ConversionTracker() {
           value: 1.0,
           currency: 'TRY',
         })
-        window.gtag?.('event', 'phone_click', { event_category: 'contact' })
-        window.posthog?.capture('phone_clicked')
+        window.gtag?.('event', 'phone_click', { event_category: 'contact', cta_location: ctaLocation })
+        window.posthog?.capture('phone_clicked', { cta_location: ctaLocation })
       }
 
       if (href.includes('wa.me') || href.includes('whatsapp.com')) {
@@ -35,8 +36,8 @@ export function ConversionTracker() {
           value: 1.0,
           currency: 'TRY',
         })
-        window.gtag?.('event', 'whatsapp_click', { event_category: 'contact' })
-        window.posthog?.capture('whatsapp_clicked')
+        window.gtag?.('event', 'whatsapp_click', { event_category: 'contact', cta_location: ctaLocation })
+        window.posthog?.capture('whatsapp_clicked', { cta_location: ctaLocation })
       }
     }
 

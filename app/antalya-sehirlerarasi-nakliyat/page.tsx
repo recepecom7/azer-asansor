@@ -40,8 +40,8 @@ export default function SehirlerarasiNakliyatPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Antalya Şehirlerarası Nakliyat</h1>
             <p className="text-gray-200 text-lg mb-6">Antalya’dan Türkiye’nin farklı şehirlerine güvenli, planlı ve profesyonel nakliyat hizmeti sunuyoruz.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
+              <a data-cta-location="hero" href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+              <a data-cta-location="hero" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
             </div>
             <p className="text-sm text-gray-300 mt-4">⭐ 5.0 Google puanı</p>
           </div>
@@ -97,8 +97,8 @@ export default function SehirlerarasiNakliyatPage() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Şehirlerarası Nakliyat İçin Hemen Fiyat Alın</h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
+            <a data-cta-location="final_cta" href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+            <a data-cta-location="final_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
           </div>
         </div>
       </section>

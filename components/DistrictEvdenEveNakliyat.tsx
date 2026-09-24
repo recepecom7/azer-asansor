@@ -76,13 +76,13 @@ export function DistrictEvdenEveNakliyat({
             <p className="text-brand-yellow font-semibold mb-3">Sigortalı &amp; Asansörlü Taşıma</p>
             <p className="text-gray-200 text-lg mb-6">{heroParagraph}</p>
             <div className="flex flex-col sm:flex-row gap-4 mb-5">
-              <a href="tel:+905424669631">
+              <a data-cta-location="hero" href="tel:+905424669631">
                 <Button variant="primary">
                   <Phone className="w-5 h-5 mr-2" />
                   Hemen Ara
                 </Button>
               </a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
+              <a data-cta-location="hero" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   WhatsApp&apos;tan Yaz
@@ -184,13 +184,13 @@ export function DistrictEvdenEveNakliyat({
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631">
+              <a data-cta-location="pricing_cta" href="tel:+905424669631">
                 <Button variant="primary">
                   <Phone className="w-5 h-5 mr-2" />
                   Ücretsiz Keşif Al
                 </Button>
               </a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
+              <a data-cta-location="pricing_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   WhatsApp&apos;tan Yaz
@@ -210,13 +210,13 @@ export function DistrictEvdenEveNakliyat({
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{district}&apos;da Evden Eve Nakliyat İçin Hemen Fiyat Alın</h2>
           <p className="text-gray-300 mb-6">Hemen arayın, aynı gün keşif ve net fiyat alın.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631">
+            <a data-cta-location="final_cta" href="tel:+905424669631">
               <Button variant="primary">
                 <Phone className="w-5 h-5 mr-2" />
                 Hemen Ara
               </Button>
             </a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
+            <a data-cta-location="final_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
               <Button variant="whatsapp">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp&apos;tan Yaz

@@ -35,8 +35,8 @@ export default function AntalyaHizmetBolgeleriPage() {
               Antalya’nın tüm ilçelerinde asansörlü nakliyat, evden eve taşıma ve mobil asansör kiralama hizmeti sunuyoruz. Aşağıdan bulunduğunuz bölgeye özel hizmet detaylarını inceleyebilirsiniz.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
+              <a data-cta-location="hero" href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+              <a data-cta-location="hero" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
             </div>
           </div>
         </div>

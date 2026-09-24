@@ -88,7 +88,7 @@ export default async function ContactPage() {
                 <Phone className="w-5 h-5 text-brand-yellow mt-1" />
                 <div>
                   <p className="font-semibold">Telefon</p>
-                  <a href="tel:+905424669631" className="text-brand-yellow hover:underline">
+                  <a data-cta-location="contact_info" href="tel:+905424669631" className="text-brand-yellow hover:underline">
                     +90 542 466 96 31
                   </a>
                   <p className="text-gray-300 mt-1">Hemen arayın, aynı gün ücretsiz keşif ve net fiyat alın.</p>
@@ -98,7 +98,7 @@ export default async function ContactPage() {
                 <MessageCircle className="w-5 h-5 text-brand-yellow mt-1" />
                 <div>
                   <p className="font-semibold">WhatsApp</p>
-                  <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
+                  <a data-cta-location="contact_info" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline">
                     WhatsApp’tan Yaz – Hızlı Teklif
                   </a>
                 </div>
@@ -153,13 +153,13 @@ export default async function ContactPage() {
             Antalya’da nakliyat veya asansör kiralama hizmeti için hemen arayın veya WhatsApp’tan yazın.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631">
+            <a data-cta-location="final_cta" href="tel:+905424669631">
               <Button variant="primary">
                 <Phone className="w-5 h-5 mr-2" />
                 Hemen Ara
               </Button>
             </a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
+            <a data-cta-location="final_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
               <Button variant="whatsapp">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp’tan Yaz

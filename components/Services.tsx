@@ -90,13 +90,13 @@ export const Services = async ({
                         {ctaDescription}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:+905424669631">
+                        <a data-cta-location="services" href="tel:+905424669631">
                             <Button variant="primary" className="min-w-[180px] text-lg">
                                 <Phone className="w-5 h-5 mr-2" />
                                 Hemen Ara – Ücretsiz Fiyat Al
                             </Button>
                         </a>
-                        <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
+                        <a data-cta-location="services" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer">
                             <Button variant="whatsapp" className="min-w-[180px] text-lg">
                                 <MessageCircle className="w-5 h-5 mr-2" />
                                 WhatsApp&apos;tan Hızlı Teklif Al

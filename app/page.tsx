@@ -158,7 +158,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
       />
       <Header />
-      <Hero />
+      <Hero fullHeight />
       <TrustBar />
 
       {/* ── LEAD CAPTURE FORM ─────────────────────────────────────────────────── */}

@@ -1,4 +1,4 @@
-const PLACE_ID = "ChIJmyRxBJuF9YURtT8wdV810jw";
+export const PLACE_ID = "ChIJmyRxBJuF9YURtT8wdV810jw";
 const FALLBACK_RATING = 5;
 const FALLBACK_REVIEW_COUNT = 119;
 const REVALIDATE_SECONDS = 43200;
@@ -35,6 +35,7 @@ interface PlaceDetails {
   rating: number;
   reviewCount: number;
   reviews: PlaceReview[];
+  isFallback: boolean;
 }
 
 interface GooglePlaceReview {
@@ -48,7 +49,7 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
 
   if (!apiKey) {
     console.log("[googlePlaces] falling back: GOOGLE_PLACES_API_KEY is missing");
-    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
+    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
   }
 
   try {
@@ -67,7 +68,7 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
       console.log(
         `[googlePlaces] falling back: non-OK response (status ${response.status} ${response.statusText})`
       );
-      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
+      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
     }
 
     const data = await response.json();
@@ -75,7 +76,7 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
 
     if (!data || Object.keys(data).length === 0) {
       console.log("[googlePlaces] falling back: empty data in response");
-      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
+      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
     }
 
     const reviews: PlaceReview[] = Array.isArray(data.reviews)
@@ -91,9 +92,10 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
       rating: data.rating ?? FALLBACK_RATING,
       reviewCount: data.userRatingCount ?? FALLBACK_REVIEW_COUNT,
       reviews: reviews.length > 0 ? reviews : FALLBACK_REVIEWS,
+      isFallback: data.rating == null || data.userRatingCount == null,
     };
   } catch (error) {
     console.log("[googlePlaces] falling back: request threw an error", error);
-    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS };
+    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
   }
 }

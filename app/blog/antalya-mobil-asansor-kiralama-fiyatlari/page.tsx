@@ -62,8 +62,8 @@ export default function Page() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <p className="text-gray-300 text-lg mb-6">Antalya’da mobil asansör kiralama fiyatı için hemen arayın veya WhatsApp’tan yazın.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
+            <a data-cta-location="blog_cta" href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+            <a data-cta-location="blog_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
           </div>
         </div>
       </section>

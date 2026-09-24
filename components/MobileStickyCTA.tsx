@@ -16,7 +16,7 @@ export function MobileStickyCTA() {
             style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 0.75rem)" }}
           >
             <div className="grid grid-cols-2 gap-3">
-              <a
+              <a data-cta-location="sticky"
                 href={PHONE_HREF}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-yellow text-brand-black font-semibold py-3 text-base shadow-sm active:scale-[0.99] transition"
                 aria-label="Ara"
@@ -24,7 +24,7 @@ export function MobileStickyCTA() {
                 <Phone className="w-5 h-5" />
                 Ara
               </a>
-              <a
+              <a data-cta-location="sticky"
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -103,13 +103,13 @@ export default function FacadeElevatorPage() {
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Antalya geneli hizmet</li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631" className="w-full sm:w-auto">
+              <a data-cta-location="hero" href="tel:+905424669631" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full px-7">
                   <Phone className="w-5 h-5 mr-2" />
                   Hemen Ara
                 </Button>
               </a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a data-cta-location="hero" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="whatsapp" className="w-full px-7">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   WhatsApp&apos;tan Yaz
@@ -365,13 +365,13 @@ export default function FacadeElevatorPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Antalya Dış Cephe Asansörü İçin Hemen Fiyat Alın</h2>
           <p className="text-gray-300 text-lg mb-8">Bugün arayın, aynı gün kurulum ve net fiyat alın.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631" className="w-full sm:w-auto">
+            <a data-cta-location="final_cta" href="tel:+905424669631" className="w-full sm:w-auto">
               <Button variant="primary" className="w-full px-7">
                 <Phone className="w-5 h-5 mr-2" />
                 Hemen Ara
               </Button>
             </a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <a data-cta-location="final_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <Button variant="whatsapp" className="w-full px-7">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp&apos;tan Yaz

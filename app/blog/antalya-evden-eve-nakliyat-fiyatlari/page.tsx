@@ -129,8 +129,8 @@ export default function Page() {
               Her taşınma farklıdır. Net fiyatınızı öğrenmek için WhatsApp&apos;tan evinizin fotoğraflarını gönderin veya arayın. Ücretsiz keşif, sürpriz ücret yok.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Fotoğraf Gönder</Button></a>
-              <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+              <a data-cta-location="blog_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Fotoğraf Gönder</Button></a>
+              <a data-cta-location="blog_cta" href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
             </div>
           </div>
 
@@ -166,8 +166,8 @@ export default function Page() {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <p className="text-gray-300 text-lg mb-6">Antalya&apos;da ev taşıma fiyatı almak için hemen arayın veya WhatsApp&apos;tan yazın.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
+            <a data-cta-location="blog_cta" href="tel:+905424669631"><Button variant="primary"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button></a>
+            <a data-cta-location="blog_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer"><Button variant="whatsapp"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button></a>
           </div>
         </div>
       </section>

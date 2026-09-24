@@ -261,7 +261,7 @@ export const Header = () => {
 
                 {/* Right side — CTA + Mobile burger */}
                 <div className="flex items-center gap-3">
-                    <a href="tel:+905424669631">
+                    <a data-cta-location="header" href="tel:+905424669631">
                         <Button variant="primary" className="text-sm px-5 py-2">
                             <Phone className="w-4 h-4 mr-2" />
                             Hemen Ara

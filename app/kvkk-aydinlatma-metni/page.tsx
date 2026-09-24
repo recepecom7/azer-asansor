@@ -37,7 +37,7 @@ export default function KvkkPage() {
           </a>
           <br />
           Telefon:{" "}
-          <a href="tel:+905424669631" className="underline hover:text-brand-black">
+          <a data-cta-location="legal_text" href="tel:+905424669631" className="underline hover:text-brand-black">
             +90 542 466 96 31
           </a>
         </p>

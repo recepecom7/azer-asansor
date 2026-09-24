@@ -46,10 +46,10 @@ export default function KlimaTasimaPage() {
               Klima sistemleri ağır ve hassas yapıya sahiptir. Antalya’da mobil asansör desteği ile klimaları güvenli şekilde taşıyoruz.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631" className="w-full sm:w-auto">
+              <a data-cta-location="hero" href="tel:+905424669631" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button>
               </a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a data-cta-location="hero" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="whatsapp" className="w-full"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button>
               </a>
             </div>
@@ -97,10 +97,10 @@ export default function KlimaTasimaPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Klima Taşıma İçin Hemen Ulaşın</h2>
           <p className="text-gray-300 mb-7">Antalya’da güvenli klima taşıma planlaması için hemen bizi arayın.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="tel:+905424669631" className="w-full sm:w-auto">
+            <a data-cta-location="final_cta" href="tel:+905424669631" className="w-full sm:w-auto">
               <Button variant="primary" className="w-full"><Phone className="w-5 h-5 mr-2" />Hemen Ara</Button>
             </a>
-            <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <a data-cta-location="final_cta" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <Button variant="whatsapp" className="w-full"><MessageCircle className="w-5 h-5 mr-2" />WhatsApp&apos;tan Yaz</Button>
             </a>
           </div>

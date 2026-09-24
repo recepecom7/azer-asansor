@@ -72,13 +72,13 @@ export default function PiyanoVeAgirEsyaTasimaPage() {
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+905424669631" className="w-full sm:w-auto">
+              <a data-cta-location="hero" href="tel:+905424669631" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full text-base md:text-lg px-7">
                   <Phone className="w-5 h-5 mr-2" />
                   Hemen Ara
                 </Button>
               </a>
-              <a href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a data-cta-location="hero" href="https://wa.me/905424669631" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button variant="whatsapp" className="w-full text-base md:text-lg px-7">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   WhatsApp Teklif Al

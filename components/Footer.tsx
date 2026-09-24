@@ -73,7 +73,7 @@ export const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-center gap-3 text-gray-300">
                                 <Phone className="w-5 h-5 text-brand-yellow" />
-                                <a href="tel:+905424669631" className="hover:text-brand-yellow transition-colors">
+                                <a data-cta-location="footer" href="tel:+905424669631" className="hover:text-brand-yellow transition-colors">
                                     +90 542 466 96 31
                                 </a>
                             </li>
