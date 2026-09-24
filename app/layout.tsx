@@ -183,7 +183,7 @@ export default async function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             window.gtag = gtag;
             gtag('js', new Date());
-            gtag('config', 'AW-18038829941');
+            gtag('config', 'AW-18038829941', { allow_enhanced_conversions: true });
             gtag('config', 'G-B3P99ETM15');
           `}
         </Script>

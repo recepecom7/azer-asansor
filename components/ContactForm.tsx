@@ -36,7 +36,7 @@ const SERVICES = [
 // Strips non-digits, removes leading +90 or 90, normalises to 10-digit "5XXXXXXXXX"
 function formatPhoneDisplay(raw: string): string {
   // Allow only digits, spaces, parens, hyphens, plus
-  let cleaned = raw.replace(/[^\d\s()\-+]/g, "");
+  const cleaned = raw.replace(/[^\d\s()\-+]/g, "");
   return cleaned;
 }
 
