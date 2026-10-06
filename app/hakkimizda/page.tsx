@@ -125,10 +125,10 @@ export default async function AboutPage() {
           <div className="max-w-5xl bg-gray-900 border border-white/10 rounded-2xl p-6 md:p-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Hakkımızda | Azer Asansör</h1>
             <p className="text-brand-yellow font-semibold text-lg mb-3">
-              Antalya’da Asansörlü Nakliyat ve Mobil Asansör Uzmanı
+              2011’den Beri Antalya’da Asansörlü Nakliyat ve Mobil Asansör
             </p>
             <p className="text-gray-200 text-lg leading-relaxed mb-7">
-              Azer Asansör, Antalya’da asansörlü nakliyat, mobil asansör kiralama ve evden eve taşımacılık hizmetleri sunan yerel bir firmadır. Yüksek katlı binalarda hızlı ve güvenli taşıma çözümleri sağlayarak müşterilerimizin taşınma sürecini kolaylaştırıyoruz.
+              2011’den beri Antalya’da evden eve nakliyat ve kiralık mobil asansör hizmeti veriyoruz. Kendi asansör ve araç filomuzla, taşeron kullanmadan çalışıyoruz.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a data-cta-location="hero" href="tel:+905424669631" className="w-full sm:w-auto">
@@ -154,11 +154,49 @@ export default async function AboutPage() {
           <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
             <h2 className="text-3xl md:text-4xl font-bold mb-5">Azer Asansör Kimdir?</h2>
             <p className="text-gray-300 text-lg leading-relaxed">
-              Antalya’da yüksek kat taşımacılığı ve mobil asansör hizmetlerine ihtiyaç duyan müşteriler için pratik ve güvenli çözümler sunuyoruz. Ev taşıma, ofis taşıma, inşaat malzemesi taşıma, cam balkon taşıma ve beyaz eşya taşıma gibi farklı ihtiyaçlarda mobil asansör desteği sağlıyoruz.
+              2011’den beri Antalya’da mobil asansör kiralama ve evden eve nakliyat hizmetleriyle tanınıyoruz. Kendi asansör ve araç filomuzla, müşterilerimize doğrudan hizmet sunuyor; taşeron kullanmadan işlerimizi yönetiyoruz.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mt-4">
-              Antalya asansörlü nakliyat hizmetlerinde doğru planlama, taşıma sürecinin kalitesini belirler. Bu yüzden her işte önce kat sayısı, bina erişimi ve eşya yoğunluğu analiz edilir. Mobil asansör kiralama ile yüksek katlı binalarda merdiven kaynaklı zaman kaybını azaltıyor, taşıma adımlarını daha kontrollü hale getiriyoruz. Ev değişikliği yapan aileler için evden eve nakliyat sürecinde paketleme, yükleme ve yerleştirme aşamalarını dengeli bir operasyonla yürütüyoruz. Antalya’nın farklı mahallelerinde değişen bina yapısına göre esnek çözümler üretmek, sahadaki en önemli yaklaşımımızdır. Amacımız fazla vaat vermek değil, ihtiyaç odaklı ve uygulanabilir bir taşıma planı sunmaktır.
+              Antalya’nın bina yapısını, mahalle erişimini ve taşıma dinamiklerini 10.000’den fazla taşıma deneyiminden biliriz. Her iş için kat sayısı, kurulum alanı ve eşya miktarını analiz ederek size özel bir plan sunuyoruz. Amaç, fazla vaat vermek değil ihtiyaç odaklı ve uygulanabilir çözümler sağlamaktır.
             </p>
+            <ul className="space-y-3 text-gray-300 text-lg mt-6 pl-4">
+              <li>• 2011’den beri Antalya’da hizmet veriyor</li>
+              <li>• 10.000+ başarılı taşıma deneyimi</li>
+              <li>• Aynı gün keşif ve hızlı hizmet</li>
+              <li>• ⭐ {rating.toFixed(1)} Google puanı · {reviewCount}+ müşteri yorumu</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-14 bg-brand-black text-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Hikayemiz</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-2xl font-bold mb-3 text-brand-yellow">Başlangıcımız</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                2011'de Azer Asansör kurulduğunda, Antalya'da hızlı gelişen yapı sektörüne hizmet verme amaçladık. Yüksek katlı binaların artmasıyla, pratik ve güvenli taşıma çözümlerine duyulan ihtiyacı gördük. Bu ihtiyaca cevap vermek için kendi asansör ve araç flomuzla çalışmaya başladık.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3 text-brand-yellow">Pazar Gözlemi</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Antalya'daki nakliyat pazarında birçok firma vardı, ancak çoğu merdivenden taşımacılığın getirdiği sınırlılıklardan şikayet eden müşterilerle karşılaştık. Mobil asansör teknolojisini yaygınlaştırarak, hızlı, düşük riskli ve planlı taşımacılık sunmaya karar verdik.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3 text-brand-yellow">Felsefemiz</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Azer Asansör olarak, fazla vaat yerine uygulanabilir çözümler sunmayı tercih ederiz. Her müşterinin durumu farklıdır; bina yapısından eşya miktarına kadar tüm faktörler dikkate alınır. Şeffaf fiyatlandırma ve planlı işleyiş, müşteri memnuniyetimizin temelini oluşturur.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-3 text-brand-yellow">Bugün</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Günümüzde 10.000'den fazla taşıma işlemini başarıyla tamamladık ve Antalya'nın en saygın nakliyat firmalarından biri haline geldik. Müşteri yorumları ve taşıma deneyimlerimiz, sürekli gelişmeye ve yeni hizmetler eklemeye bizi teşvik ediyor.
+              </p>
+            </div>
           </div>
         </div>
       </section>
