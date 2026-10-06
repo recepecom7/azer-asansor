@@ -1,6 +1,6 @@
 export const PLACE_ID = "ChIJmyRxBJuF9YURtT8wdV810jw";
 const FALLBACK_RATING = 5;
-const FALLBACK_REVIEW_COUNT = 119;
+const FALLBACK_REVIEW_COUNT = 128;
 const REVALIDATE_SECONDS = 43200;
 
 export interface PlaceReview {
@@ -59,49 +59,66 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
     return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
   }
 
-  try {
-    const response = await fetch(
-      `https://places.googleapis.com/v1/places/${PLACE_ID}`,
-      {
-        headers: {
-          "X-Goog-Api-Key": apiKey,
-          "X-Goog-FieldMask": "rating,userRatingCount,reviews",
-        },
-        next: { revalidate: REVALIDATE_SECONDS },
-      }
-    );
-
-    if (!response.ok) {
-      console.log(
-        `[googlePlaces] falling back: non-OK response (status ${response.status} ${response.statusText})`
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const response = await fetch(
+        `https://places.googleapis.com/v1/places/${PLACE_ID}`,
+        {
+          headers: {
+            "X-Goog-Api-Key": apiKey,
+            "X-Goog-FieldMask": "rating,userRatingCount,reviews",
+          },
+          next: { revalidate: REVALIDATE_SECONDS },
+          signal: AbortSignal.timeout(8000),
+        }
       );
+
+      if (!response.ok) {
+        if (attempt < 2) {
+          console.log(`[googlePlaces] retry ${attempt}: non-OK response (status ${response.status})`);
+          continue;
+        }
+        console.log(
+          `[googlePlaces] falling back: non-OK response (status ${response.status} ${response.statusText})`
+        );
+        return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
+      }
+
+      const data = await response.json();
+      if (!data || Object.keys(data).length === 0) {
+        if (attempt < 2) {
+          console.log("[googlePlaces] retry: empty data in response");
+          continue;
+        }
+        console.log("[googlePlaces] falling back: empty data in response");
+        return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
+      }
+
+      const reviews: PlaceReview[] = Array.isArray(data.reviews)
+        ? data.reviews
+            .map((review: GooglePlaceReview) => ({
+              author: review.authorAttribution?.displayName ?? "Google Kullanıcısı",
+              text: review.originalText?.text ?? review.text?.text ?? "",
+              rating: review.rating ?? 0,
+            }))
+            .filter((review: PlaceReview) => review.text.length > 0)
+        : [];
+
+      return {
+        rating: data.rating ?? FALLBACK_RATING,
+        reviewCount: data.userRatingCount ?? FALLBACK_REVIEW_COUNT,
+        reviews: reviews.length > 0 ? reviews : FALLBACK_REVIEWS,
+        isFallback: data.rating == null || data.userRatingCount == null,
+      };
+    } catch (error) {
+      if (attempt < 2) {
+        console.log(`[googlePlaces] retry ${attempt}: request threw an error`);
+        continue;
+      }
+      console.log("[googlePlaces] falling back: request threw an error");
       return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
     }
-
-    const data = await response.json();
-    if (!data || Object.keys(data).length === 0) {
-      console.log("[googlePlaces] falling back: empty data in response");
-      return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
-    }
-
-    const reviews: PlaceReview[] = Array.isArray(data.reviews)
-      ? data.reviews
-          .map((review: GooglePlaceReview) => ({
-            author: review.authorAttribution?.displayName ?? "Google Kullanıcısı",
-            text: review.originalText?.text ?? review.text?.text ?? "",
-            rating: review.rating ?? 0,
-          }))
-          .filter((review: PlaceReview) => review.text.length > 0)
-      : [];
-
-    return {
-      rating: data.rating ?? FALLBACK_RATING,
-      reviewCount: data.userRatingCount ?? FALLBACK_REVIEW_COUNT,
-      reviews: reviews.length > 0 ? reviews : FALLBACK_REVIEWS,
-      isFallback: data.rating == null || data.userRatingCount == null,
-    };
-  } catch (error) {
-    console.log("[googlePlaces] falling back: request threw an error", error);
-    return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
   }
+
+  return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
 }
