@@ -112,10 +112,10 @@ export async function getPlaceDetails(): Promise<PlaceDetails> {
       };
     } catch (error) {
       if (attempt < 2) {
-        console.log(`[googlePlaces] retry ${attempt}: request threw an error`);
+        console.log(`[googlePlaces] retry ${attempt}: request threw an error: ${error instanceof Error ? error.message : String(error)}`);
         continue;
       }
-      console.log("[googlePlaces] falling back: request threw an error");
+      console.log(`[googlePlaces] falling back: request threw an error: ${error instanceof Error ? error.message : String(error)}`);
       return { rating: FALLBACK_RATING, reviewCount: FALLBACK_REVIEW_COUNT, reviews: FALLBACK_REVIEWS, isFallback: true };
     }
   }
