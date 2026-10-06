@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/dosemealti-asansorlu-nakliyat", priority: 0.7, changeFrequency: "monthly" },
     { path: "/dosemealti-evden-eve-nakliyat", priority: 0.7, changeFrequency: "monthly" },
 
+    { path: "/blog/nakliyeci-isi-yarida-birakirsa-ne-yapmali", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-asansorlu-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },

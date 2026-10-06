@@ -40,6 +40,11 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "Nakliyeci İşi Yarıda Bırakırsa veya Fiyatı Artırırsa Ne Yapmalı?",
+    href: "/blog/nakliyeci-isi-yarida-birakirsa-ne-yapmali",
+    text: "Taşınma günü sorun çıkarsa izlenecek adımlar ve taşınmadan önce alınacak 7 önlem.",
+  },
+  {
     title: "Eylülde Evden Eve Nakliyat mı Asansörlü Nakliyat mı Seçmeli?",
     href: "/blog/antalya-evden-eve-nakliyat-asansorlu-nakliyat-eylul",
     text: "Kat sayısına göre hangi hizmeti seçmeniz gerektiğine dair pratik karar rehberi.",
