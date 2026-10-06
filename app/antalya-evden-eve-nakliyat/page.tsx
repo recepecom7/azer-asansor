@@ -141,6 +141,22 @@ const breadcrumbItems: BreadcrumbItem[] = [
   { label: "Evden Eve Nakliyat", href: "/antalya-evden-eve-nakliyat" },
 ];
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Antalya Evden Eve Nakliyat",
+  serviceType: "Evden Eve Nakliyat",
+  url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": "https://www.azerasansor.com/#business",
+    name: "Azer Asansör - Antalya Kiralık Asansör & Evden Eve Nakliyat",
+    url: "https://www.azerasansor.com",
+    telephone: "+905424669631",
+  },
+  areaServed: ["Muratpaşa", "Kepez", "Konyaaltı", "Lara", "Aksu", "Döşemealtı", "Antalya"],
+};
+
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default async function EvdenEveNakliyatPage() {
   const { rating, reviewCount } = await getPlaceDetails();
@@ -148,6 +164,11 @@ export default async function EvdenEveNakliyatPage() {
 
   return (
     <main className="min-h-screen bg-brand-beige">
+      <script
+        id="service-schema-evden-eve-nakliyat"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header />
       <Breadcrumb items={breadcrumbItems} schemaId="breadcrumb-schema-evden-eve-nakliyat" />
 

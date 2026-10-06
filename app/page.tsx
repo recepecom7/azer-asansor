@@ -111,6 +111,7 @@ const homepageSchema = {
     "latitude": 36.9162825,
     "longitude": 30.63951
   },
+  "logo": "https://www.azerasansor.com/images/logo.png",
   "areaServed": ["Muratpaşa", "Kepez", "Konyaaltı", "Lara", "Aksu", "Döşemealtı", "Kemer", "Antalya"],
   "openingHours": "Mo-Su 00:00-23:59",
   "sameAs": "https://www.google.com/maps/place/?q=place_id:ChIJmyRxBJuF9YURtT8wdV810jw",
