@@ -17,11 +17,24 @@ export const metadata: Metadata = {
     title: "Blog | Azer Asansör Antalya",
     description:
       "Antalya asansörlü nakliyat, mobil asansör kiralama ve evden eve nakliyat hakkında faydalı rehberler.",
+    siteName: "Azer Asansör",
+    locale: "tr_TR",
+    type: "website",
+    images: [
+      {
+        url: "https://www.azerasansor.com/images/hero-real.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Azer Asansör - Antalya Kiralık Asansör",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Blog | Azer Asansör Antalya",
     description:
       "Antalya asansörlü nakliyat, mobil asansör kiralama ve evden eve nakliyat hakkında faydalı rehberler.",
+    images: ["https://www.azerasansor.com/images/hero-real.jpg"],
   },
 };
 

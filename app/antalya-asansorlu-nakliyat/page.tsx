@@ -132,11 +132,24 @@ export const metadata: Metadata = {
     title: "Antalya Asansörlü Nakliyat Hizmeti | Azer Asansör",
     description:
       "Antalya asansörlü nakliyat hizmeti. 22. kata kadar mobil asansör, sigortalı taşıma, hızlı kurulum. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.",
+    siteName: "Azer Asansör",
+    locale: "tr_TR",
+    type: "website",
+    images: [
+      {
+        url: "https://www.azerasansor.com/images/hero-real.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Azer Asansör - Antalya Kiralık Asansör",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Antalya Asansörlü Nakliyat Hizmeti | Azer Asansör",
     description:
       "Antalya asansörlü nakliyat hizmeti. 22. kata kadar mobil asansör, sigortalı taşıma, hızlı kurulum. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.",
+    images: ["https://www.azerasansor.com/images/hero-real.jpg"],
   },
 };
 

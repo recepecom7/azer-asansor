@@ -38,10 +38,6 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Azer Asansör | Dış Cephe ve Yük Asansörü Hizmetleri",
-    description:
-      "Antalya ve çevre illerde güvenli kiralık asansör, yük asansörü kiralama ve nakliyat asansörü hizmetleri.",
-    url: "https://www.azerasansor.com",
     siteName: "Azer Asansör",
     locale: "tr_TR",
     type: "website",
@@ -56,9 +52,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Azer Asansör | Dış Cephe ve Yük Asansörü Hizmetleri",
-    description:
-      "Antalya ve çevre illerde güvenli kiralık asansör, yük asansörü kiralama ve nakliyat asansörü hizmetleri.",
     images: ["https://www.azerasansor.com/images/hero-real.jpg"],
   },
 };

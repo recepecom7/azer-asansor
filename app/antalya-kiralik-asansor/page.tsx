@@ -69,11 +69,24 @@ export const metadata: Metadata = {
     title: "Antalya Kiralık Asansör | Mobil Asansör Kiralama | Azer Asansör",
     description:
       "Antalya kiralık asansör hizmeti ile yüksek katlara hızlı ve güvenli taşıma. Mobil asansör kiralama, uygun fiyat ve aynı gün kurulum.",
+    siteName: "Azer Asansör",
+    locale: "tr_TR",
+    type: "website",
+    images: [
+      {
+        url: "https://www.azerasansor.com/images/hero-real.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Azer Asansör - Antalya Kiralık Asansör",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Antalya Kiralık Asansör | Mobil Asansör Kiralama | Azer Asansör",
     description:
       "Antalya kiralık asansör hizmeti ile yüksek katlara hızlı ve güvenli taşıma. Mobil asansör kiralama, uygun fiyat ve aynı gün kurulum.",
+    images: ["https://www.azerasansor.com/images/hero-real.jpg"],
   },
 };
 
