@@ -78,6 +78,15 @@ export const metadata: Metadata = {
     url: "https://www.azerasansor.com",
     siteName: "Azer Asansör",
     type: "website",
+    locale: "tr_TR",
+    images: [
+      {
+        url: "https://www.azerasansor.com/images/hero-real.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Azer Asansör - Antalya Kiralık Asansör",
+      },
+    ],
   },
 };
 
