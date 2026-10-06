@@ -86,7 +86,7 @@ const faqItems = [
   {
     question: "Hafta sonu veya nakliyat yasak günlerinde ev taşıma hizmeti veriyor musunuz?",
     answer:
-      "Evet, Antalya genelinde hafta sonu ve resmi tatil günlerinde de evden eve nakliyat hizmeti sunuyoruz; ancak bazı site yönetimleri ve belediyeler belirli gün ve saat aralıklarında ağır taşıt girişini kısıtlayabilir. Bu tür kısıtlamalar özellikle Muratpaşa ve Kepez merkezdeki dar sokaklarda farklılık gösterebileceğinden, taşınma günü öncesinde bölgenizin trafik düzenlemelerini ekibimizle birlikte netleştirmenizi tavsiye ederiz. Randevunuzu en az 2–3 gün öncesinden almak, hem uygun ekip planlaması hem de sigortalı nakliyat belgelerinin hazırlanması açısından süreci kolaylaştırır. Acil taşınma talepleriniz için WhatsApp hattımız 7/24 aktiftir.",
+      "Evet, Antalya genelinde hafta sonu ve resmi tatil günlerinde de evden eve nakliyat hizmeti sunuyoruz; ancak bazı site yönetimleri ve belediyeler belirli gün ve saat aralıklarında ağır taşıt girişini kısıtlayabilir. Bu tür kısıtlamalar özellikle Muratpaşa ve Kepez merkezdeki dar sokaklarda farklılık gösterebileceğinden, taşınma günü öncesinde bölgenizin trafik düzenlemelerini ekibimizle birlikte netleştirmenizi tavsiye ederiz. Randevunuzu en az 2–3 gün öncesinden almak, uygun ekip planlaması açısından süreci kolaylaştırır. Acil taşınma talepleriniz için WhatsApp hattımız 7/24 aktiftir.",
   },
 ];
 
@@ -351,7 +351,7 @@ export default async function EvdenEveNakliyatPage() {
               Evden eve taşınma sürecinde en çok duyduğumuz kaygı, mobilyaların hasar görmesidir. Özellikle yıllarca birlikte yaşanmış gardıroplar, değer taşıyan koltuk takımları ya da büyükanne yadigarı antika eşyalar söz konusu olduğunda bu endişe büyümektedir. Azer Asansör olarak bu gerçeği çok iyi biliyoruz.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-5">
-              Bu nedenle taşımacılık hizmetimiz, yalnızca &ldquo;eşyaları bir noktadan alıp diğerine bırakmak&rdquo; anlayışıyla değil, kapsamlı bir güvence sistemiyle şekillenmektedir. Büyük mobilyaların demontajı ve yeni adreste montajı için <strong className="text-white">deneyimli mobilya sökme ve montaj ekibi</strong> sunuyoruz; karyola kafaları, modüler kütüphaneler, mutfak dolapları ve TV üniteleri gibi söküp takılması uzmanlık gerektiren eşyalar bu kapsamda değerlendirilir.
+              Bu nedenle taşımacılık hizmetimiz, yalnızca &ldquo;eşyaları bir noktadan alıp diğerine bırakmak&rdquo; anlayışıyla değil, güvenli ve planlı bir süreçle şekillenmektedir. Büyük mobilyaların demontajı ve yeni adreste montajı için <strong className="text-white">deneyimli mobilya sökme ve montaj ekibi</strong> sunuyoruz; karyola kafaları, modüler kütüphaneler, mutfak dolapları ve TV üniteleri gibi söküp takılması uzmanlık gerektiren eşyalar bu kapsamda değerlendirilir.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-5">
               Taşıma sürecinde tüm eşyalar önce uygun ambalaj malzemeleriyle sarılır; kırılgan ürünler köpük ve baloncuklu naylon ile ayrıca korunur. Ardından <strong className="text-white">sigortalı taşımacılık</strong> kapsamında güvence altına alınarak araca yüklenir. Olası bir hasar durumunda ekibimizle iletişime geçebilirsiniz.

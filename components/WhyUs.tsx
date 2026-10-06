@@ -11,7 +11,7 @@ const defaultBenefits: Benefit[] = [
     { title: '10+ Yıllık Sektör Tecrübesi', description: "Antalya'da konut, inşaat, tadilat ve taşımacılık projelerinde yıllara dayanan deneyim.", icon: Award },
     { title: 'Sertifikalı ve Deneyimli Ekip', description: 'İş güvenliği eğitimlerini tamamlamış, alanında uzman profesyonel kadro.', icon: HardHat },
     { title: 'Modern ve Güvenli Ekipman', description: 'Düzenli bakımlı, 22. kata kadar ulaşan mobil ve dış cephe asansörleri.', icon: ShieldCheck },
-    { title: 'Tam Sigorta Güvencesi', description: 'Tüm çalışmalar yasal mevzuata uygun, sigortalı ve kontrollü şekilde gerçekleştirilir.', icon: Check },
+    { title: 'Sigortalı Taşıma', description: 'Taşımalarımız sigortalıdır ve tüm çalışmalar kontrollü şekilde gerçekleştirilir.', icon: Check },
     { title: 'Hızlı Servis', description: 'Muratpaşa, Kepez, Konyaaltı, Lara, Aksu, Döşemealtı ve çevresinde hızlı hizmet.', icon: Clock },
 ];
 
