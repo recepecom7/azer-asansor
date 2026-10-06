@@ -127,6 +127,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-asansorlu-nakliyat",
   },
+  openGraph: {
+    url: "https://www.azerasansor.com/antalya-asansorlu-nakliyat",
+    title: "Antalya Asansörlü Nakliyat Hizmeti | Azer Asansör",
+    description:
+      "Antalya asansörlü nakliyat hizmeti. 22. kata kadar mobil asansör, sigortalı taşıma, hızlı kurulum. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.",
+  },
+  twitter: {
+    title: "Antalya Asansörlü Nakliyat Hizmeti | Azer Asansör",
+    description:
+      "Antalya asansörlü nakliyat hizmeti. 22. kata kadar mobil asansör, sigortalı taşıma, hızlı kurulum. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.",
+  },
 };
 
 export default async function AsansorluNakliyatPage() {

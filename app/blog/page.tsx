@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.azerasansor.com/blog",
   },
+  openGraph: {
+    url: "https://www.azerasansor.com/blog",
+    title: "Blog | Azer Asansör Antalya",
+    description:
+      "Antalya asansörlü nakliyat, mobil asansör kiralama ve evden eve nakliyat hakkında faydalı rehberler.",
+  },
+  twitter: {
+    title: "Blog | Azer Asansör Antalya",
+    description:
+      "Antalya asansörlü nakliyat, mobil asansör kiralama ve evden eve nakliyat hakkında faydalı rehberler.",
+  },
 };
 
 const posts = [

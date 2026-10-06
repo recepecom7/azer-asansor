@@ -103,6 +103,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-mobil-asansor-kiralama",
   },
+  openGraph: {
+    url: "https://www.azerasansor.com/antalya-mobil-asansor-kiralama",
+    title: "Antalya Mobil Asansör Kiralama | Azer Asansör",
+    description:
+      "Antalya mobil asansör kiralama hizmeti. 22. kata kadar hızlı kurulum, güvenli taşıma ve kiralık asansör çözümleri. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya.",
+  },
+  twitter: {
+    title: "Antalya Mobil Asansör Kiralama | Azer Asansör",
+    description:
+      "Antalya mobil asansör kiralama hizmeti. 22. kata kadar hızlı kurulum, güvenli taşıma ve kiralık asansör çözümleri. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya.",
+  },
 };
 
 export default async function MobileElevatorPage() {

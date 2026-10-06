@@ -71,6 +71,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.azerasansor.com/hakkimizda",
   },
+  openGraph: {
+    url: "https://www.azerasansor.com/hakkimizda",
+    title: "Hakkımızda | Azer Asansör Antalya",
+    description:
+      "Azer Asansör hakkında bilgi alın. Antalya’da asansörlü nakliyat, mobil asansör kiralama, evden eve nakliyat ve dış cephe asansörü hizmetleri sunuyoruz.",
+  },
+  twitter: {
+    title: "Hakkımızda | Azer Asansör Antalya",
+    description:
+      "Azer Asansör hakkında bilgi alın. Antalya’da asansörlü nakliyat, mobil asansör kiralama, evden eve nakliyat ve dış cephe asansörü hizmetleri sunuyoruz.",
+  },
 };
 
 export default async function AboutPage() {

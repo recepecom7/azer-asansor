@@ -111,10 +111,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
     title: "Antalya Evden Eve Nakliyat | Sigortalı & Asansörlü Taşıma",
     description:
       "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu ve Döşemealtı'nda hizmet.",
-    url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
     siteName: "Azer Asansör",
     locale: "tr_TR",
     type: "website",
