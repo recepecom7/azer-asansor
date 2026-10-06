@@ -66,7 +66,7 @@ const faqItems = [
   {
     question: "Taşınma sırasında eşyalarım sigortalanıyor mu; olası bir hasarda süreç nasıl işliyor?",
     answer:
-      "Evet, sigortalı nakliyat kapsamında eşyalarınız taşıma sürecinin başından teslimata kadar güvence altına alınmaktadır. Taşıma öncesinde eşyaların durumu kayıt altına alınır; tüm ürünler balonlu naylon, köpük profil ve koruyucu battaniyelerle ambalajlanarak araca yüklenir. Olası bir hasar durumunda durum tutanakla belgelenir ve sigorta kapsamında tazminat süreci hızlıca başlatılır; sizi bürokrasi ile baş başa bırakmayız. Bu şeffaf güvence sistemi, özellikle değerli mobilya ve antika eşya taşıyan aileler için büyük bir huzur kaynağı olmaktadır.",
+      "Evet, taşımalarımız sigortalıdır. Tüm ürünler balonlu naylon, köpük profil ve koruyucu battaniyelerle ambalajlanarak araca yüklenir. Olası bir hasar durumunda ekibimizle iletişime geçebilirsiniz.",
   },
   {
     question: "Eşya paketleme ve ambalajlama hizmetine neler dahildir; beyaz eşyaları da sökebiliyor musunuz?",

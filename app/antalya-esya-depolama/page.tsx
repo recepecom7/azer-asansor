@@ -36,7 +36,7 @@ export default function EsyaDepolamaPage() {
     },
     {
       question: "Eşyalarım sigortalanıyor mu?",
-      answer: "Evet, depolanan tüm eşyalarınız doğal afetler, yangın ve hırsızlığa karşı sigortalanmaktadır.",
+      answer: "Evet, depolanan eşyalarınız sigortalıdır.",
     },
     {
       question: "Depolarda rutubet veya haşere sorunu var mı?",

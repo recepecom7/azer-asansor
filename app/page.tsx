@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "Taşıma sırasında eşyalarım sigortalı mı?",
     answer:
-      "Taşıma sürecinde eşyalarınızın güvenliği için her adım planlı ve kontrollü şekilde yürütülür. Hasar durumunda süreç hakkında bilgi almak için ekibimizle iletişime geçebilirsiniz.",
+      "Evet, taşımalarımız sigortalıdır. Hasar durumunda süreç hakkında bilgi almak için ekibimizle iletişime geçebilirsiniz.",
   },
   {
     question: "Hafta sonu hizmet veriyor musunuz?",

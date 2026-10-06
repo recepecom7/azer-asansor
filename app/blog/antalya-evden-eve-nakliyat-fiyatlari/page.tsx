@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Sigorta gerçekten gerekli mi?",
     answer:
-      "Zorunlu değildir ama özellikle değerli mobilya ve eşyalarda önerilir; olası hasar durumunda maddi kaybı önler.",
+      "Sigorta, hasar durumunda maddi kaybı önleyen önemli bir güvencedir; özellikle değerli mobilya ve eşyalarda önemlidir. Azer Asansör taşımalarında eşyalarınız sigortalıdır.",
   },
   {
     question: "Şehirler arası nakliyat neden bu kadar daha pahalı?",

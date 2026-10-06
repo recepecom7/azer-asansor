@@ -40,7 +40,7 @@ export default function PiyanoVeAgirEsyaTasimaPage() {
     },
     {
       question: "Ağır eşya taşımada sigorta geçerli mi?",
-      answer: "Evet, taşınan piyano ve çelik kasalarınız gibi yüksek maddi değere sahip ağır eşyalarınız poliçelendirilerek sigorta kapsamına alınmaktadır.",
+      answer: "Evet, ağır ve değerli eşyalar da sigortalı taşımamız kapsamındadır.",
     }
   ];
 
