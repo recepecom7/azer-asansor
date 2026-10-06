@@ -28,7 +28,7 @@ const processSteps = [
 
 const whyUsItems = [
   { title: "Deneyimli ekip", text: "Antalya genelinde taşınma süreçlerini planlı şekilde yöneten deneyimli ekibimizle çalışıyoruz." },
-  { title: "Sigortalı taşıma", text: "Eşyalarınızın güvenliği için taşıma süreci kontrollü ilerler ve uygun durumlarda sigortalı destek sunulur." },
+  { title: "Sigortalı taşıma", text: "Eşyalarınızın güvenliği için taşıma süreci kontrollü ilerler ve eşyalarınız sigortalı olarak taşınır." },
   { title: "Hızlı ve planlı süreç", text: "Taşınma günü, ekip planı ve taşıma adımları önceden belirlenerek süreç gereksiz bekleme olmadan tamamlanır." },
   { title: "Asansörlü taşıma desteği", text: "Yüksek katlı binalarda mobil asansör desteği ile eşyalar daha güvenli ve düzenli şekilde taşınır." },
   { title: "Ücretsiz keşif", text: "Eşya miktarı, kat sayısı ve mesafeye göre net fiyatlandırma için ücretsiz keşif imkanı sunuyoruz." },

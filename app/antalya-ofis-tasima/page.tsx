@@ -46,7 +46,7 @@ const whyUsItems = [
   },
   {
     title: "Sigortalı ve Kontrollü Süreç",
-    text: "Taşıma sürecini dikkatli şekilde yönetiyor, uygun durumlarda sigortalı taşıma desteği sunuyoruz.",
+    text: "Taşıma sürecini dikkatli şekilde yönetiyoruz; taşımalarımız sigortalıdır.",
   },
   {
     title: "Antalya Geneli Hızlı Hizmet",
@@ -157,7 +157,7 @@ export default async function OfisTasimaPage() {
 
             <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mb-8">
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Planlı Taşıma Süreci</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma Desteği</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma</li>
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Asansörlü Taşıma Seçeneği</li>
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Antalya Geneli Hizmet</li>
             </ul>

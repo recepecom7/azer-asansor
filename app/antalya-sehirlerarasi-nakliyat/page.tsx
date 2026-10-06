@@ -17,7 +17,7 @@ const cityLinks = [
 const faqs = [
   { question: "Antalya şehirlerarası nakliyat fiyatları neye göre değişir?", answer: "Fiyatlar mesafe, eşya miktarı, kat sayısı, asansör ihtiyacı ve hizmet kapsamına göre belirlenir." },
   { question: "Taşıma süreci nasıl planlanır?", answer: "Ön keşif sonrası rota, yükleme planı, araç tipi ve teslim günü netleştirilerek süreç adım adım organize edilir." },
-  { question: "Sigortalı taşıma hizmeti var mı?", answer: "Evet, uygun taşımalarda sigortalı taşıma desteği sunularak eşyaların güvenliği önceliklendirilir." },
+  { question: "Sigortalı taşıma hizmeti var mı?", answer: "Evet, taşımalarımız sigortalıdır; eşyalarınızın güvenliği önceliğimizdir." },
   { question: "Eşyalar kaç günde teslim edilir?", answer: "Gidilecek şehre ve operasyon planına göre teslim süresi değişir; çoğu taşımada 1-3 gün aralığında planlama yapılır." },
   { question: "Asansörlü taşıma şehirlerarası nakliyatta gerekli mi?", answer: "Yüksek katlı binalarda yükleme ve boşaltma sırasında asansörlü taşıma süreci hızlandırır ve hasar riskini azaltır." },
   { question: "Hafta sonu şehirlerarası taşıma yapılıyor mu?", answer: "Yoğunluk durumuna göre hafta sonu planlama yapılabilir. Net program için önceden rezervasyon önerilir." },
@@ -82,7 +82,7 @@ export default function SehirlerarasiNakliyatPage() {
           </div>
           <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
             <h2 className="text-3xl font-bold mb-4">Güvenlik / sigorta</h2>
-            <p className="text-gray-300">Eşyalar taşıma öncesinde doğru şekilde hazırlanır; uygun operasyonlarda sigorta desteğiyle süreç daha güvenli hale getirilir.</p>
+            <p className="text-gray-300">Eşyalar taşıma öncesinde doğru şekilde hazırlanır; taşımalarımız sigortalıdır ve süreç daha güvenli ilerler.</p>
           </div>
           <div className="bg-gray-900 border border-white/10 rounded-2xl p-6">
             <h2 className="text-3xl font-bold mb-4">Antalya bölgeleri</h2>

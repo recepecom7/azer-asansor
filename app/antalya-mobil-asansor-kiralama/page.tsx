@@ -159,7 +159,7 @@ export default async function MobileElevatorPage() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-100 mb-8">
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>22. Kata Kadar Ulaşım</li>
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>15-20 Dakikada Kurulum</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma Desteği</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Taşıma</li>
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Antalya Geneli Hizmet</li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-4">

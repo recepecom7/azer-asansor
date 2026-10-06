@@ -17,7 +17,7 @@ const faqs = [
   { question: "Muratpaşa nakliyat fiyatları ne kadar?", answer: "Fiyat; kat sayısı, eşya miktarı, mesafe ve asansör kurulum ihtiyacına göre belirlenir." },
   { question: "Dar merdivenli binalarda taşıma nasıl yapılır?", answer: "Muratpaşa’daki dar merdivenli ve eski binalarda mobil asansör ile dış cepheden güvenli taşıma yapılır." },
   { question: "Aynı gün hizmet var mı?", answer: "Yoğunluk durumuna göre Muratpaşa için aynı gün keşif ve ekip planlaması yapılabilir." },
-  { question: "Eşyalar sigortalı mı?", answer: "Uygun operasyonlarda sigortalı taşıma desteği sunularak eşyaların güvenliği artırılır." },
+  { question: "Eşyalar sigortalı mı?", answer: "Taşımalarımız sigortalıdır; bu, eşyalarınızın güvenliğini artırır." },
 ];
 
 export const metadata: Metadata = {

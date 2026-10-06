@@ -9,7 +9,7 @@ import { Phone, MessageCircle } from "lucide-react";
 const faqs = [
   { question: "Antalya İstanbul nakliyat fiyatı ne kadar?", answer: "Fiyat; eşya miktarı, kat sayısı, asansör ihtiyacı ve teslim planına göre değişir." },
   { question: "Kaç gün sürer?", answer: "Operasyon planına göre taşıma ve teslim süreci genellikle 1-3 gün aralığında tamamlanır." },
-  { question: "Sigorta var mı?", answer: "Uygun taşımalarda sigortalı taşıma desteği sunuyoruz." },
+  { question: "Sigorta var mı?", answer: "Taşımalarımız sigortalıdır." },
   { question: "Eşyalar zarar görür mü?", answer: "Doğru paketleme ve profesyonel yükleme ile hasar riski minimum seviyeye indirilir." },
   { question: "Hangi araçlar kullanılır?", answer: "Eşya hacmine uygun kapalı kasa şehirlerarası nakliye araçları kullanılır." },
 ];

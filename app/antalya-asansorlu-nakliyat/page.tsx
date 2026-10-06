@@ -65,7 +65,7 @@ const whyUsItems = [
   },
   {
     title: "Sigortalı ve Kontrollü Süreç",
-    text: "Taşıma sürecini planlı şekilde yönetiyor, uygun durumlarda sigortalı taşıma desteği sunuyoruz.",
+    text: "Taşıma sürecini planlı şekilde yönetiyoruz; taşımalarımız sigortalıdır.",
   },
   {
     title: "Aynı Gün Hizmet İmkânı",
