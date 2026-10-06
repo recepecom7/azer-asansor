@@ -23,7 +23,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Konyaaltı Evden Eve Nakliyat | Sigortalı & Asansörlü | Azer Asansör",
+  title: "Konyaaltı Evden Eve Nakliyat | Sigortalı & Asansörlü",
   description:
     "Konyaaltı evden eve nakliyat için profesyonel, güvenli ve planlı çözüm. Hemen teklif alın, taşınmanızı kolaylaştırın!",
   alternates: {

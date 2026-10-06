@@ -23,7 +23,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Muratpaşa Evden Eve Nakliyat | Sigortalı & Asansörlü | Azer Asansör",
+  title: "Muratpaşa Evden Eve Nakliyat | Sigortalı & Asansörlü",
   description:
     "Antalya Muratpaşa evden eve nakliyat için profesyonel, hızlı ve güvenli taşımayı şimdi planlayın; ücretsiz teklif alın!",
   alternates: {

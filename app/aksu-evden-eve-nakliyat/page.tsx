@@ -23,7 +23,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Aksu Evden Eve Nakliyat | Sigortalı & Asansörlü | Azer Asansör",
+  title: "Aksu Evden Eve Nakliyat | Sigortalı & Asansörlü",
   description:
     "Antalya Aksu evden eve nakliyat için hemen teklif alın. Mahallenize uygun taşınma planı ve hızlı çözüm sizi bekliyor.",
   alternates: {

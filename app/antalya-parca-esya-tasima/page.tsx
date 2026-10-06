@@ -9,7 +9,7 @@ import { Button } from "@/components/Button";
 import { Phone, MessageCircle, ShieldCheck, Clock, MapPin, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Antalya Parça Eşya Taşıma | Azer Asansör",
+  title: "Antalya Parça Eşya Taşıma",
   description: "Antalya parça eşya, öğrenci eşyası ve bekar eşyası taşıma hizmetleri. Uygun fiyatlı, hızlı ve güvenli küçük nakliye çözümleri.",
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-parca-esya-tasima",

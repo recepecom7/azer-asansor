@@ -23,7 +23,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Lara Evden Eve Nakliyat | Sigortalı & Asansörlü | Azer Asansör",
+  title: "Lara Evden Eve Nakliyat | Sigortalı & Asansörlü",
   description:
     "Antalya Lara evden eve nakliyat için şimdi arayın. Güzeloba ve Şirinyalı'da hızlı plan alın, taşınmanızı kolaylaştırın.",
   alternates: {

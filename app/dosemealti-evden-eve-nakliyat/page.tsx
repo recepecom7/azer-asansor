@@ -23,7 +23,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Döşemealtı Evden Eve Nakliyat | Sigortalı & Asansörlü | Azer Asansör",
+  title: "Döşemealtı Evden Eve Nakliyat | Sigortalı & Asansörlü",
   description:
     "Döşemealtı evden eve nakliyat için hemen teklif alın. Azer Asansör ile taşınmayı planlayın, zaman kaybetmeyin.",
   alternates: {

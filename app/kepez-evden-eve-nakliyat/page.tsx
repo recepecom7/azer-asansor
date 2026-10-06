@@ -23,7 +23,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Kepez Evden Eve Nakliyat | Sigortalı & Asansörlü | Azer Asansör",
+  title: "Kepez Evden Eve Nakliyat | Sigortalı & Asansörlü",
   description:
     "Antalya Kepez evden eve nakliyat için güvenli ve hızlı çözüm. Hemen teklif alın, taşınmayı profesyonelce planlayın!",
   alternates: {

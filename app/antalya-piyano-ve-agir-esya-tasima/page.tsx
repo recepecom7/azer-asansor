@@ -8,7 +8,7 @@ import { Button } from "@/components/Button";
 import { Phone, MessageCircle, ShieldCheck, Box, Route, HardHat } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Antalya Piyano ve Ağır Eşya Taşıma | Azer Asansör",
+  title: "Antalya Piyano ve Ağır Eşya Taşıma",
   description: "Antalya piyano, çelik kasa ve ağır eşya taşımacılığı. Özel ekipmanlar ve uzman kadromuzla eşyalarınızı sıfır hasar garantisiyle taşıyoruz.",
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-piyano-ve-agir-esya-tasima",

@@ -8,7 +8,7 @@ import { Button } from "@/components/Button";
 import { Phone, MessageCircle, ShieldCheck, Lock, ThermometerSun, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Antalya Eşya Depolama Hizmeti | Azer Asansör",
+  title: "Antalya Eşya Depolama Hizmeti",
   description: "Antalya sigortalı, güvenlikli ve rutubetsiz eşya depolama hizmetleri. Ev ve ofis eşyalarınız için kısa veya uzun dönem kiralık depolar.",
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-esya-depolama",
