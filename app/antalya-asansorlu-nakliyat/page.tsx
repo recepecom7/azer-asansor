@@ -121,7 +121,7 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-  title: "Antalya Asansörlü Nakliyat Hizmeti | Azer Asansör",
+  title: "Antalya Asansörlü Nakliyat Hizmeti",
   description:
     "Antalya asansörlü nakliyat hizmeti. 22. kata kadar mobil asansör, sigortalı taşıma, hızlı kurulum. Muratpaşa, Kepez, Konyaaltı, Lara ve tüm Antalya.",
   alternates: {

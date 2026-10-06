@@ -4,7 +4,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog | Azer Asansör Antalya",
+  title: {
+    absolute: "Blog | Azer Asansör Antalya",
+  },
   description:
     "Antalya asansörlü nakliyat, mobil asansör kiralama ve evden eve nakliyat hakkında faydalı rehberler.",
   alternates: {

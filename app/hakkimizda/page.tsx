@@ -65,7 +65,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | Azer Asansör Antalya",
+  title: {
+    absolute: "Hakkımızda | Azer Asansör Antalya",
+  },
   description:
     "Azer Asansör hakkında bilgi alın. Antalya’da asansörlü nakliyat, mobil asansör kiralama, evden eve nakliyat ve dış cephe asansörü hizmetleri sunuyoruz.",
   alternates: {

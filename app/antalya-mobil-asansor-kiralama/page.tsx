@@ -97,7 +97,7 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = {
-  title: "Antalya Mobil Asansör Kiralama | Azer Asansör",
+  title: "Antalya Mobil Asansör Kiralama",
   description:
     "Antalya mobil asansör kiralama hizmeti. 22. kata kadar hızlı kurulum, güvenli taşıma ve kiralık asansör çözümleri. Muratpaşa, Kepez, Konyaaltı ve tüm Antalya.",
   alternates: {

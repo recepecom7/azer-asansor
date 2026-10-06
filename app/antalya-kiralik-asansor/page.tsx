@@ -58,7 +58,7 @@ const whyUs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Antalya Kiralık Asansör | Hızlı ve Güvenli Asansör Kiralama",
+  title: "Antalya Kiralık Asansör | Mobil Asansör Kiralama",
   description:
     "Antalya kiralık asansör hizmeti ile yüksek katlara hızlı ve güvenli taşıma. Mobil asansör kiralama, uygun fiyat ve aynı gün kurulum.",
   alternates: {
@@ -66,12 +66,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "https://www.azerasansor.com/antalya-kiralik-asansor",
-    title: "Antalya Kiralık Asansör | Hızlı ve Güvenli Asansör Kiralama",
+    title: "Antalya Kiralık Asansör | Mobil Asansör Kiralama | Azer Asansör",
     description:
       "Antalya kiralık asansör hizmeti ile yüksek katlara hızlı ve güvenli taşıma. Mobil asansör kiralama, uygun fiyat ve aynı gün kurulum.",
   },
   twitter: {
-    title: "Antalya Kiralık Asansör | Hızlı ve Güvenli Asansör Kiralama",
+    title: "Antalya Kiralık Asansör | Mobil Asansör Kiralama | Azer Asansör",
     description:
       "Antalya kiralık asansör hizmeti ile yüksek katlara hızlı ve güvenli taşıma. Mobil asansör kiralama, uygun fiyat ve aynı gün kurulum.",
   },
