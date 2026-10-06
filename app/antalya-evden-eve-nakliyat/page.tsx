@@ -61,7 +61,7 @@ const faqItems = [
   {
     question: "Antalya evden eve nakliyat fiyatları ne kadar?",
     answer:
-      "Antalya şehir içi nakliye fiyatları; taşınacak eşyanın hacmi ve ağırlığı, yükleme ile boşaltma adreslerinin kat sayısı, iki adres arasındaki mesafe ve asansörlü taşıma gereksinimi gibi temel faktörlere göre şekillenir. Dar merdiveni olan eski binalarda ya da 8. kat ve üzerindeki dairelerde mobil asansör kullanımı zorunlu hale geldiğinden bu durum fiyatlandırmayı doğrudan etkiler. Bunların yanı sıra eşya paketleme, marangoz montaj desteği ve sigortalı nakliyat gibi ek hizmetler de toplam maliyete dahil edilebilir. Kesin rakam almak için ücretsiz keşif ya da WhatsApp üzerinden detaylı bir görüşme yapmanızı öneririz.",
+      "Antalya şehir içi nakliye fiyatları; taşınacak eşyanın hacmi ve ağırlığı, yükleme ile boşaltma adreslerinin kat sayısı, iki adres arasındaki mesafe ve asansörlü taşıma gereksinimi gibi temel faktörlere göre şekillenir. Dar merdiveni olan eski binalarda ya da 8. kat ve üzerindeki dairelerde mobil asansör kullanımı zorunlu hale geldiğinden bu durum fiyatlandırmayı doğrudan etkiler. Bunların yanı sıra eşya paketleme, mobilya montaj desteği ve sigortalı nakliyat gibi ek hizmetler de toplam maliyete dahil edilebilir. Kesin rakam almak için ücretsiz keşif ya da WhatsApp üzerinden detaylı bir görüşme yapmanızı öneririz.",
   },
   {
     question: "Taşınma sırasında eşyalarım sigortalanıyor mu; olası bir hasarda süreç nasıl işliyor?",
@@ -71,7 +71,7 @@ const faqItems = [
   {
     question: "Eşya paketleme ve ambalajlama hizmetine neler dahildir; beyaz eşyaları da sökebiliyor musunuz?",
     answer:
-      "Eşya paketleme hizmetimiz; tabak-bardak gibi kırılgan ürünlerin balonlu naylonla, tekstil ürünlerin vakum poşetle, büyük mobilyaların ise koruyucu battaniye ve stretch filmle sarılmasını kapsar. Buzdolabı, çamaşır makinesi, bulaşık makinesi gibi büyük beyaz eşyaların taşımaya hazır hale getirilmesi için deneyimli teknik ekibimiz söküm ve sabitleme işlemlerini gerçekleştirir. Gardırop, yatak başlığı, TV ünitesi gibi büyük mobilyaların demontaj ve montajı ise marangoz desteğimiz aracılığıyla yeni adresinizde de sağlanmaktadır. Tüm bu hizmetler taşıma paketinize dahil edilebildiği gibi ihtiyaç bazlı olarak da eklenebilir.",
+      "Eşya paketleme hizmetimiz; tabak-bardak gibi kırılgan ürünlerin balonlu naylonla, tekstil ürünlerin vakum poşetle, büyük mobilyaların ise koruyucu battaniye ve stretch filmle sarılmasını kapsar. Buzdolabı, çamaşır makinesi, bulaşık makinesi gibi büyük beyaz eşyaların taşımaya hazır hale getirilmesi için deneyimli teknik ekibimiz söküm ve sabitleme işlemlerini gerçekleştirir. Gardırop, yatak başlığı, TV ünitesi gibi büyük mobilyaların demontaj ve montajı ise mobilya sökme ve montaj ekibimiz aracılığıyla yeni adresinizde de sağlanmaktadır. Tüm bu hizmetler taşıma paketinize dahil edilebildiği gibi ihtiyaç bazlı olarak da eklenebilir.",
   },
   {
     question: "Mobil asansörlü nakliyat kaçıncı kata kadar hizmet verebiliyor?",
@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     url: "https://www.azerasansor.com/antalya-evden-eve-nakliyat",
     title: "Antalya Evden Eve Nakliyat | Sigortalı Taşıma | Azer Asansör",
     description:
-      "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu ve Döşemealtı'nda hizmet.",
+      "Antalya'da profesyonel evden eve nakliyat: sigortalı taşıma, paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu ve Döşemealtı'nda hizmet.",
     siteName: "Azer Asansör",
     locale: "tr_TR",
     type: "website",
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Antalya Evden Eve Nakliyat | Sigortalı Taşıma | Azer Asansör",
     description:
-      "Antalya'da sigortalı evden eve nakliyat, ücretsiz paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu, Döşemealtı'nda hizmet – hemen fiyat alın!",
+      "Antalya'da sigortalı evden eve nakliyat, paketleme ve mobil asansör desteği. Muratpaşa, Lara, Konyaaltı, Kepez, Aksu, Döşemealtı'nda hizmet – hemen fiyat alın!",
     images: ["https://www.azerasansor.com/images/muratpasa-nakliye.jpg"],
   },
 };
@@ -155,7 +155,7 @@ export default async function EvdenEveNakliyatPage() {
         title="Antalya Evden Eve Nakliyat"
         subtitle="Ev eşyalarınızı paketleme, söküm ve kurulum, taşıma ve yeni evinizde yerleştirme dahil tek ekiple taşıyoruz. Yüksek katlarda 22. kata kadar ulaşan mobil asansör kullanıyoruz. Muratpaşa, Kepez, Konyaaltı, Lara, Aksu ve Döşemealtı'nda aktif hizmet veriyoruz."
         eyebrow="Antalya'da Sigortalı Evden Eve Nakliyat"
-        checklist={["Paketleme ve Ambalajlama", "Marangozlu Söküm ve Kurulum", "Sigortalı Taşıma", "Aynı Gün Hizmet İmkânı"]}
+        checklist={["Paketleme ve Ambalajlama", "Mobilya Söküm ve Kurulum", "Sigortalı Taşıma", "Aynı Gün Hizmet İmkânı"]}
         subline="Antalya'da evden eve nakliyatta yerel, hızlı ve güvenli çözüm."
         showRating
         ratingText={ratingText}
@@ -337,27 +337,27 @@ export default async function EvdenEveNakliyatPage() {
         </div>
       </section>
 
-      {/* ── TRUST BLOCK: Sigortalı & Marangozlu Taşımacılık ─────────────────── */}
+      {/* ── TRUST BLOCK: Sigortalı Taşımacılık ─────────────────── */}
       <section className="py-10 md:py-16 bg-brand-black text-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-[#111827] border border-brand-yellow/20 rounded-2xl p-6 md:p-8">
             <div className="flex items-start gap-4 mb-6">
               <span className="text-3xl flex-shrink-0" aria-hidden="true">🛡️</span>
               <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
-                Sigortalı ve Marangozlu Taşımacılık: Eşyalarınız Her Adımda Güvende
+                Sigortalı Taşımacılık: Eşyalarınız Her Adımda Güvende
               </h2>
             </div>
             <p className="text-gray-300 text-lg leading-relaxed mb-5">
               Evden eve taşınma sürecinde en çok duyduğumuz kaygı, mobilyaların hasar görmesidir. Özellikle yıllarca birlikte yaşanmış gardıroplar, değer taşıyan koltuk takımları ya da büyükanne yadigarı antika eşyalar söz konusu olduğunda bu endişe büyümektedir. Azer Asansör olarak bu gerçeği çok iyi biliyoruz.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-5">
-              Bu nedenle taşımacılık hizmetimiz, yalnızca &ldquo;eşyaları bir noktadan alıp diğerine bırakmak&rdquo; anlayışıyla değil, kapsamlı bir güvence sistemiyle şekillenmektedir. Büyük mobilyaların demontajı ve yeni adreste montajı için <strong className="text-white">deneyimli marangoz desteği</strong> sunuyoruz; karyola kafaları, modüler kütüphaneler, mutfak dolapları ve TV üniteleri gibi söküp takılması uzmanlık gerektiren eşyalar bu kapsamda değerlendirilir.
+              Bu nedenle taşımacılık hizmetimiz, yalnızca &ldquo;eşyaları bir noktadan alıp diğerine bırakmak&rdquo; anlayışıyla değil, kapsamlı bir güvence sistemiyle şekillenmektedir. Büyük mobilyaların demontajı ve yeni adreste montajı için <strong className="text-white">deneyimli mobilya sökme ve montaj ekibi</strong> sunuyoruz; karyola kafaları, modüler kütüphaneler, mutfak dolapları ve TV üniteleri gibi söküp takılması uzmanlık gerektiren eşyalar bu kapsamda değerlendirilir.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-5">
               Taşıma sürecinde tüm eşyalar önce uygun ambalaj malzemeleriyle sarılır; kırılgan ürünler köpük ve baloncuklu naylon ile ayrıca korunur. Ardından <strong className="text-white">sigortalı taşımacılık</strong> kapsamında güvence altına alınarak araca yüklenir. Olası beklenmedik bir hasar durumunda ailenizin maddi kaybı telafi edilir; süreci şeffaf ve yazılı olarak yönetiyoruz.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              Antalya&apos;da evden eve nakliyat planlarken sadece en ucuz teklifi değil, eşyalarınızın gerçek anlamda güvende olduğu, marangozlu ve sigortalı bir hizmet deneyimi arıyorsanız doğru yerdesiniz. Bize ulaşın; taşınma günü sizi stressiz bir sürecin içinde bulun.
+              Antalya&apos;da evden eve nakliyat planlarken sadece en ucuz teklifi değil, eşyalarınızın gerçek anlamda güvende olduğu, mobilya montaj destekli ve sigortalı bir hizmet deneyimi arıyorsanız doğru yerdesiniz. Bize ulaşın; taşınma günü sizi stressiz bir sürecin içinde bulun.
             </p>
           </div>
         </div>

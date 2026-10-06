@@ -27,7 +27,7 @@ const faqs = [
 export const metadata: Metadata = {
   title: "Antalya Cam Balkon Taşıma | Güvenli Asansörlü Taşıma",
   description:
-    "Antalya cam balkon taşıma hizmeti ile ağır ve hassas cam sistemleri güvenli şekilde taşınır. Mobil asansör ile hızlı ve hasarsız çözüm.",
+    "Antalya cam balkon taşıma hizmeti ile ağır ve hassas cam sistemleri güvenli şekilde taşınır. Mobil asansör ile hızlı ve güvenli çözüm.",
   alternates: {
     canonical: "https://www.azerasansor.com/cam-balkon-tasima-antalya",
   },

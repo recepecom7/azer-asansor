@@ -109,7 +109,7 @@ export default function Page() {
             <Link className="text-brand-yellow hover:underline" href="/antalya-evden-eve-nakliyat">
               evden eve nakliyat
             </Link>{" "}
-            öncesinde atacağınız 10 basit adım, hem zamandan tasarruf etmenizi hem de eşyalarınızın hasarsız taşınmasını sağlar.
+            öncesinde atacağınız 10 basit adım, hem zamandan tasarruf etmenize hem de eşyalarınızın güvenle taşınmasına yardımcı olur.
           </p>
         </div>
       </section>

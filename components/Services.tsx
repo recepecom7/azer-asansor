@@ -18,7 +18,7 @@ const SERVICES: ServiceCard[] = [
   {
     icon: ArrowUp,
     title: "Asansörlü Nakliyat",
-    description: "22. kata kadar mobil asansörle hasarsız taşıma.",
+    description: "22. kata kadar mobil asansörle güvenli taşıma.",
     href: "/antalya-asansorlu-nakliyat",
   },
   {

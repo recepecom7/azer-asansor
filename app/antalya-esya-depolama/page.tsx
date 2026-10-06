@@ -40,7 +40,7 @@ export default function EsyaDepolamaPage() {
     },
     {
       question: "Depolarda rutubet veya haşere sorunu var mı?",
-      answer: "Kesinlikle hayır. Depolarımız düzenli olarak havalandırılmakta ve periyodik olarak profesyonel ilaçlama şirketleri tarafından haşerelere karşı ilaçlanmaktadır.",
+      answer: "Kesinlikle hayır. Eşyalarınız güvenli ve kuru bir depolama alanında saklanır.",
     }
   ];
 
@@ -61,13 +61,13 @@ export default function EsyaDepolamaPage() {
               Antalya Sigortalı Eşya Depolama Hizmeti
             </h1>
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-7">
-              Ev veya ofis eşyalarınızı geçici bir süre güvende tutmanız gerekiyorsa, 7/24 güvenlik kameralı, rutubetsiz ve sigortalı depolarımızla hizmetinizdeyiz.
+              Ev veya ofis eşyalarınızı geçici bir süre güvende tutmanız gerekiyorsa, güvenli, rutubetsiz ve sigortalı depolama hizmetimizle yanınızdayız.
             </p>
 
             <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mb-8">
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>7/24 Kameralı Güvenlik</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Güvenli Depolama</li>
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Rutubetsiz Ortam</li>
-              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Yangın ve Hırsızlık Sigortası</li>
+              <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Sigortalı Depolama</li>
               <li className="flex items-center gap-2"><span className="text-brand-yellow">✓</span>Özel Paketleme Desteği</li>
             </ul>
 
@@ -114,7 +114,7 @@ export default function EsyaDepolamaPage() {
             Güvenli Eşya Depolama
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Yeni bir eve geçmeden önce, tayin durumlarında, ofis tadilatlarında eşyalarınızı güvende tutacak bir alan arıyorsanız eşya depolarımız tam size göre. Eşyalarınız hava almayan özel ambalaj malzemeleriyle paketlenir ve zarar görmeden depolanır.
+            Yeni bir eve geçmeden önce, tayin durumlarında, ofis tadilatlarında eşyalarınızı güvende tutacak bir alan arıyorsanız eşya depolama hizmetimiz tam size göre. Eşyalarınız paketlenerek güvenle depolanır.
           </p>
           </div>
         </div>

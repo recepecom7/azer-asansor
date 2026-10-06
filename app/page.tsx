@@ -67,7 +67,7 @@ const faqs = [
 export const metadata: Metadata = {
   title: "Antalya Asansörlü Nakliyat ve Evden Eve Taşıma | Azer Asansör",
   description:
-    "Antalya asansörlü nakliyat ve evden eve taşıma hizmetlerinde 22. kata ulaşabilen mobil asansör kiralama. Sıfır hasar, uygun fiyat garantisiyle hemen teklif alın.",
+    "Antalya asansörlü nakliyat ve evden eve taşıma hizmetlerinde 22. kata ulaşabilen mobil asansör kiralama. Ücretsiz keşifle hemen teklif alın.",
   alternates: {
     canonical: "https://www.azerasansor.com",
   },

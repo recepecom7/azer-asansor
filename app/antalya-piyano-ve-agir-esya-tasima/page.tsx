@@ -9,7 +9,7 @@ import { Phone, MessageCircle, ShieldCheck, Box, Route, HardHat } from "lucide-r
 
 export const metadata: Metadata = {
   title: "Antalya Piyano ve Ağır Eşya Taşıma",
-  description: "Antalya piyano, çelik kasa ve ağır eşya taşımacılığı. Özel ekipmanlar ve uzman kadromuzla eşyalarınızı sıfır hasar garantisiyle taşıyoruz.",
+  description: "Antalya piyano, çelik kasa ve ağır eşya taşımacılığı. Özel ekipmanlar ve uzman kadromuzla eşyalarınızı özenle ve güvenle taşıyoruz.",
   alternates: {
     canonical: "https://www.azerasansor.com/antalya-piyano-ve-agir-esya-tasima",
   },
@@ -61,7 +61,7 @@ export default function PiyanoVeAgirEsyaTasimaPage() {
               Antalya Piyano ve Ağır Eşya Taşımacılığı
             </h1>
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-7">
-              Standart taşımacılık yöntemleriyle taşınması imkansız olan piyano, çelik kasa, tıbbi cihaz ve ağır makinelerinizi profesyonel ekipmanlarla sıfır hasar riskiyle taşıyoruz.
+              Standart taşımacılık yöntemleriyle taşınması imkansız olan piyano, çelik kasa, tıbbi cihaz ve ağır makinelerinizi profesyonel ekipmanlarla hasar riskini azaltarak taşıyoruz.
             </p>
 
             <ul className="grid gap-2 sm:grid-cols-2 text-white/95 mb-8">
@@ -95,8 +95,8 @@ export default function PiyanoVeAgirEsyaTasimaPage() {
             {[
               { icon: HardHat, text: "Uzman Ekip" },
               { icon: Box, text: "Özel Ambalaj" },
-              { icon: Route, text: "Hasarsız Taşıma" },
-              { icon: ShieldCheck, text: "Garantili" },
+              { icon: Route, text: "Güvenli Taşıma" },
+              { icon: ShieldCheck, text: "Güvenli" },
             ].map((item) => (
               <div key={item.text} className="bg-gray-900 border border-gray-800 rounded-xl p-4 flex items-center gap-2 text-gray-200">
                 <item.icon className="w-5 h-5 text-brand-yellow flex-shrink-0" />

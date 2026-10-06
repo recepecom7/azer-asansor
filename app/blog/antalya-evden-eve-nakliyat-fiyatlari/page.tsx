@@ -46,7 +46,7 @@ const factors = [
   { title: "Mesafe", text: "Şehir içi kısa mesafeler ile şehirler arası uzun mesafeler farklı yakıt, araç ve iş gücü maliyeti gerektirir; bu fark doğrudan fiyata yansır." },
   { title: "Paketleme hizmeti", text: "Paketleme kapsamı hem malzeme hem de işçilik planını etkiler. Profesyonel paketleme, taşıma sırasında hasar riskini azaltır ama ek maliyet oluşturur." },
   { title: "Sigortalı taşıma", text: "Eşyaların sigorta kapsamına alınması, olası hasar durumunda güvence sağlar ve fiyata küçük bir kalem olarak eklenir." },
-  { title: "Mobilya söküm-montaj", text: "Gardırop, TV ünitesi gibi büyük mobilyaların demontaj ve montajı, marangoz desteği gerektirdiği için ek ücrete tabi olabilir." },
+  { title: "Mobilya söküm-montaj", text: "Gardırop, TV ünitesi gibi büyük mobilyaların demontaj ve montajı, mobilya sökme ve montaj gerektirdiği için ek ücrete tabi olabilir." },
   { title: "Taşınma günü ve sezon", text: "Yaz ayları, hafta sonları ve ay başı/sonu gibi yoğun dönemlerde talep arttığı için fiyatlar bir miktar yükselebilir." },
 ];
 
