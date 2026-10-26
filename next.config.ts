@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         destination: "/antalya-hizmet-bolgeleri",
         permanent: true,
       },
+      {
+        source: "/antalya-tasinma-hazirlik-rehberi",
+        destination: "/blog/antalya-tasinma-hazirlik-rehberi",
+        permanent: true,
+      },
     ];
   },
 };
