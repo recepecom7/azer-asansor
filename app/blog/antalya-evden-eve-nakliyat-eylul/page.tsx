@@ -120,7 +120,7 @@ export default function Page() {
                 Asansörlü nakliyat
               </Link>{" "}
               yöntemiyle eşyalar merdiven kullanılmadan bina dışından taşınıyor, bu da hem zamandan kazandırıyor hem hasar riskini azaltıyor. Özellikle 8. kat ve üzerinde oturanlara bu yöntemi öneriyoruz. Taşınmadan önce{" "}
-              <Link className="text-brand-yellow hover:underline" href="/antalya-tasinma-hazirlik-rehberi">
+              <Link className="text-brand-yellow hover:underline" href="/blog/antalya-tasinma-hazirlik-rehberi">
                 hazırlık rehberimize
               </Link>{" "}
               göz atmanız da işinizi kolaylaştırır.

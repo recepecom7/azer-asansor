@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/nakliyeci-isi-yarida-birakirsa-ne-yapmali", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-asansorlu-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-eylul", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/antalya-tasinma-hazirlik-rehberi", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-evden-eve-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-ev-tasima-suresi", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/antalya-asansorlu-nakliyat-fiyatlari", priority: 0.8, changeFrequency: "monthly" },
